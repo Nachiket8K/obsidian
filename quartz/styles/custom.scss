@@ -1,3 +1,77 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+
+body[data-slug="index"],
+body[data-slug="docs/index"] {
+  .page {
+    max-width: 100vw;
+    margin: 0;
+  }
+
+  .page > #quartz-body {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "grid-sidebar-right";
+    min-height: 100vh;
+    column-gap: 0;
+    row-gap: 0;
+    padding: 0;
+  }
+
+  .sidebar.left,
+  .center,
+  footer {
+    display: none !important;
+  }
+
+  .sidebar.right {
+    grid-area: grid-sidebar-right;
+    position: static;
+    top: auto;
+    height: auto;
+    min-height: 100vh;
+    width: min(1200px, 100vw);
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    box-sizing: border-box;
+  }
+
+  .sidebar.right > :not(.graph) {
+    display: none !important;
+  }
+
+  .graph {
+    width: 100%;
+  }
+
+  .graph > h3 {
+    display: none;
+  }
+
+  .graph > .graph-outer {
+    height: calc(100vh - 3rem);
+    margin: 0;
+    border-radius: 0.75rem;
+  }
+
+  @media all and ($mobile) {
+    .page > #quartz-body {
+      padding: 0;
+    }
+
+    .sidebar.right {
+      width: 100vw;
+      min-height: 100vh;
+      padding: 0.75rem;
+    }
+
+    .graph > .graph-outer {
+      height: calc(100vh - 1.5rem);
+    }
+  }
+}
