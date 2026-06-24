@@ -1,1 +1,0 @@
-C:\Users\nachi\Data\Brain\Obsidian\tests\test_generate_simulation_in_practice_notes.py
