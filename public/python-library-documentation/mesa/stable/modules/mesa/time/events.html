@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Source code for mesa.time.events</title><meta charset="utf-8"/><link rel="preload" href="../../../../../../index.css" as="style"/><link rel="preload" href="../../../../../../prescript.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 5"/><meta property="og:title" content="Source code for mesa.time.events"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Source code for mesa.time.events"/><meta name="twitter:description" content="Source code for mesa.time.events &quot;&quot;&quot;Core event management functionality for Mesa's discrete event simulation system."/><meta property="og:description" content="Source code for mesa.time.events &quot;&quot;&quot;Core event management functionality for Mesa's discrete event simulation system."/><meta property="og:image:alt" content="Source code for mesa.time.events &quot;&quot;&quot;Core event management functionality for Mesa's discrete event simulation system."/><meta property="twitter:domain" content="nachiket8k.github.io/obsidian"/><meta property="og:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/time/events"/><meta property="twitter:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/time/events"/><link rel="icon" href="../../../../../../static/icon.png"/><meta name="description" content="Source code for mesa.time.events &quot;&quot;&quot;Core event management functionality for Mesa's discrete event simulation system."/><meta name="generator" content="Quartz"/><link href="../../../../../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-9f9b2774.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-a12dcaa2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-26a99b87.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../../../../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../../../../../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/time/events-og-image.webp"/><meta property="og:image:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/time/events-og-image.webp"/><meta name="twitter:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/time/events-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="python-library-documentation/mesa/stable/modules/mesa/time/events" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../../../../..">Quartz 5</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="Reader mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\r\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\r\n        numeric: true,\r\n        sensitivity: \&quot;base\&quot;\r\n      });\r\n    }\r\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return 1;\r\n    }\r\n    return -1;\r\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\r\n    return node;\r\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-178" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-178" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/">Python Library Documentation</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/">mesa package</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/stable/">Mesa: Agent-based modeling in Python</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/stable/modules/">modules</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/stable/modules/mesa/">mesa</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/stable/modules/mesa/time/">time</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Source code for mesa.time.events</a></div></nav><h1 class="article-title">Source code for mesa.time.events</h1><p show-comma="true" class="content-meta"><time datetime="2026-06-19T10:11:10.662Z">Jun 19, 2026</time><span>10 min read</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="source-code-for-mesatimeevents">Source code for mesa.time.events<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#source-code-for-mesatimeevents" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<pre><code>&quot;&quot;&quot;Core event management functionality for Mesa's discrete event simulation system.
+
+This module provides the foundational data structures and classes needed for event-based
+simulation in Mesa. The EventList class is a priority queue implementation that maintains
+simulation events in chronological order while respecting event priorities. Key features:
+
+- Priority-based event ordering
+- Weak references to prevent memory leaks from canceled events
+- Efficient event insertion and removal using a heap queue
+- Support for event cancellation without breaking the heap structure
+
+The module contains three main components:
+- Priority: An enumeration defining event priority levels (HIGH, DEFAULT, LOW)
+- Event: A class representing individual events with timing and execution details
+- EventList: A heap-based priority queue managing the chronological ordering of events
+
+The implementation supports both pure discrete event simulation and hybrid approaches
+combining agent-based modeling with event scheduling.
+&quot;&quot;&quot;
+
+from __future__ import annotations
+
+import itertools
+import types
+from collections.abc import Callable
+from dataclasses import dataclass
+from enum import IntEnum
+from heapq import heapify, heappop, heappush, nsmallest
+from types import MethodType
+from typing import TYPE_CHECKING, Any
+from weakref import ReferenceType, WeakMethod, ref
+
+if TYPE_CHECKING:
+    from mesa import Model
+
+def _create_callable_reference(
+    function: Callable[..., None],
+) -> ReferenceType[Any] | WeakMethod:
+    &quot;&quot;&quot;Validate and create a weak-reference wrapper for an event callback.&quot;&quot;&quot;
+    if not callable(function):
+        raise TypeError(&quot;function must be a callable&quot;)
+
+    if isinstance(function, types.FunctionType) and function.__name__ == &quot;&lt;lambda>&quot;:
+        raise ValueError(&quot;function must be alive at Event creation.&quot;)
+
+    if isinstance(function, MethodType):
+        function_ref = WeakMethod(function)
+    else:
+        try:
+            function_ref = ref(function)
+        except TypeError as exc:
+            raise TypeError(&quot;function must be weak referenceable&quot;) from exc
+
+    return function_ref
+
+[docs]
+class Priority(IntEnum):
+    &quot;&quot;&quot;Enumeration of priority levels.&quot;&quot;&quot;
+
+    LOW = 10
+    DEFAULT = 5
+    HIGH = 1
+
+[docs]
+class Event:
+    &quot;&quot;&quot;A simulation event.
+
+    The callable is wrapped using weakref, so there is no need to explicitly cancel event if e.g., an agent
+    is removed from the simulation.
+
+    Attributes:
+        time (float): The simulation time of the event
+        fn (Callable): The function to execute for this event
+        priority (Priority): The priority of the event
+        unique_id (int) the unique identifier of the event
+        function_args list[Any]: Argument for the function
+        function_kwargs dict[str, Any]: Keyword arguments for the function
+
+    Notes:
+        Simulation events use a weak reference to the callable.
+        If the callback no longer exists at execution time (e.g., because an agent
+        has been removed), execution will fail silently.
+        Lambda callbacks are rejected at Event creation.
+
+    &quot;&quot;&quot;
+
+    _ids = itertools.count()
+
+    @property
+    def CANCELED(self) -> bool:  # noqa: D102
+        return self._canceled
+
+    def __init__(
+        self,
+        time: int | float,
+        function: Callable[..., None],
+        priority: Priority = Priority.DEFAULT,
+        function_args: list[Any] | None = None,
+        function_kwargs: dict[str, Any] | None = None,
+    ) -> None:
+        &quot;&quot;&quot;Initialize a simulation event.
+
+        Args:
+            time: the instant of time of the simulation event
+            function: the callable to invoke
+            priority: the priority of the event
+            function_args: arguments for callable
+            function_kwargs: keyword arguments for the callable
+        &quot;&quot;&quot;
+        super().__init__()
+        self.time = time
+        self.priority = priority.value
+        self._canceled = False
+
+        weak_ref_fn = _create_callable_reference(function)
+
+        self.fn = weak_ref_fn
+
+        self.unique_id = next(self._ids)
+        self.function_args = function_args if function_args else []
+        self.function_kwargs = function_kwargs if function_kwargs else {}
+
+[docs]
+    def execute(self) -> None:
+        &quot;&quot;&quot;Execute this event.&quot;&quot;&quot;
+        if not self._canceled:
+            fn = self.fn()
+            if fn is not None:
+                fn(*self.function_args, **self.function_kwargs)
+
+[docs]
+    def cancel(self) -> None:
+        &quot;&quot;&quot;Cancel this event.&quot;&quot;&quot;
+        self._canceled = True
+        self.fn = None
+        self.function_args = []
+        self.function_kwargs = {}
+
+def __lt__(self, other: Event) -> bool:
+        &quot;&quot;&quot;Define a total ordering for events to be used by the heapq.&quot;&quot;&quot;
+        if self.time != other.time:
+            return self.time &lt; other.time
+        if self.priority != other.priority:
+            return self.priority &lt; other.priority
+        return self.unique_id &lt; other.unique_id
+
+    def __getstate__(self) -> dict[str, Any]:
+        &quot;&quot;&quot;Prepare state for pickling.&quot;&quot;&quot;
+        state = self.__dict__.copy()
+        # Convert weak reference back to strong reference for pickling
+        fn = self.fn() if self.fn is not None else None
+        state[&quot;_fn_strong&quot;] = fn
+        state[&quot;fn&quot;] = None  # Don't pickle the weak reference
+        return state
+
+    def __setstate__(self, state: dict[str, Any]) -> None:
+        &quot;&quot;&quot;Restore state after unpickling.&quot;&quot;&quot;
+        fn = state.pop(&quot;_fn_strong&quot;)
+        self.__dict__.update(state)
+        # Recreate callable reference strategy.
+        if fn is not None:
+            self.fn = _create_callable_reference(fn)
+        else:
+            self.fn = None
+
+[docs]
+@dataclass(frozen=True, slots=True)
+class Schedule:
+    &quot;&quot;&quot;Defines when something should happen repeatedly.
+
+    Attributes:
+        interval: Time between executions (fixed value or callable returning value)
+        start: Absolute time to begin (None = use current model time + interval)
+        end: Absolute time to stop (None = no end)
+        count: Maximum executions (None = unlimited)
+    &quot;&quot;&quot;
+
+    interval: float | int | Callable[[Model], float | int] = 1.0
+    start: float | None = None
+    end: float | None = None
+    count: int | None = None
+
+    def __post_init__(self):
+        &quot;&quot;&quot;Validate schedule parameters.&quot;&quot;&quot;
+        if not callable(self.interval) and self.interval &lt;= 0:
+            raise ValueError(f&quot;Schedule interval must be > 0, got {self.interval}&quot;)
+
+        if self.count is not None and self.count &lt;= 0:
+            raise ValueError(
+                f&quot;Schedule count must be > 0 if provided, got {self.count}&quot;
+            )
+
+        if self.start is not None and self.end is not None and self.start > self.end:
+            raise ValueError(
+                f&quot;Schedule start ({self.start}) cannot be after end ({self.end})&quot;
+            )
+
+[docs]
+class EventGenerator:
+    &quot;&quot;&quot;A generator that creates recurring events based on a Schedule.
+
+    Unlike a single Event, an EventGenerator is persistent and can be
+    stopped or configured with stop conditions.
+
+    Attributes:
+        model: The model this generator belongs to
+        function: The callable to execute for each generated event
+        schedule: The Schedule defining when events occur
+        priority: Priority level for generated events
+
+    Notes:
+        Event generators use a weak reference to the callable. Therefore, you cannot pass a lambda function in fn.
+        A simulation event where the callable no longer exists (e.g., because the agent has been removed from the model)
+        will fail silently. If you want to use functools.partial, please assign the partial function to a variable
+        prior to creating the generator.
+
+    &quot;&quot;&quot;
+
+    def __init__(
+        self,
+        model: Model,
+        function: Callable[..., None],
+        schedule: Schedule,
+        priority: Priority = Priority.DEFAULT,
+    ) -> None:
+        &quot;&quot;&quot;Initialize an EventGenerator.
+
+        Args:
+            model: The model this generator belongs to
+            function: The callable to execute for each generated event.
+                     Use functools.partial to bind arguments.
+            schedule: The Schedule defining timing
+            priority: Priority level for generated events
+        &quot;&quot;&quot;
+        self.model = model
+        self.function = _create_callable_reference(function)
+        self.schedule = schedule
+        self.priority = priority
+
+        self._active: bool = False
+        self._paused: bool = False
+        self._current_event: Event | None = None
+        self._execution_count: int = 0
+
+    @property
+    def is_active(self) -> bool:
+        &quot;&quot;&quot;Return whether the generator is currently active.&quot;&quot;&quot;
+        return self._active
+
+    @property
+    def execution_count(self) -> int:
+        &quot;&quot;&quot;Return the number of times this generator has executed.&quot;&quot;&quot;
+        return self._execution_count
+
+    @property
+    def next_scheduled_time(self) -> float | None:
+        &quot;&quot;&quot;Return the time of the next scheduled execution, or None if not scheduled.&quot;&quot;&quot;
+        if self._current_event is None:
+            return None
+        return self._current_event.time
+
+    def _get_interval(self) -> float | int:
+        &quot;&quot;&quot;Get the next interval value.&quot;&quot;&quot;
+        if callable(self.schedule.interval):
+            interval = self.schedule.interval(self.model)
+            if interval &lt; 0:
+                raise ValueError(f&quot;Interval must be > 0, got {interval}&quot;)
+            return interval
+        return self.schedule.interval
+
+    def _should_stop(self, next_time: float) -> bool:
+        &quot;&quot;&quot;Check if the generator should stop before scheduling the next event.&quot;&quot;&quot;
+        return (
+            self.schedule.count is not None
+            and self._execution_count >= self.schedule.count
+        ) or (self.schedule.end is not None and next_time > self.schedule.end)
+
+    def _execute_and_reschedule(self) -> None:
+        &quot;&quot;&quot;Execute the function and schedule the next event.&quot;&quot;&quot;
+        if not self._active or self._paused:
+            return
+
+        # Check weakref HERE (execution time), not in property getter
+        # This matches Event class behavior - weakref check during execution
+        fn = self.function()
+        if fn is None:
+            # Stop the generator if weakref is dead
+            self.stop()
+            return  # Silent no-op (no error raised)
+
+        # Execute the function
+        fn()
+        self._execution_count += 1
+
+        # Schedule next event if we shouldn't stop
+        next_time = self.model.time + self._get_interval()
+        if not self._should_stop(next_time):
+            self._schedule_next(next_time)
+        else:
+            self._active = False
+            self._current_event = None
+            self.model._event_generators.discard(self)
+
+    def _schedule_next(self, time: float) -> None:
+        &quot;&quot;&quot;Schedule the next event at the given time.&quot;&quot;&quot;
+        self._current_event = Event(
+            time,
+            self._execute_and_reschedule,
+            priority=self.priority,
+        )
+        self.model._event_list.add_event(self._current_event)
+
+[docs]
+    def start(self) -> EventGenerator:
+        &quot;&quot;&quot;Start the event generator.
+
+        Returns:
+            Self for method chaining
+        &quot;&quot;&quot;
+        if self._active:
+            return self
+
+        if self.schedule.start is not None:
+            start_time = self.schedule.start
+        else:
+            # Default: start at next interval from now
+            start_time = self.model.time + self._get_interval()
+
+        self._active = True
+        self.model._event_generators.add(self)
+        self._schedule_next(start_time)
+        return self
+
+[docs]
+    def stop(self) -> None:
+        &quot;&quot;&quot;Stop the event generator immediately.&quot;&quot;&quot;
+        self._active = False
+        self._paused = False
+        if self._current_event is not None:
+            self._current_event.cancel()
+            self._current_event = None
+        self.model._event_generators.discard(self)
+
+[docs]
+    def pause(self) -> None:
+        &quot;&quot;&quot;Pause the event generator temporarily.
+
+        This cancels the currently scheduled event but keeps the generator
+        active in the model. Execution can be resumed later using resume().
+        &quot;&quot;&quot;
+        if not self._active or self._paused:
+            return
+
+        self._paused = True
+
+        if self._current_event is not None:
+            self._current_event.cancel()
+            self._current_event = None
+
+[docs]
+    def resume(self) -> None:
+        &quot;&quot;&quot;Resume a paused event generator.&quot;&quot;&quot;
+        if not self._active or not self._paused:
+            return
+
+        self._paused = False
+
+        next_time = self.model.time + self._get_interval()
+
+        if not self._should_stop(next_time):
+            self._schedule_next(next_time)
+        else:
+            self._active = False
+            self.model._event_generators.discard(self)
+
+def __getstate__(self) -> dict[str, Any]:
+        &quot;&quot;&quot;Prepare state for pickling.&quot;&quot;&quot;
+        state = self.__dict__.copy()
+        fn = self.function() if self.function is not None else None
+        state[&quot;_fn_strong&quot;] = fn
+        state[&quot;function&quot;] = None
+        return state
+
+    def __setstate__(self, state: dict[str, Any]) -> None:
+        &quot;&quot;&quot;Restore state after unpickling.&quot;&quot;&quot;
+        # Keep strong reference alive during entire method
+        fn = state.pop(&quot;_fn_strong&quot;)
+
+        # Update state first (keeps references alive)
+        self.__dict__.update(state)
+
+        # Now recreate weak reference
+        if fn is not None:
+            if isinstance(fn, MethodType):
+                self.function = WeakMethod(fn)
+            else:
+                self.function = ref(fn)
+        else:
+            self.function = None
+
+[docs]
+class EventList:
+    &quot;&quot;&quot;An event list.
+
+    This is a heap queue sorted list of events. Events are always removed from the left, so heapq is a performant and
+    appropriate data structure. Events are sorted based on their time stamp, their priority, and their unique_id
+    as a tie-breaker, guaranteeing a complete ordering.
+
+    &quot;&quot;&quot;
+
+    def __init__(self):
+        &quot;&quot;&quot;Initialize an event list.&quot;&quot;&quot;
+        self._events: list[Event] = []
+        heapify(self._events)
+
+[docs]
+    def add_event(self, event: Event):
+        &quot;&quot;&quot;Add the event to the event list.
+
+        Args:
+            event (Event): The event to be added
+
+        &quot;&quot;&quot;
+        heappush(self._events, event)
+
+[docs]
+    def peek_ahead(self, n: int = 1) -> list[Event]:
+        &quot;&quot;&quot;Look at the first n non-canceled event in the event list.
+
+        Args:
+            n (int): The number of events to look ahead
+
+        Returns:
+            list[Event]
+
+        Raises:
+            IndexError: If the eventlist is empty
+
+        Notes:
+            this method can return a list shorted then n if the number of non-canceled events on the event list
+            is less than n.
+
+        &quot;&quot;&quot;
+        # look n events ahead
+        if self.is_empty():
+            raise IndexError(&quot;event list is empty&quot;)
+
+        # Filter out canceled events and get n smallest in correct chronological order
+        return nsmallest(n, (e for e in self._events if not e.CANCELED))
+
+[docs]
+    def pop_event(self) -> Event:
+        &quot;&quot;&quot;Pop the first element from the event list.&quot;&quot;&quot;
+        while self._events:
+            event = heappop(self._events)
+
+            if not event.CANCELED:
+                return event
+
+        raise IndexError(&quot;Event list is empty&quot;)
+
+[docs]
+    def compact(self) -> None:
+        &quot;&quot;&quot;Remove all canceled events from the heap and rebuild it.
+
+        If there are many canceled events, compaction can speed up performance substantially.
+        &quot;&quot;&quot;
+        self._events = [e for e in self._events if not e.CANCELED]
+        heapify(self._events)
+
+[docs]
+    def is_empty(self) -> bool:
+        &quot;&quot;&quot;Return whether the event list is empty.&quot;&quot;&quot;
+        return len(self) == 0
+
+def __contains__(self, event: Event) -> bool:  # noqa
+        if event.CANCELED:
+            return False
+        return event in self._events
+
+    def __len__(self) -> int:  # noqa
+        return sum(1 for e in self._events if not e.CANCELED)
+
+    def __repr__(self) -> str:
+        &quot;&quot;&quot;Return a string representation of the event list.&quot;&quot;&quot;
+        events_str = &quot;, &quot;.join(
+            [
+                f&quot;Event(time={e.time}, priority={e.priority}, id={e.unique_id})&quot;
+                for e in self._events
+                if not e.CANCELED
+            ]
+        )
+        return f&quot;EventList([{events_str}])&quot;
+
+[docs]
+    def remove(self, event: Event) -> None:
+        &quot;&quot;&quot;Remove an event from the event list.
+
+        Args:
+            event (Event): The event to be removed
+
+        &quot;&quot;&quot;
+        # We use lazy deletion: mark the event as canceled without
+        # removing it from the heap to preserve heap invariants.
+        # Canceled events are skipped during pop and may trigger
+        # adaptive compaction if they dominate the heap.
+        if not event.CANCELED:
+            event.cancel()
+
+[docs]
+    def clear(self) -> None:
+        &quot;&quot;&quot;Clear the event list.&quot;&quot;&quot;
+        self._events.clear()
+</code></pre>
+<hr/>
+<p>Original source: <a href="https://mesa.readthedocs.io/stable/_modules/mesa/time/events.html" class="external external-link">https://mesa.readthedocs.io/stable/_modules/mesa/time/events.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul id="list-0" class="overflow"><li><a href="../../../../../../python-library-documentation/mesa/mesa-documentation" class="internal">Mesa Documentation</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script src="../../../../../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../static/resource-after-683f275d.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../postscript.js" type="module" data-persist="true"></script></html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Source code for experimental.continuous_space.continuous_space</title><meta charset="utf-8"/><link rel="preload" href="../../../../../index.css" as="style"/><link rel="preload" href="../../../../../prescript.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 5"/><meta property="og:title" content="Source code for experimental.continuous_space.continuous_space"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Source code for experimental.continuous_space.continuous_space"/><meta name="twitter:description" content="Source code for experimental.continuous_space.continuous_space &quot;&quot;&quot;A Continuous Space class.&quot;&quot;&quot; import warnings from collections.abc import Iterable from itertools import compress from random import Random import numpy as np from numpy.typing import ArrayLike from scipy...."/><meta property="og:description" content="Source code for experimental.continuous_space.continuous_space &quot;&quot;&quot;A Continuous Space class.&quot;&quot;&quot; import warnings from collections.abc import Iterable from itertools import compress from random import Random import numpy as np from numpy.typing import ArrayLike from scipy...."/><meta property="og:image:alt" content="Source code for experimental.continuous_space.continuous_space &quot;&quot;&quot;A Continuous Space class.&quot;&quot;&quot; import warnings from collections.abc import Iterable from itertools import compress from random import Random import numpy as np from numpy.typing import ArrayLike from scipy...."/><meta property="twitter:domain" content="nachiket8k.github.io/obsidian"/><meta property="og:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/modules/experimental/continuous-space/index"/><meta property="twitter:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/modules/experimental/continuous-space/index"/><link rel="icon" href="../../../../../static/icon.png"/><meta name="description" content="Source code for experimental.continuous_space.continuous_space &quot;&quot;&quot;A Continuous Space class.&quot;&quot;&quot; import warnings from collections.abc import Iterable from itertools import compress from random import Random import numpy as np from numpy.typing import ArrayLike from scipy...."/><meta name="generator" content="Quartz"/><link href="../../../../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-9f9b2774.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-a12dcaa2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-26a99b87.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../../../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../../../../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/modules/experimental/continuous-space/index-og-image.webp"/><meta property="og:image:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/modules/experimental/continuous-space/index-og-image.webp"/><meta name="twitter:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/modules/experimental/continuous-space/index-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="python-library-documentation/mesa/modules/experimental/continuous-space/index" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../../../..">Quartz 5</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\r\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\r\n        numeric: true,\r\n        sensitivity: \&quot;base\&quot;\r\n      });\r\n    }\r\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return 1;\r\n    }\r\n    return -1;\r\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\r\n    return node;\r\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-101" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-101" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/">Python Library Documentation</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/">mesa package</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/modules/">modules</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/modules/experimental/">experimental</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Source code for experimental.continuous_space.continuous_space</a></div></nav><h1 class="article-title">Source code for experimental.continuous_space.continuous_space</h1><p show-comma="true" class="content-meta"><time datetime="2026-06-19T10:09:49.894Z">Jun 19, 2026</time><span>7 min read</span></p></div></div><div class="popover-hint"><article class><div class="markdown-preview-view markdown-rendered"><h1 id="source-code-for-experimentalcontinuous_spacecontinuous_space">Source code for experimental.continuous_space.continuous_space<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#source-code-for-experimentalcontinuous_spacecontinuous_space" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<pre><code>&quot;&quot;&quot;A Continuous Space class.&quot;&quot;&quot;
+
+import warnings
+from collections.abc import Iterable
+from itertools import compress
+from random import Random
+
+import numpy as np
+from numpy.typing import ArrayLike
+from scipy.spatial.distance import cdist
+
+from mesa.agent import Agent, AgentSet
+
+[docs]
+class ContinuousSpace:
+    &quot;&quot;&quot;Continuous space where each agent can have an arbitrary position.&quot;&quot;&quot;
+
+    @property
+    def x_min(self):  # noqa: D102
+        # compatibility with solara_viz
+        return self.dimensions[0, 0]
+
+    @property
+    def x_max(self):  # noqa: D102
+        # compatibility with solara_viz
+        return self.dimensions[0, 1]
+
+    @property
+    def y_min(self):  # noqa: D102
+        # compatibility with solara_viz
+        return self.dimensions[1, 0]
+
+    @property
+    def y_max(self):  # noqa: D102
+        # compatibility with solara_viz
+        return self.dimensions[1, 1]
+
+    @property
+    def width(self):  # noqa: D102
+        # compatibility with solara_viz
+        return self.size[0]
+
+    @property
+    def height(self):  # noqa: D102
+        # compatibility with solara_viz
+        return self.size[1]
+
+    def __init__(
+        self,
+        dimensions: ArrayLike,
+        torus: bool = False,
+        random: Random | None = None,
+        n_agents: int = 100,
+    ) -> None:
+        &quot;&quot;&quot;Create a new continuous space.
+
+        Args:
+            dimensions: a numpy array like object where each row specifies the minimum and maximum value of that dimension.
+            torus: boolean for whether the space wraps around or not
+            random: a seeded stdlib random.Random instance
+            n_agents: the expected number of agents in the space
+
+        Internally, a numpy array is used to store the positions of all agents. This is resized if needed,
+        but you can control the initial size explicitly by passing n_agents.
+
+        &quot;&quot;&quot;
+        if random is None:
+            warnings.warn(
+                &quot;Random number generator not specified, this can make models non-reproducible. Please pass a random number generator explicitly&quot;,
+                UserWarning,
+                stacklevel=2,
+            )
+            random = Random()
+        self.random = random
+
+        self.dimensions: np.array = np.asanyarray(dimensions)
+        self.ndims: int = self.dimensions.shape[0]
+
+        self.size: np.array = self.dimensions[:, 1] - self.dimensions[:, 0]
+        self.center: np.array = np.sum(self.dimensions, axis=1) / 2
+
+        self.torus: bool = torus
+
+        # self._agent_positions is the array containing all agent positions
+        # plus potential extra empty rows
+        # agent_positions is a view into _agent_positions containing only the filled rows
+        self._agent_positions: np.array = np.empty(
+            (n_agents, self.dimensions.shape[0]), dtype=float
+        )
+        # Initialize agent_positions as an empty view (zero rows) into _agent_positions.
+        # This avoids copying data and ensures agent_positions always reflects the current
+        # active slice of _agent_positions as agents are added or removed.
+        self.agent_positions = self._agent_positions[0:0]
+
+        # the list of agents in the space
+        self.active_agents = []
+        self._n_agents = 0  # the number of active agents in the space
+
+        #  a mapping from agents to index and vice versa
+        self._index_to_agent: dict[int, Agent] = {}
+
+    @property
+    def agents(self) -> AgentSet:
+        &quot;&quot;&quot;Return an AgentSet with the agents in the space.&quot;&quot;&quot;
+        return AgentSet(self.active_agents, random=self.random)
+
+    def _add_agent(self, agent: Agent) -> int:
+        &quot;&quot;&quot;Helper method for adding an agent to the space.
+
+        This method manages the numpy array with the agent positions and ensuring it is
+        enlarged if and when needed. It is called automatically by ContinousSpaceAgent when created.
+
+        &quot;&quot;&quot;
+        index = self._n_agents
+        self._n_agents += 1
+
+        current_capacity = self._agent_positions.shape[0]
+        if current_capacity &lt;= index:
+            # expand using pre-allocation with a growth factor
+            growth_factor = 0.2
+            n = max(int(current_capacity * growth_factor), 20)
+            new_capacity = current_capacity + n
+
+            new_positions = np.empty(
+                (new_capacity, self.dimensions.shape[0]), dtype=float
+            )
+            new_positions[:current_capacity] = self._agent_positions
+            self._agent_positions = new_positions
+
+        agent._mesa_index = index
+        self._index_to_agent[index] = agent
+
+        # we want to maintain a view rather than a copy on the active agents and positions
+        # this is essential for the performance of the rest of this code
+        self.active_agents.append(agent)
+        self.agent_positions = self._agent_positions[0 : self._n_agents]
+
+        return index
+
+    def _remove_agent(self, agent: Agent) -> None:
+        &quot;&quot;&quot;Remove an agent from the space.
+
+        This method is automatically called by ContinuousSpaceAgent.remove.
+
+        &quot;&quot;&quot;
+        index = agent._mesa_index
+        last_index = self._n_agents - 1
+
+        # If the removed agent isn't already the last one, swap the last one into its place
+        if index != last_index:
+            last_agent = self.active_agents[last_index]
+
+            # Swap in active_agents list
+            self.active_agents[index] = last_agent
+
+            # Swap in numpy array
+            self._agent_positions[index] = self._agent_positions[last_index]
+
+            last_agent._mesa_index = index
+            self._index_to_agent[index] = last_agent
+
+        # Pop the last elements
+        self.active_agents.pop()
+        self._index_to_agent.pop(last_index, None)
+        self._n_agents -= 1
+        self.agent_positions = self._agent_positions[0 : self._n_agents]
+
+[docs]
+    def calculate_difference_vector(self, point: np.ndarray, agents=None) -> np.ndarray:
+        &quot;&quot;&quot;Calculate the difference vector between the point and all agenents.
+
+        Args:
+            point: the point to calculate the difference vector for
+            agents: the agents to calculate the difference vector of point with. By default,
+                    all agents are considered.
+
+        &quot;&quot;&quot;
+        point = np.asanyarray(point)
+        positions = (
+            self.agent_positions
+            if agents is None
+            else self._agent_positions[[a._mesa_index for a in agents]]
+        )
+
+        delta = positions - point
+
+        if self.torus:
+            inverse_delta = delta - np.sign(delta) * self.size
+
+            # we need to use the lowest absolute value from delta and inverse delta
+            logical = np.abs(delta) &lt; np.abs(inverse_delta)
+
+            out = np.zeros(delta.shape)
+            out[logical] = delta[logical]
+            out[~logical] = inverse_delta[~logical]
+
+            delta = out
+
+        return delta
+
+[docs]
+    def calculate_distances(
+        self, point: ArrayLike, agents: Iterable[Agent] | None = None, **kwargs
+    ) -> tuple[np.ndarray, list]:
+        &quot;&quot;&quot;Calculate the distance between the point and all agents.
+
+        Args:
+            point: the point to calculate the difference vector for
+            agents: the agents to calculate the difference vector of point with. By default,
+                    all agents are considered.
+            kwargs: any additional keyword arguments are passed to scipy's cdist, which is used
+                    only if torus is False. This allows for non-Euclidian distance measures.
+
+        &quot;&quot;&quot;
+        point = np.asanyarray(point)
+
+        if agents is None:
+            positions = self.agent_positions
+            agents = self.active_agents
+        else:
+            positions = self._agent_positions[[a._mesa_index for a in agents]]
+            agents = np.asarray(agents)
+
+        if self.torus:
+            delta = np.abs(point - positions)
+            delta = np.minimum(delta, self.size - delta, out=delta)
+
+            # + is much faster than np.sum or array.sum
+            dists = delta[:, 0] ** 2
+            for i in range(1, self.ndims):
+                dists += delta[:, i] ** 2
+            dists = np.sqrt(dists)
+        else:
+            dists = cdist(point[np.newaxis, :], positions, **kwargs)[0, :]
+        return dists, agents
+
+[docs]
+    def get_agents_in_radius(
+        self, point: ArrayLike, radius: float | int = 1
+    ) -> tuple[list, np.ndarray]:
+        &quot;&quot;&quot;Return the agents and their distances within a radius for the point.&quot;&quot;&quot;
+        distances, agents = self.calculate_distances(point)
+        logical = distances &lt;= radius
+        agents = list(compress(agents, logical))
+        return (
+            agents,
+            distances[logical],
+        )
+
+[docs]
+    def get_k_nearest_agents(
+        self, point: ArrayLike, k: int = 1
+    ) -> tuple[list, np.ndarray]:
+        &quot;&quot;&quot;Return the k nearest agents and their distances to the point.
+
+        Notes:
+            This method returns exactly k agents, ignoring ties. In case of ties, the
+            earlier an agent is inserted the higher it will rank.
+
+            If fewer than k agents are present in the space, all agents are returned
+            and a UserWarning is emitted to indicate that the requested k could not be
+            satisfied. If the space is empty or k &lt;= 0, an empty result is returned
+            without a warning.
+
+        &quot;&quot;&quot;
+        dists, agents = self.calculate_distances(point)
+        n = len(dists)
+        # Handle empty space or invalid k
+        if n == 0 or k &lt;= 0:
+            return [], np.array([])
+
+        # If fewer agents exist than requested, warn and return all available agents
+        if k > n:
+            warnings.warn(
+                f&quot;Requested k={k} nearest agents but only {n} agent(s) are present in the space. &quot;
+                f&quot;Returning all {n} agent(s).&quot;,
+                UserWarning,
+                stacklevel=2,
+            )
+            k = n
+
+        # np.argpartition expects zero-based index (k-1) and returns the indices of the k smallest distances
+        indices = np.argpartition(dists, k - 1)[:k]
+        agents = [agents[i] for i in indices]
+        return agents, dists[indices]
+
+[docs]
+    def in_bounds(self, point: ArrayLike) -> bool:
+        &quot;&quot;&quot;Check if point is inside the bounds of the space.&quot;&quot;&quot;
+        return bool(
+            (
+                (np.asanyarray(point) >= self.dimensions[:, 0])
+                &amp; (point &lt;= self.dimensions[:, 1])
+            ).all()
+        )
+
+[docs]
+    def torus_correct(self, point: ArrayLike) -> np.ndarray:
+        &quot;&quot;&quot;Apply a torus correction to the point.&quot;&quot;&quot;
+        return self.dimensions[:, 0] + np.mod(
+            np.asanyarray(point) - self.dimensions[:, 0], self.size
+        )
+</code></pre>
+<hr/>
+<p>Original source: <a href="https://mesa.readthedocs.io/latest/_modules/experimental/continuous_space/continuous_space.html" class="external external-link">https://mesa.readthedocs.io/latest/_modules/experimental/continuous_space/continuous_space.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p></div></article><div class="page-listing"><p>1 item under this folder.</p><div><ul class="section-ul"><li class="section-li"><div class="section"><p class="meta"><time datetime="2026-06-19T10:09:50.616Z">Jun 19, 2026</time></p><div class="desc"><h3><a href="../../../../../python-library-documentation/mesa/modules/experimental/continuous-space/continuous-space-agents" class="internal">Source code for experimental.continuous_space.continuous_space_agents</a></h3></div><ul class="tags"></ul></div></li></ul></div></div></div><hr/><div class="page-footer"></div></div><div class="right sidebar"></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script src="../../../../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-683f275d.js" type="application/javascript" data-persist="true"></script><script src="../../../../../postscript.js" type="module" data-persist="true"></script></html>

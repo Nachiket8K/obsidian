@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Source code for mesa.visualization.solara_viz</title><meta charset="utf-8"/><link rel="preload" href="../../../../../index.css" as="style"/><link rel="preload" href="../../../../../prescript.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 5"/><meta property="og:title" content="Source code for mesa.visualization.solara_viz"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Source code for mesa.visualization.solara_viz"/><meta name="twitter:description" content="Source code for mesa.visualization.solara_viz &quot;&quot;&quot;Mesa visualization module for creating interactive model visualizations."/><meta property="og:description" content="Source code for mesa.visualization.solara_viz &quot;&quot;&quot;Mesa visualization module for creating interactive model visualizations."/><meta property="og:image:alt" content="Source code for mesa.visualization.solara_viz &quot;&quot;&quot;Mesa visualization module for creating interactive model visualizations."/><meta property="twitter:domain" content="nachiket8k.github.io/obsidian"/><meta property="og:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/modules/mesa/visualization/solara-viz"/><meta property="twitter:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/modules/mesa/visualization/solara-viz"/><link rel="icon" href="../../../../../static/icon.png"/><meta name="description" content="Source code for mesa.visualization.solara_viz &quot;&quot;&quot;Mesa visualization module for creating interactive model visualizations."/><meta name="generator" content="Quartz"/><link href="../../../../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-9f9b2774.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-a12dcaa2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-26a99b87.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../../../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../../../../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/modules/mesa/visualization/solara-viz-og-image.webp"/><meta property="og:image:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/modules/mesa/visualization/solara-viz-og-image.webp"/><meta name="twitter:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/modules/mesa/visualization/solara-viz-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="python-library-documentation/mesa/modules/mesa/visualization/solara-viz" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../../../..">Quartz 5</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="Reader mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\r\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\r\n        numeric: true,\r\n        sensitivity: \&quot;base\&quot;\r\n      });\r\n    }\r\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return 1;\r\n    }\r\n    return -1;\r\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\r\n    return node;\r\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-124" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-124" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/">Python Library Documentation</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/">mesa package</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/modules/">modules</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/modules/mesa/">mesa</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/modules/mesa/visualization/">visualization</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Source code for mesa.visualization.solara_viz</a></div></nav><h1 class="article-title">Source code for mesa.visualization.solara_viz</h1><p show-comma="true" class="content-meta"><time datetime="2026-06-19T10:09:32.906Z">Jun 19, 2026</time><span>15 min read</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="source-code-for-mesavisualizationsolara_viz">Source code for mesa.visualization.solara_viz<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#source-code-for-mesavisualizationsolara_viz" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<pre><code>&quot;&quot;&quot;Mesa visualization module for creating interactive model visualizations.
+
+This module provides components to create browser- and Jupyter notebook-based visualizations of
+Mesa models, allowing users to watch models run step-by-step and interact with model parameters.
+
+Key features:
+    - SolaraViz: Main component for creating visualizations, supporting grid displays and plots
+    - ModelController: Handles model execution controls (step, play, pause, reset)
+    - UserInputs: Generates UI elements for adjusting model parameters
+
+The module uses Solara for rendering in Jupyter notebooks or as standalone web applications.
+It supports various types of visualizations including matplotlib plots, agent grids, and
+custom visualization components.
+
+Usage:
+    1. Define an agent_portrayal function to specify how agents should be displayed
+    2. Set up model_params to define adjustable parameters
+    3. Create a SolaraViz instance with your model, parameters, and desired measures
+    4. Display the visualization in a Jupyter notebook or run as a Solara app
+
+See the Visualization Tutorial and example models for more details.
+&quot;&quot;&quot;
+
+from __future__ import annotations
+
+import collections
+import contextlib
+import inspect
+import itertools
+import threading
+import time
+import traceback
+from collections.abc import Callable
+from typing import TYPE_CHECKING, Any, Literal
+
+import altair as alt
+import pandas as pd
+import reacton.core
+import solara
+import solara.lab
+
+import mesa.visualization.components.altair_components as components_altair
+from mesa.experimental.scenarios import Scenario
+from mesa.mesa_logging import create_module_logger, function_logger
+from mesa.visualization.command_console import CommandConsole
+from mesa.visualization.space_renderer import SpaceRenderer
+from mesa.visualization.user_param import Slider, UserParam
+from mesa.visualization.utils import force_update, update_counter
+
+if TYPE_CHECKING:
+    from mesa.model import Model
+
+_mesa_logger = create_module_logger()
+
+_SUPPORTED_MODEL_PARAM_TYPES = (UserParam, dict, int, float, bool, str)
+
+def _validate_model_params(model_params: dict) -> None:
+    for key, val in model_params.items():
+        if not isinstance(val, _SUPPORTED_MODEL_PARAM_TYPES):
+            raise TypeError(
+                f&quot;model_params['{key}'] has unsupported type '{type(val).__name__}'. &quot;
+                &quot;Use Mesa's Slider wrapper or a primitive (int, float, bool, str) &quot;
+                &quot;from mesa.visualization instead of raw Solara components.&quot;
+            )
+
+@solara.component
+@function_logger(__name__)
+def SolaraViz(
+    model: Model | solara.Reactive[Model],
+    renderer: SpaceRenderer | None = None,
+    components: list[tuple[reacton.core.Component], int]
+    | list[tuple[Callable[[Model], reacton.core.Component], 0]]
+    | Literal[&quot;default&quot;] = [],  # noqa: B006
+    *,
+    play_interval: int = 100,
+    render_interval: int = 1,
+    model_params=None,
+    name: str | None = None,
+    use_threads: bool = False,
+    **console_kwargs,
+):
+    &quot;&quot;&quot;Solara visualization component.
+
+    This component provides a visualization interface for a given model using Solara.
+    It supports various visualization components and allows for interactive model
+    stepping and parameter adjustments.
+
+    Args:
+        model (Model | solara.Reactive[Model]): A Model instance or a reactive Model.
+            This is the main model to be visualized. If a non-reactive model is provided,
+            it will be converted to a reactive model.
+        renderer (SpaceRenderer): A SpaceRenderer instance to render the model's space.
+        components (list[tuple[solara.component], int] | Literal[&quot;default&quot;], optional): List of solara
+            (components, page) or functions that return a solara (component, page).
+            These components are used to render different parts of the model visualization.
+            Defaults to &quot;default&quot;, which uses the default Altair space visualization on page 0.
+        play_interval (int, optional): Interval for playing the model steps in milliseconds.
+            This controls the speed of the model's automatic stepping. Defaults to 100 ms.
+        render_interval (int, optional): Controls how often plots are updated during a simulation,
+            allowing users to skip intermediate steps and update graphs less frequently.
+        use_threads: Flag for indicating whether to utilize multi-threading for model execution.
+            When checked, the model will utilize multiple threads,adjust based on system capabilities.
+        model_params (dict, optional): Parameters for (re-)instantiating a model.
+            Can include user-adjustable parameters and fixed parameters. Defaults to None.
+        name (str | None, optional): Name of the visualization. Defaults to the model's class name.
+        **console_kwargs (dict, optional): Arguments to pass to the command console.
+            Currently supported arguments:
+            - additional_imports: Dictionary of names to objects to import into the command console.
+                - Example:
+                    >>> console_kwargs = {&quot;additional_imports&quot;: {&quot;numpy&quot;: np}}
+                    >>> SolaraViz(model, console_kwargs=console_kwargs)
+
+    Returns:
+        solara.component: A Solara component that renders the visualization interface for the model.
+
+    Example:
+        >>> model = MyModel()
+        >>> page = SolaraViz(model)
+        >>> page
+
+    Notes:
+        - The `model` argument can be either a direct model instance or a reactive model. If a direct
+          model instance is provided, it will be converted to a reactive model using `solara.use_reactive`.
+        - The `play_interval` argument controls the speed of the model's automatic stepping. A lower
+          value results in faster stepping, while a higher value results in slower stepping.
+        - The `render_interval` argument determines how often plots are updated during simulation. Higher values
+          reduce update frequency, resulting in faster execution.
+    &quot;&quot;&quot;
+    if components == &quot;default&quot;:
+        components = [
+            (
+                components_altair.make_altair_space(
+                    agent_portrayal=None,
+                    property_layer_portrayal=None,
+                    post_process=None,
+                ),
+                0,
+            )
+        ]
+    if model_params is None:
+        model_params = {}
+
+    _validate_model_params(model_params)
+
+    # Validate that model is an instance, not a class
+    if isinstance(model, type):
+        raise TypeError(
+            f&quot;SolaraViz requires an initialized model instance, not a model class. &quot;
+            f&quot;Did you mean: SolaraViz({model.__name__}(), ...) instead of SolaraViz({model.__name__}, ...)?&quot;
+        )
+    if isinstance(model, solara.Reactive) and isinstance(model.value, type):
+        raise TypeError(
+            f&quot;SolaraViz requires an initialized model instance, not a model class. &quot;
+            f&quot;Did you mean: SolaraViz({model.value.__name__}(), ...) instead of SolaraViz({model.value.__name__}, ...)?&quot;
+        )
+
+    # Convert model to reactive
+    if not isinstance(model, solara.Reactive):
+        model = solara.use_reactive(model)  # noqa: RUF100  # noqa: SH102
+
+    reactive_model_parameters = solara.use_reactive({})
+    reactive_play_interval = solara.use_reactive(play_interval)
+    reactive_render_interval = solara.use_reactive(render_interval)
+    reactive_use_threads = solara.use_reactive(use_threads)
+
+    # Make a copy of the components to avoid modifying the original list
+    display_components = list(components)
+    # Create space component based on the renderer
+    if renderer is not None:
+        if isinstance(renderer, SpaceRenderer):
+            renderer = solara.use_reactive(renderer)  # noqa: RUF100  # noqa: SH102
+        display_components.insert(0, (create_space_component(renderer.value), 0))
+
+    with solara.AppBar():
+        solara.AppBarTitle(name if name else type(model.value).__name__)
+        solara.lab.ThemeToggle()
+
+    with solara.Sidebar(), solara.Column():
+        with solara.Card(&quot;Controls&quot;):
+            solara.SliderInt(
+                label=&quot;Play Interval (ms)&quot;,
+                value=reactive_play_interval,
+                on_value=reactive_play_interval.set,
+                min=1,
+                max=500,
+                step=10,
+            )
+            solara.SliderInt(
+                label=&quot;Render Interval (steps)&quot;,
+                value=reactive_render_interval,
+                on_value=reactive_render_interval.set,
+                min=1,
+                max=100,
+                step=2,
+            )
+            if reactive_use_threads.value:
+                solara.Text(&quot;Increase play interval to avoid skipping plots&quot;)
+
+            def set_reactive_use_threads(value):
+                reactive_use_threads.set(value)
+
+            solara.Checkbox(
+                label=&quot;Use Threads&quot;,
+                value=reactive_use_threads,
+                on_value=set_reactive_use_threads,
+            )
+
+            ModelController(
+                model,
+                renderer=renderer,
+                model_parameters=reactive_model_parameters,
+                play_interval=reactive_play_interval,
+                render_interval=reactive_render_interval,
+                use_threads=reactive_use_threads,
+            )
+
+        with solara.Card(&quot;Model Parameters&quot;):
+            ModelCreator(
+                model, model_params, model_parameters=reactive_model_parameters
+            )
+        with solara.Card(&quot;Information&quot;):
+            ShowSteps(model.value)
+        if (
+            CommandConsole in display_components
+        ):  # If command console in components show it in sidebar
+            display_components.remove(CommandConsole)
+            additional_imports = console_kwargs.get(&quot;additional_imports&quot;, {})
+            with solara.Card(&quot;Command Console&quot;):
+                CommandConsole(model.value, additional_imports=additional_imports)
+
+    # Render the main components view
+    ComponentsView(display_components, model.value)
+
+[docs]
+def create_space_component(renderer: SpaceRenderer):
+    &quot;&quot;&quot;Create a space visualization component for the given renderer.&quot;&quot;&quot;
+
+    def SpaceVisualizationComponent(model: Model):
+        &quot;&quot;&quot;Component that renders the model's space using the provided renderer.&quot;&quot;&quot;
+        return SpaceRendererComponent(model, renderer)
+
+    return SpaceVisualizationComponent
+
+@solara.component
+def SpaceRendererComponent(
+    model: Model,
+    renderer: SpaceRenderer,
+    # FIXME: Manage dependencies properly
+    dependencies: list[Any] | None = None,
+):
+    &quot;&quot;&quot;Render the space of a model using a SpaceRenderer.
+
+    Args:
+        model (Model): The model whose space is to be rendered.
+        renderer: A SpaceRenderer instance to render the model's space.
+        dependencies (list[any], optional): List of dependencies for the component.
+    &quot;&quot;&quot;
+    update_counter.get()
+
+    # update renderer's space according to the model's space/grid
+    renderer.space = getattr(model, &quot;grid&quot;, getattr(model, &quot;space&quot;, None))
+
+    viz_dependencies = [update_counter.value]
+    if dependencies:
+        viz_dependencies.extend(dependencies)
+
+    if renderer.backend == &quot;matplotlib&quot;:
+        # Clear the previous plotted data and agents
+        all_artists = [
+            renderer.canvas.lines[:],
+            renderer.canvas.collections[:],
+            renderer.canvas.patches[:],
+            renderer.canvas.images[:],
+            renderer.canvas.artists[:],
+        ]
+
+        # Remove duplicate colorbars from the canvas
+        for cbar in renderer.backend_renderer._active_colorbars:
+            cbar.remove()
+        renderer.backend_renderer._active_colorbars.clear()
+
+        # Chain them together into a single iterable
+        for artist in itertools.chain.from_iterable(all_artists):
+            artist.remove()
+
+        if renderer.space_mesh:
+            renderer.draw_structure()
+        if renderer.agent_mesh:
+            renderer.draw_agents()
+        if renderer.property_layer_mesh:
+            renderer.draw_property_layer()
+
+        if renderer.post_process and not renderer._post_process_applied:
+            renderer.post_process(renderer.canvas)
+            renderer._post_process_applied = True
+
+        solara.FigureMatplotlib(
+            renderer.canvas.get_figure(),
+            format=&quot;png&quot;,
+            bbox_inches=&quot;tight&quot;,
+            dependencies=viz_dependencies,
+        )
+        return None
+    else:
+        structure = renderer.space_mesh if renderer.space_mesh else None
+        agents = renderer.agent_mesh if renderer.agent_mesh else None
+        props = renderer.property_layer_mesh or None
+
+        if renderer.space_mesh:
+            structure = renderer.draw_structure()
+        if renderer.agent_mesh:
+            agents = renderer.draw_agents()
+        if renderer.property_layer_mesh:
+            props = renderer.draw_property_layer()
+
+        spatial_charts_list = [chart for chart in [structure, props, agents] if chart]
+
+        final_chart = None
+        if spatial_charts_list:
+            final_chart = (
+                spatial_charts_list[0]
+                if len(spatial_charts_list) == 1
+                else alt.layer(*spatial_charts_list).resolve_axis(
+                    x=&quot;independent&quot;, y=&quot;independent&quot;
+                )
+            )
+
+        if final_chart is None:
+            # If no charts are available, return an empty chart
+            final_chart = (
+                alt.Chart(pd.DataFrame()).mark_point().properties(width=450, height=350)
+            )
+
+        if renderer.post_process:
+            final_chart = renderer.post_process(final_chart)
+
+        final_chart = final_chart.configure_view(stroke=&quot;black&quot;, strokeWidth=1.5)
+
+        solara.FigureAltair(final_chart, on_click=None, on_hover=None)
+        return None
+
+def _wrap_component(
+    component: reacton.core.Component | Callable[[Model], reacton.core.Component],
+) -> reacton.core.Component:
+    &quot;&quot;&quot;Wrap a component in an auto-updated Solara component if needed.&quot;&quot;&quot;
+    if isinstance(component, reacton.core.Component):
+        return component
+
+    @solara.component
+    def WrappedComponent(model):
+        update_counter.get()
+        return component(model)
+
+    return WrappedComponent
+
+@solara.component
+def ComponentsView(
+    components: list[tuple[reacton.core.Component], int]
+    | list[tuple[Callable[[Model], reacton.core.Component], int]],
+    model: Model,
+):
+    &quot;&quot;&quot;Display a list of components.
+
+    Args:
+        components: List of (components, page) to display
+        model: Model instance to pass to each component
+    &quot;&quot;&quot;
+    # State for current tab and layouts
+    current_tab_index, set_current_tab_index = solara.use_state(0)
+    layouts, set_layouts = solara.use_state({})
+
+    # Backward's compatibility, page = 0 if not passed.
+    for i, comp in enumerate(components):
+        if not isinstance(comp, tuple):
+            components[i] = (comp, 0)
+
+    # Build pages mapping
+    pages = collections.defaultdict(list)
+    for component, page_index in components:
+        pages[page_index].append(_wrap_component(component))
+
+    # Fill in missing page indices for sequential tab order
+    all_indices = sorted(pages.keys())
+    if len(all_indices) > 1:
+        min_page, max_page = all_indices[0], all_indices[-1]
+        all_indices = list(range(min_page, max_page + 1))
+        for idx in all_indices:
+            pages.setdefault(idx, [])
+
+    sorted_page_indices = all_indices
+
+    # Keep layouts in sync with pages
+    def sync_layouts():
+        if not components:  # Handle empty case inside the effect
+            return
+
+        current_keys = set(pages.keys())
+        layout_keys = set(layouts.keys())
+
+        # Add layouts for new pages
+        new_layouts = {
+            index: make_initial_grid_layout(len(pages[index]))
+            for index in current_keys - layout_keys
+        }
+
+        # Remove layouts for deleted pages
+        cleaned_layouts = {k: v for k, v in layouts.items() if k in current_keys}
+
+        if new_layouts or len(cleaned_layouts) != len(layouts):
+            set_layouts({**cleaned_layouts, **new_layouts})
+
+    solara.use_effect(sync_layouts, list(pages.keys()))
+
+    # Allow early return (which is now safe because all hooks have been called)
+    if not components:
+        return
+
+    # Tab Navigation
+    with solara.v.Tabs(v_model=current_tab_index, on_v_model=set_current_tab_index):
+        for index in sorted_page_indices:
+            solara.v.Tab(children=[f&quot;Page {index}&quot;])
+
+    with solara.v.Window(v_model=current_tab_index):
+        for i, page_id in enumerate(sorted_page_indices):
+            with solara.v.WindowItem():
+                # Use tab index 'i' instead of 'page_id' because solara.v.Window
+                # Tracks active tabs using 0-based indexing, which may differ from page IDs.
+                if i == current_tab_index:
+                    page_components = pages[page_id]
+                    page_layout = layouts.get(page_id)
+
+                    if page_layout:
+
+                        def on_layout_change(new_layout, current_page_id=page_id):
+                            set_layouts(
+                                lambda old: {**old, current_page_id: new_layout}
+                            )
+
+                        solara.GridDraggable(
+                            items=[c(model) for c in page_components],
+                            grid_layout=page_layout,
+                            resizable=True,
+                            draggable=True,
+                            on_grid_layout=on_layout_change,
+                        )
+
+JupyterViz = SolaraViz
+
+def _get_scenario_defaults(scenario: Scenario) -> dict[str, Any]:
+    &quot;&quot;&quot;Return defaults for a scenario instance, validating scenario type.&quot;&quot;&quot;
+    scenario_class = type(scenario)
+    if not issubclass(scenario_class, Scenario):
+        raise ValueError(
+            &quot;Expected model.scenario to be a subclass instance of mesa.experimental.scenarios.Scenario.&quot;
+        )
+
+    defaults = getattr(scenario, &quot;_scenario_defaults&quot;, {}).copy()
+    defaults[&quot;rng&quot;] = None
+
+    return defaults
+
+def _build_model_init_kwargs(
+    model: Model,
+    model_parameters: dict[str, Any],
+    *,
+    add_scenario_when_empty: bool,
+    require_model_accepts_scenario: bool,
+) -> dict[str, Any]:
+    &quot;&quot;&quot;Build kwargs for model re-instantiation, splitting scenario/model params.&quot;&quot;&quot;
+    kwargs: dict[str, Any] = {}
+    scenario_kwargs: dict[str, Any] = {}
+
+    if getattr(model, &quot;scenario&quot;, None):
+        scenario = model.scenario
+        scenario_class = type(scenario)
+        scenario_defaults = _get_scenario_defaults(scenario)
+        model_init_params = inspect.signature(type(model).__init__).parameters
+
+        for key, value in model_parameters.items():
+            if key in scenario_defaults and key not in model_init_params:
+                scenario_kwargs[key] = value
+            else:
+                kwargs[key] = value
+
+        has_kwargs = any(p.kind == p.VAR_KEYWORD for p in model_init_params.values())
+        accepts_scenario = &quot;scenario&quot; in model_init_params or has_kwargs
+        should_add_scenario = add_scenario_when_empty or bool(scenario_kwargs)
+
+        if should_add_scenario and (
+            accepts_scenario or not require_model_accepts_scenario
+        ):
+            kwargs[&quot;scenario&quot;] = scenario_class(**scenario_kwargs)
+    else:
+        kwargs = {**model_parameters}
+
+    return kwargs
+
+@solara.component
+def ModelController(
+    model: solara.Reactive[Model],
+    *,
+    renderer: solara.Reactive[SpaceRenderer] | None = None,
+    model_parameters: dict | solara.Reactive[dict] = None,
+    play_interval: int | solara.Reactive[int] = 100,
+    render_interval: int | solara.Reactive[int] = 1,
+    use_threads: bool | solara.Reactive[bool] = False,
+):
+    &quot;&quot;&quot;Create controls for model execution (step, play, pause, reset).
+
+    Args:
+        model: Reactive model instance
+        renderer: SpaceRenderer instance to render the model's space.
+        model_parameters: Reactive parameters for (re-)instantiating a model.
+        play_interval: Interval for playing the model steps in milliseconds.
+        render_interval: Controls how often the plots are updated during simulation steps.Higher value reduce update frequency.
+        use_threads: Flag for indicating whether to utilize multi-threading for model execution.
+    &quot;&quot;&quot;
+    playing = solara.use_reactive(False)
+    running = solara.use_reactive(True)
+
+    if model_parameters is None:
+        model_parameters = {}
+    model_parameters = solara.use_reactive(model_parameters)
+    visualization_pause_event = solara.use_memo(threading.Event, [])
+
+    error_message = solara.use_reactive(None)
+
+    def step():
+        try:
+            while running.value and playing.value:
+                time.sleep(play_interval.value / 1000)
+                do_step()
+                if use_threads.value:
+                    visualization_pause_event.set()
+        except Exception as e:
+            error_message.value = f&quot;error in step: {e}&quot;
+            traceback.print_exc()
+            return
+
+    def visualization_task():
+        if use_threads.value:
+            try:
+                while playing.value and running.value:
+                    visualization_pause_event.wait()
+                    visualization_pause_event.clear()
+                    force_update()
+
+            except Exception as e:
+                error_message.value = f&quot;error in visualization: {e}&quot;
+                traceback.print_exc()
+
+    solara.lab.use_task(
+        step, dependencies=[playing.value, running.value], prefer_threaded=True
+    )
+
+    solara.use_thread(
+        visualization_task,
+        dependencies=[playing.value, running.value],
+    )
+
+    @function_logger(__name__)
+    def do_step():
+        &quot;&quot;&quot;Advance the model by the number of steps specified by the render_interval slider.&quot;&quot;&quot;
+        if playing.value:
+            for _ in range(render_interval.value):
+                model.value.step()
+                running.value = model.value.running
+                if not playing.value:
+                    break
+            if not use_threads.value:
+                force_update()
+
+        else:
+            for _ in range(render_interval.value):
+                model.value.step()
+                running.value = model.value.running
+            force_update()
+
+    @function_logger(__name__)
+    def do_reset():
+        &quot;&quot;&quot;Reset the model to its initial state.&quot;&quot;&quot;
+        error_message.set(None)
+        playing.value = False
+        running.value = True
+        visualization_pause_event.clear()
+        _mesa_logger.log(
+            10,
+            f&quot;creating new {type(model.value)} instance with {model_parameters.value}&quot;,
+        )
+        kwargs = _build_model_init_kwargs(
+            model.value,
+            model_parameters.value,
+            add_scenario_when_empty=True,
+            require_model_accepts_scenario=True,
+        )
+
+        model.value = type(model.value)(**kwargs)
+        if renderer is not None:
+            renderer.value = copy_renderer(renderer.value, model.value)
+            force_update()
+
+    @function_logger(__name__)
+    def do_play_pause():
+        &quot;&quot;&quot;Toggle play/pause.&quot;&quot;&quot;
+        playing.value = not playing.value
+
+    with solara.Row(justify=&quot;space-between&quot;):
+        solara.Button(label=&quot;Reset&quot;, color=&quot;primary&quot;, on_click=do_reset)
+        solara.Button(
+            label=&quot;▶&quot; if not playing.value else &quot;❚❚&quot;,
+            color=&quot;primary&quot;,
+            on_click=do_play_pause,
+            disabled=not running.value,
+        )
+        solara.Button(
+            label=&quot;Step&quot;,
+            color=&quot;primary&quot;,
+            on_click=do_step,
+            disabled=playing.value or not running.value,
+        )
+
+    if error_message.value:
+        solara.Error(label=error_message.value)
+
+[docs]
+def split_model_params(model_params):
+    &quot;&quot;&quot;Split model parameters into user-adjustable and fixed parameters.
+
+    Args:
+        model_params: Dictionary of all model parameters
+
+    Returns:
+        tuple: (user_adjustable_params, fixed_params)
+    &quot;&quot;&quot;
+    model_params_input = {}
+    model_params_fixed = {}
+    for k, v in model_params.items():
+        if check_param_is_fixed(v):
+            model_params_fixed[k] = v
+        else:
+            model_params_input[k] = v
+    return model_params_input, model_params_fixed
+
+[docs]
+def check_param_is_fixed(param):
+    &quot;&quot;&quot;Check if a parameter is fixed (not user-adjustable).
+
+    Args:
+        param: Parameter to check
+
+    Returns:
+        bool: True if parameter is fixed, False otherwise
+    &quot;&quot;&quot;
+    if isinstance(param, Slider):
+        return False
+    if not isinstance(param, dict):
+        return True
+    if &quot;type&quot; not in param:
+        return True
+
+@solara.component
+def ModelCreator(
+    model: solara.Reactive[Model],
+    user_params: dict,
+    *,
+    model_parameters: dict | solara.Reactive[dict] = None,
+):
+    &quot;&quot;&quot;Solara component for creating and managing a model instance with user-defined parameters.
+
+    This component allows users to create a model instance with specified parameters and seed.
+    It provides an interface for adjusting model parameters and reseeding the model's random
+    number generator.
+
+    Args:
+        model: A reactive model instance. This is the main model to be created and managed.
+        user_params: Parameters for (re-)instantiating a model. Can include user-adjustable parameters and fixed parameters. Defaults to None.
+        model_parameters: reactive parameters for reinitializing the model
+
+    Returns:
+        solara.component: A Solara component that renders the model creation and management interface.
+
+    Example:
+        >>> model = solara.reactive(MyModel())
+        >>> model_params = {
+        >>>     &quot;param1&quot;: {&quot;type&quot;: &quot;slider&quot;, &quot;value&quot;: 10, &quot;min&quot;: 0, &quot;max&quot;: 100},
+        >>>     &quot;param2&quot;: {&quot;type&quot;: &quot;slider&quot;, &quot;value&quot;: 5, &quot;min&quot;: 1, &quot;max&quot;: 10},
+        >>> }
+        >>> creator = ModelCreator(model, model_params)
+        >>> creator
+
+    Notes:
+        - The `model_params` argument should be a dictionary where keys are parameter names and values either fixed values
+          or are dictionaries containing parameter details such as type, value, min, and max.
+        - The `seed` argument ensures reproducibility by setting the initial seed for the model's random number generator.
+        - The component provides an interface for adjusting user-defined parameters and reseeding the model.
+    &quot;&quot;&quot;
+    if model_parameters is None:
+        model_parameters = {}
+    model_parameters = solara.use_reactive(model_parameters)
+
+    solara.use_effect(
+        lambda: _check_model_params(model.value, user_params),
+        [model.value],
+    )
+    user_adjust_params, fixed_params = split_model_params(user_params)
+
+    # Use solara.use_effect to run the initialization code only once
+    solara.use_effect(
+        # set model_parameters to the default values for all parameters
+        lambda: model_parameters.set(
+            {
+                **fixed_params,
+                **{k: v.get(&quot;value&quot;) for k, v in user_adjust_params.items()},
+            }
+        ),
+        [],
+    )
+
+    @function_logger(__name__)
+    def on_change(name, value):
+        model_parameters.value = {**model_parameters.value, name: value}
+
+    UserInputs(user_adjust_params, on_change=on_change)
+
+def _check_model_params(model_or_func, model_params):
+    &quot;&quot;&quot;Check if model parameters are valid for the model's initialization function.
+
+    Args:
+        model_or_func: Model instance or its initialization function
+        model_params: Dictionary of model parameters
+
+    Raises:
+        ValueError: If a parameter is not valid for the model's initialization function
+    &quot;&quot;&quot;
+    if inspect.isfunction(model_or_func) or inspect.ismethod(model_or_func):
+        init_func = model_or_func
+        model = None
+    else:
+        model = model_or_func
+        init_func = type(model).__init__
+
+    model_parameters = inspect.signature(init_func).parameters
+
+    has_var_positional = any(
+        param.kind == inspect.Parameter.VAR_POSITIONAL
+        for param in model_parameters.values()
+    )
+
+    if has_var_positional:
+        raise ValueError(
+            &quot;Mesa's visualization requires the use of keyword arguments to ensure the parameters are passed to Solara correctly. Please ensure all model parameters are of form param=value&quot;
+        )
+
+    has_var_keyword = any(
+        param.kind == inspect.Parameter.VAR_KEYWORD
+        for param in model_parameters.values()
+    )
+
+    scenario_defaults = {}
+    if model is not None and getattr(model, &quot;scenario&quot;, None):
+        scenario_defaults = _get_scenario_defaults(model.scenario)
+
+    for name in model_parameters:
+        if (
+            model_parameters[name].default == inspect.Parameter.empty
+            and name not in model_params
+            and name not in [&quot;self&quot;, &quot;kwargs&quot;, &quot;args&quot;, &quot;scenario&quot;]
+            and not has_var_keyword
+        ):
+            raise ValueError(f&quot;Missing required model parameter: {name}&quot;)
+
+    for name in model_params:
+        if (
+            name not in model_parameters
+            and name not in scenario_defaults
+            and name not in [&quot;rng&quot;, &quot;seed&quot;]
+            and not has_var_keyword
+        ):
+            raise ValueError(f&quot;Invalid model parameter: {name}&quot;)
+
+@solara.component
+def UserInputs(user_params, on_change=None):
+    &quot;&quot;&quot;Initialize user inputs for configurable model parameters.
+
+    Currently supports :class:`solara.SliderInt`, :class:`solara.SliderFloat`,
+    :class:`solara.Select`, and :class:`solara.Checkbox`.
+
+    Args:
+        user_params: Dictionary with options for the input, including label, min and max values, and other fields specific to the input type.
+        on_change: Function to be called with (name, value) when the value of an input changes.
+    &quot;&quot;&quot;
+    for name, options in user_params.items():
+
+        def change_handler(value, name=name):
+            on_change(name, value)
+
+        if isinstance(options, Slider):
+            slider_class = (
+                solara.SliderFloat if options.is_float_slider else solara.SliderInt
+            )
+            slider_class(
+                options.label,
+                value=options.value,
+                on_value=change_handler,
+                min=options.min,
+                max=options.max,
+                step=options.step,
+            )
+            continue
+
+        # label for the input is &quot;label&quot; from options or name
+        label = options.get(&quot;label&quot;, name)
+        input_type = options.get(&quot;type&quot;)
+        if input_type == &quot;SliderInt&quot;:
+            solara.SliderInt(
+                label,
+                value=options.get(&quot;value&quot;),
+                on_value=change_handler,
+                min=options.get(&quot;min&quot;),
+                max=options.get(&quot;max&quot;),
+                step=options.get(&quot;step&quot;),
+            )
+        elif input_type == &quot;SliderFloat&quot;:
+            solara.SliderFloat(
+                label,
+                value=options.get(&quot;value&quot;),
+                on_value=change_handler,
+                min=options.get(&quot;min&quot;),
+                max=options.get(&quot;max&quot;),
+                step=options.get(&quot;step&quot;),
+            )
+        elif input_type == &quot;Select&quot;:
+            solara.Select(
+                label,
+                value=options.get(&quot;value&quot;),
+                on_value=change_handler,
+                values=options.get(&quot;values&quot;),
+            )
+        elif input_type == &quot;Checkbox&quot;:
+            solara.Checkbox(
+                label=label,
+                on_value=change_handler,
+                value=options.get(&quot;value&quot;),
+            )
+
+        elif input_type == &quot;InputText&quot;:
+
+            def input_change_handler(value, name=name):
+                converted = value
+                with contextlib.suppress(ValueError, TypeError):
+                    converted = int(value)
+                    on_change(name, converted)
+                    return
+                with contextlib.suppress(ValueError, TypeError):
+                    converted = float(value)
+                on_change(name, converted)
+
+            solara.InputText(
+                label=label,
+                on_value=input_change_handler,
+                value=str(options.get(&quot;value&quot;)),
+            )
+        else:
+            raise ValueError(f&quot;{input_type} is not a supported input type&quot;)
+
+[docs]
+def make_initial_grid_layout(num_components):
+    &quot;&quot;&quot;Create an initial grid layout for visualization components.
+
+    Args:
+        num_components: Number of components to display
+
+    Returns:
+        list: Initial grid layout configuration
+    &quot;&quot;&quot;
+    return [
+        {
+            &quot;i&quot;: i,
+            &quot;w&quot;: 6,
+            &quot;h&quot;: 10,
+            &quot;moved&quot;: False,
+            &quot;x&quot;: 6 * (i % 2),
+            &quot;y&quot;: 16 * (i - i % 2),
+        }
+        for i in range(num_components)
+    ]
+
+[docs]
+def copy_renderer(renderer: SpaceRenderer, model: Model):
+    &quot;&quot;&quot;Create a new renderer instance with the same configuration as the original.&quot;&quot;&quot;
+    new_renderer = type(renderer)(model=model, backend=renderer.backend)
+
+    attributes_to_copy = [
+        &quot;agent_portrayal&quot;,
+        &quot;property_layer_portrayal&quot;,
+        &quot;space_kwargs&quot;,
+        &quot;agent_kwargs&quot;,
+        &quot;space_mesh&quot;,
+        &quot;agent_mesh&quot;,
+        &quot;property_layer_mesh&quot;,
+        &quot;post_process_func&quot;,
+    ]
+
+    for attr in attributes_to_copy:
+        if getattr(renderer, attr, None) is not None:
+            value_to_copy = getattr(renderer, attr)
+            setattr(new_renderer, attr, value_to_copy)
+
+    return new_renderer
+
+@solara.component
+def ShowSteps(model):
+    &quot;&quot;&quot;Display the current step of the model.&quot;&quot;&quot;
+    update_counter.get()
+    return solara.Text(f&quot;Time: {model.time}&quot;)
+</code></pre>
+<hr/>
+<p>Original source: <a href="https://mesa.readthedocs.io/latest/_modules/mesa/visualization/solara_viz.html" class="external external-link">https://mesa.readthedocs.io/latest/_modules/mesa/visualization/solara_viz.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script src="../../../../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-683f275d.js" type="application/javascript" data-persist="true"></script><script src="../../../../../postscript.js" type="module" data-persist="true"></script></html>

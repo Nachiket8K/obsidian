@@ -1,0 +1,232 @@
+{
+  "main": {
+    "id": "8b8362909df7e8c1",
+    "type": "split",
+    "children": [
+      {
+        "id": "521be5076a5d60d4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "d995e4bfe3655b5a",
+            "type": "leaf",
+            "state": {
+              "type": "pdf",
+              "state": {
+                "file": "Jerry Banks, John Carson, Barry L. Nelson, David Nicol - Discrete-Event System Simulation (2004, Prentice Hall) - libgen.li.pdf"
+              },
+              "icon": "lucide-file-text",
+              "title": "Jerry Banks, John Carson, Barry L. Nelson, David Nicol - Discrete-Event System Simulation (2004, Prentice Hall) - libgen.li"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bee68c636340bde1",
+    "type": "split",
+    "children": [
+      {
+        "id": "d5a6a85157965838",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5eff8bbdb805e715",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "28ffa9b72cdce595",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "0a7e0bea544ce584",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 355.5
+  },
+  "right": {
+    "id": "0ebbe9b04b703c3b",
+    "type": "split",
+    "children": [
+      {
+        "id": "18bf9ae8f0441baf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8d4006eba97b3bb3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "ec06c3fe98e20c2a",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "e7846e0b6ce5bde1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "48cb73c8b5011e4a",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "24516115e3127823",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "fdc812e3636e089b",
+            "type": "leaf",
+            "state": {
+              "type": "smart-connections-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "smart-connections-view"
+            }
+          }
+        ],
+        "currentTab": 5
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "karpathywiki:Ingest current file": false
+    }
+  },
+  "active": "d995e4bfe3655b5a",
+  "lastOpenFiles": [
+    "current/source/EMA Workbench Documentation - Source.md",
+    "current/source/GIS&T Body of Knowledge/00 GIS Index.md",
+    "current/concept/GIS Participatory Modeling.md",
+    "current/concept/Python for GIS.md",
+    "current/method/Multi-Criteria Evaluation.md",
+    "current/method/Location-allocation modeling.md",
+    "current/source/GIS&T Body of Knowledge/UCGIS GIS&T Body of Knowledge.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-04-019 Managing GIS&T Operations and Infrastructure.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-04-017 The Benefits and Costs of Enterprise GIS Implementations.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-04-003 Strategic Planning for GIS Design.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-04-014 Measuring GIS Return on Investment.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-04-012 GIS&T Project Planning and Management.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-04-001 The process of GIS&T design.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-04 Design and Implementation of GIS&T.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-03-033 Organizational Models for GIS Management.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-02-029 The Geospatial Community.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-03-021 System Modelling for Effective GIS Management.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-03-011 Funding.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-02-030 The Geospatial Industry.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-02-034 Multi-Organizational GIS Coordination.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-03 GIS&T Operations.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-02-027 Value of Professional Geospatial Organizations.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-02-018 Regional Multi-Jurisdictional GIS Coordination & Collaboration.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-02-028 Geospatial Conferences and Publications.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-01-032 Competence in GIS&T Knowledge Work.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy/KE-02 Coordinating Organizations.md",
+    "current/source/GIS&T Body of Knowledge/KE Knowledge Economy",
+    "current/source/GIS&T Body of Knowledge/DC Data Capture",
+    "current/source/GIS&T Body of Knowledge/DA Domain Applications",
+    "current/source/GIS&T Body of Knowledge/CV Cartography and Visualization",
+    "current/source/GIS&T Body of Knowledge/GS GIS&T and Society",
+    "current/source/GIS&T Body of Knowledge/FC Foundational Concepts",
+    "current/source/GIS&T Body of Knowledge/DM Data Management",
+    "current/source/GIS&T Body of Knowledge/PD Programming and Development",
+    "current/source/GIS&T Body of Knowledge/CP Computing Platforms",
+    "current/source/GIS&T Body of Knowledge/AM Analytics and Modeling"
+  ]
+}

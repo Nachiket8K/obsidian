@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Source code for mesa.discrete_space.property_layer</title><meta charset="utf-8"/><link rel="preload" href="../../../../../../index.css" as="style"/><link rel="preload" href="../../../../../../prescript.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 5"/><meta property="og:title" content="Source code for mesa.discrete_space.property_layer"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Source code for mesa.discrete_space.property_layer"/><meta name="twitter:description" content="Source code for mesa.discrete_space.property_layer &quot;&quot;&quot;Efficient storage and manipulation of cell properties across spaces."/><meta property="og:description" content="Source code for mesa.discrete_space.property_layer &quot;&quot;&quot;Efficient storage and manipulation of cell properties across spaces."/><meta property="og:image:alt" content="Source code for mesa.discrete_space.property_layer &quot;&quot;&quot;Efficient storage and manipulation of cell properties across spaces."/><meta property="twitter:domain" content="nachiket8k.github.io/obsidian"/><meta property="og:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/discrete-space/property-layer"/><meta property="twitter:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/discrete-space/property-layer"/><link rel="icon" href="../../../../../../static/icon.png"/><meta name="description" content="Source code for mesa.discrete_space.property_layer &quot;&quot;&quot;Efficient storage and manipulation of cell properties across spaces."/><meta name="generator" content="Quartz"/><link href="../../../../../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-9f9b2774.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-a12dcaa2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-26a99b87.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../../../../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../../../../../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/discrete-space/property-layer-og-image.webp"/><meta property="og:image:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/discrete-space/property-layer-og-image.webp"/><meta name="twitter:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/discrete-space/property-layer-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="python-library-documentation/mesa/stable/modules/mesa/discrete-space/property-layer" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../../../../..">Quartz 5</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="Reader mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\r\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\r\n        numeric: true,\r\n        sensitivity: \&quot;base\&quot;\r\n      });\r\n    }\r\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return 1;\r\n    }\r\n    return -1;\r\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\r\n    return node;\r\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-174" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-174" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/">Python Library Documentation</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/">mesa package</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/stable/">Mesa: Agent-based modeling in Python</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/stable/modules/">modules</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/stable/modules/mesa/">mesa</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/stable/modules/mesa/discrete-space/">Source code for mesa.discrete_space.discrete_space</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Source code for mesa.discrete_space.property_layer</a></div></nav><h1 class="article-title">Source code for mesa.discrete_space.property_layer</h1><p show-comma="true" class="content-meta"><time datetime="2026-06-19T10:10:49.245Z">Jun 19, 2026</time><span>9 min read</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="source-code-for-mesadiscrete_spaceproperty_layer">Source code for mesa.discrete_space.property_layer<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#source-code-for-mesadiscrete_spaceproperty_layer" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<pre><code>&quot;&quot;&quot;Efficient storage and manipulation of cell properties across spaces.
+
+PropertyLayers provide a way to associate properties with cells in a space efficiently.
+The module includes:
+- PropertyLayer class for managing grid-wide properties
+- Property access descriptors for cells
+- Batch operations for property modification
+- Property-based cell selection
+- Integration with numpy for efficient operations
+
+This system separates property storage from cells themselves, enabling
+fast bulk operations and sophisticated property-based behaviors while
+maintaining an intuitive interface through cell attributes. Properties
+can represent environmental factors, cell states, or any other grid-wide
+attributes.
+&quot;&quot;&quot;
+
+import warnings
+from collections.abc import Callable, Sequence
+from itertools import chain
+from typing import Any, TypeVar
+
+import numpy as np
+
+from mesa.discrete_space import Cell
+
+Coordinate = Sequence[int]
+T = TypeVar(&quot;T&quot;, bound=Cell)
+
+[docs]
+class PropertyLayer:
+    &quot;&quot;&quot;A class representing a layer of properties in a two-dimensional grid.
+
+    Each cell in the grid can store a value of a specified data type.
+
+    Attributes:
+        name: The name of the property layer.
+        dimensions: The width of the grid (number of columns).
+        data: A NumPy array representing the grid data.
+
+    &quot;&quot;&quot;
+
+    propertylayer_experimental_warning_given = False
+
+    @property
+    def data(self):  # noqa: D102
+        return self._data
+
+    @data.setter
+    def data(self, value):
+        # FIXME, in mesa 4, we simply should not allow a setter, forcing people
+        #    to always use data[:]
+        #    this holds even if we drop PropertyLayers in favour of raw numpy arrays.
+        self._data[:] = value
+
+    def __init__(
+        self, name: str, dimensions: Sequence[int], default_value=0.0, dtype=float
+    ):
+        &quot;&quot;&quot;Initializes a new PropertyLayer instance.
+
+        Args:
+            name: The name of the property layer.
+            dimensions: the dimensions of the property layer.
+            default_value: The default value to initialize each cell in the grid. Should ideally
+                           be of the same type as specified by the dtype parameter.
+            dtype (data-type, optional): The desired data-type for the grid's elements. Default is float.
+
+        Notes:
+            An exception is raised if the default_value is not of a type compatible with dtype.
+            A UserWarning is raised if the conversion would results in a loss of precision.
+            The dtype parameter can accept both Python data types (like bool, int or float) and NumPy data types
+            (like np.int64 or np.float64).
+        &quot;&quot;&quot;
+        self.name = name
+        self.dimensions = dimensions
+
+        # Check if the dtype is suitable for the data
+        try:
+            if dtype(default_value) != default_value:
+                warnings.warn(
+                    f&quot;Default value {default_value} will lose precision when converted to {dtype.__name__}.&quot;,
+                    UserWarning,
+                    stacklevel=2,
+                )
+        except (ValueError, TypeError) as e:
+            raise TypeError(
+                f&quot;Default value {default_value} is incompatible with dtype={dtype.__name__}.&quot;
+            ) from e
+
+        # Public attribute exposing the raw data
+        self._data = np.full(self.dimensions, default_value, dtype=dtype)
+
+[docs]
+    @classmethod
+    def from_data(cls, name: str, data: np.ndarray):
+        &quot;&quot;&quot;Create a property layer from a NumPy array.
+
+        Args:
+            name: The name of the property layer.
+            data: A NumPy array representing the grid data.
+
+        &quot;&quot;&quot;
+        layer = cls(
+            name,
+            data.shape,
+            default_value=data.flat[0],
+            dtype=data.dtype.type,
+        )
+        layer.data = data.copy()
+        return layer
+
+[docs]
+    def set_cells(self, value, condition: Callable | None = None):
+        &quot;&quot;&quot;Perform a batch update either on the entire grid or conditionally, in-place.
+
+        Args:
+            value: The value to be used for the update.
+            condition: (Optional) A callable that returns a boolean array when applied to the data.
+        &quot;&quot;&quot;
+        if condition is None:
+            self.data[:] = value
+        else:
+            vectorized_condition = np.vectorize(condition)
+            condition_result = vectorized_condition(self.data)
+            self.data[condition_result] = value
+
+[docs]
+    def modify_cells(
+        self,
+        operation: Callable,
+        value=None,
+        condition: Callable | None = None,
+    ):
+        &quot;&quot;&quot;Modify cells using an operation, which can be a lambda function or a NumPy ufunc.
+
+        If a NumPy ufunc is used, an additional value should be provided.
+
+        Args:
+            operation: A function to apply. Can be a lambda function or a NumPy ufunc.
+            value: The value to be used if the operation is a NumPy ufunc. Ignored for lambda functions.
+            condition: (Optional) A callable that returns a boolean array when applied to the data.
+        &quot;&quot;&quot;
+        if condition is None:
+            mask = slice(None)
+            target_data = self.data
+        else:
+            mask = condition(self.data)
+            target_data = self.data[mask]
+
+        if isinstance(operation, np.ufunc):
+            if ufunc_requires_additional_input(operation):
+                if value is None:
+                    raise ValueError(&quot;This ufunc requires an additional input value.&quot;)
+                self.data[mask] = operation(target_data, value)
+            else:
+                self.data[mask] = operation(target_data)
+        else:
+            vectorized_operation = np.vectorize(operation)
+            self.data[mask] = vectorized_operation(target_data)
+
+[docs]
+    def select_cells(self, condition: Callable, return_list=True):
+        &quot;&quot;&quot;Find cells that meet a specified condition using NumPy's boolean indexing, in-place.
+
+        Args:
+            condition: A callable that returns a boolean array when applied to the data.
+            return_list: (Optional) If True, return a list of (x, y) tuples. Otherwise, return a boolean array.
+
+        Returns:
+            A list of (x, y) tuples or a boolean array.
+        &quot;&quot;&quot;
+        # fixme: consider splitting into two separate functions
+        #  select_cells_boolean
+        #  select_cells_index
+
+        condition_array = condition(self.data)
+        if return_list:
+            return list(zip(*np.where(condition_array)))
+        else:
+            return condition_array
+
+[docs]
+    def aggregate(self, operation: Callable):
+        &quot;&quot;&quot;Perform an aggregate operation (e.g., sum, mean) on a property across all cells.
+
+        Args:
+            operation: A function to apply. Can be a lambda function or a NumPy ufunc.
+        &quot;&quot;&quot;
+        return operation(self.data)
+
+class HasPropertyLayers:
+    &quot;&quot;&quot;Mixin-like class to add property layer functionality to Grids.
+
+    Property layers can be added to a grid using create_property_layer or add_property_layer. Once created, property
+    layers can be accessed as attributes if the name used for the layer is a valid python identifier.
+
+    &quot;&quot;&quot;
+
+    # fixme is there a way to indicate that a mixin only works with specific classes?
+    def __init__(self, *args, **kwargs):
+        &quot;&quot;&quot;Initialize a HasPropertyLayers instance.&quot;&quot;&quot;
+        super().__init__(*args, **kwargs)
+        self._mesa_property_layers = {}
+
+    def create_property_layer(
+        self,
+        name: str,
+        default_value=0.0,
+        dtype=float,
+    ):
+        &quot;&quot;&quot;Add a property layer to the grid.
+
+        Args:
+            name: The name of the property layer.
+            default_value: The default value of the property layer.
+            dtype: The data type of the property layer.
+
+        Returns:
+              Property layer instance.
+
+        &quot;&quot;&quot;
+        layer = PropertyLayer(
+            name, self.dimensions, default_value=default_value, dtype=dtype
+        )
+        self.add_property_layer(layer)
+        return layer
+
+    def add_property_layer(self, layer: PropertyLayer):
+        &quot;&quot;&quot;Add a predefined property layer to the grid.
+
+        Args:
+            layer: The property layer to add.
+
+        Raises:
+            ValueError: If the dimensions of the layer and the grid are not the same.
+
+        &quot;&quot;&quot;
+        if layer.dimensions != self.dimensions:
+            raise ValueError(
+                &quot;Dimensions of property layer do not match the dimensions of the grid&quot;
+            )
+        if layer.name in self._mesa_property_layers:
+            raise ValueError(f&quot;Property layer {layer.name} already exists.&quot;)
+        if layer.name in set(
+            chain.from_iterable(
+                getattr(cls, &quot;__slots__&quot;, []) for cls in self.cell_klass.__mro__
+            )
+        ):
+            raise ValueError(
+                f&quot;Property layer {layer.name} clashes with existing attribute in {self.cell_klass.__name__}&quot;
+            )
+
+        self._mesa_property_layers[layer.name] = layer
+        setattr(
+            self.cell_klass,
+            layer.name,
+            create_property_accessors(
+                layer._data, docstring=f&quot;accessor for {layer.name}&quot;
+            ),
+        )
+        self.cell_klass._mesa_properties.add(layer.name)
+
+    def remove_property_layer(self, property_name: str):
+        &quot;&quot;&quot;Remove a property layer from the grid.
+
+        Args:
+            property_name: the name of the property layer to remove
+        &quot;&quot;&quot;
+        del self._mesa_property_layers[property_name]
+        delattr(self.cell_klass, property_name)
+        self.cell_klass._mesa_properties.remove(property_name)
+
+    def set_property(
+        self, property_name: str, value, condition: Callable[[T], bool] | None = None
+    ):
+        &quot;&quot;&quot;Set the value of a property for all cells in the grid.
+
+        Args:
+            property_name: the name of the property to set
+            value: the value to set
+            condition: a function that takes a cell and returns a boolean
+        &quot;&quot;&quot;
+        self._mesa_property_layers[property_name].set_cells(value, condition)
+
+    def modify_properties(
+        self,
+        property_name: str,
+        operation: Callable,
+        value: Any = None,
+        condition: Callable[[T], bool] | None = None,
+    ):
+        &quot;&quot;&quot;Modify the values of a specific property for all cells in the grid.
+
+        Args:
+            property_name: the name of the property to modify
+            operation: the operation to perform
+            value: the value to use in the operation
+            condition: a function that takes a cell and returns a boolean (used to filter cells)
+        &quot;&quot;&quot;
+        self._mesa_property_layers[property_name].modify_cells(
+            operation, value, condition
+        )
+
+    def get_neighborhood_mask(
+        self, coordinate: Coordinate, include_center: bool = True, radius: int = 1
+    ) -> np.ndarray:
+        &quot;&quot;&quot;Generate a boolean mask representing the neighborhood.
+
+        Args:
+            coordinate: Center of the neighborhood.
+            include_center: Include the central cell in the neighborhood.
+            radius: The radius of the neighborhood.
+
+        Returns:
+            np.ndarray: A boolean mask representing the neighborhood.
+        &quot;&quot;&quot;
+        cell = self._cells[coordinate]
+        neighborhood = cell.get_neighborhood(
+            include_center=include_center, radius=radius
+        )
+        mask = np.zeros(self.dimensions, dtype=bool)
+
+        # Convert the neighborhood list to a NumPy array and use advanced indexing
+        coords = np.array([c.coordinate for c in neighborhood])
+        indices = [coords[:, i] for i in range(coords.shape[1])]
+        mask[*indices] = True
+        return mask
+
+    def select_cells(
+        self,
+        conditions: dict | None = None,
+        extreme_values: dict | None = None,
+        masks: np.ndarray | list[np.ndarray] = None,
+        only_empty: bool = False,
+        return_list: bool = True,
+    ) -> list[Coordinate] | np.ndarray:
+        &quot;&quot;&quot;Select cells based on property conditions, extreme values, and/or masks, with an option to only select empty cells.
+
+        Args:
+            conditions (dict): A dictionary where keys are property names and values are callables that return a boolean when applied.
+            extreme_values (dict): A dictionary where keys are property names and values are either 'highest' or 'lowest'.
+            masks (np.ndarray | list[np.ndarray], optional): A mask or list of masks to restrict the selection.
+            only_empty (bool, optional): If True, only select cells that are empty. Default is False.
+            return_list (bool, optional): If True, return a list of coordinates, otherwise return a mask.
+
+        Returns:
+            Union[list[Coordinate], np.ndarray]: Coordinates where conditions are satisfied or the combined mask.
+        &quot;&quot;&quot;
+        # fixme: consider splitting into two separate functions
+        #  select_cells_boolean
+        #  select_cells_index
+        #  also we might want to change the naming to avoid classes with PropertyLayer
+
+        # Initialize the combined mask
+        combined_mask = np.ones(self.dimensions, dtype=bool)
+
+        # Apply the masks
+        if masks is not None:
+            if isinstance(masks, list):
+                for mask in masks:
+                    combined_mask = np.logical_and(combined_mask, mask)
+            else:
+                combined_mask = np.logical_and(combined_mask, masks)
+
+        # Apply the empty mask if only_empty is True
+        if only_empty:
+            combined_mask = np.logical_and(
+                combined_mask, self._mesa_property_layers[&quot;empty&quot;].data
+            )
+
+        # Apply conditions
+        if conditions:
+            for prop_name, condition in conditions.items():
+                prop_layer = self._mesa_property_layers[prop_name].data
+                prop_mask = condition(prop_layer)
+                combined_mask = np.logical_and(combined_mask, prop_mask)
+
+        # Apply extreme values
+        if extreme_values:
+            for property_name, mode in extreme_values.items():
+                prop_values = self._mesa_property_layers[property_name].data
+
+                # Create a masked array using the combined_mask
+                masked_values = np.ma.masked_array(prop_values, mask=~combined_mask)
+
+                if mode == &quot;highest&quot;:
+                    target_value = masked_values.max()
+                elif mode == &quot;lowest&quot;:
+                    target_value = masked_values.min()
+                else:
+                    raise ValueError(
+                        f&quot;Invalid mode {mode}. Choose from 'highest' or 'lowest'.&quot;
+                    )
+
+                extreme_value_mask = prop_values == target_value
+                combined_mask = np.logical_and(combined_mask, extreme_value_mask)
+
+        # Generate output
+        if return_list:
+            selected_cells = list(zip(*np.where(combined_mask)))
+            return selected_cells
+        else:
+            return combined_mask
+
+    def __getattr__(self, name: str) -> Any:  # noqa: D105
+        try:
+            return self._mesa_property_layers[name]
+        except KeyError as e:
+            raise AttributeError(
+                f&quot;'{type(self).__name__}' object has no property layer called '{name}'&quot;
+            ) from e
+
+    def __setattr__(self, key, value):  # noqa: D105
+        # fixme
+        #  this might be done more elegantly, the main problem is that _mesa_property_layers must already be defined to avoid infinite recursion errors from happening
+        #  also, this protection only works if the attribute is added after the layer, not the other way around
+        try:
+            layers = self.__dict__[&quot;_mesa_property_layers&quot;]
+        except KeyError:
+            super().__setattr__(key, value)
+        else:
+            if key in layers:
+                raise AttributeError(
+                    f&quot;'{type(self).__name__}' object already has a property layer with name '{key}'&quot;
+                )
+            else:
+                super().__setattr__(key, value)
+
+def create_property_accessors(layer, docstring=None):
+    &quot;&quot;&quot;Helper function for creating accessor for properties on cells.&quot;&quot;&quot;
+
+    def getter(self):
+        return layer[self.coordinate]
+
+    def setter(self, value):
+        layer[self.coordinate] = value
+
+    return property(getter, setter, doc=docstring)
+
+def ufunc_requires_additional_input(ufunc):  # noqa: D103
+    # NumPy ufuncs have a 'nin' attribute indicating the number of input arguments
+    # For binary ufuncs (like np.add), nin is 2    # codespell:ignore
+    return ufunc.nin > 1  # codespell:ignore
+</code></pre>
+<hr/>
+<p>Original source: <a href="https://mesa.readthedocs.io/stable/_modules/mesa/discrete_space/property_layer.html" class="external external-link">https://mesa.readthedocs.io/stable/_modules/mesa/discrete_space/property_layer.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul id="list-0" class="overflow"><li><a href="../../../../../../python-library-documentation/mesa/mesa-documentation" class="internal">Mesa Documentation</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script src="../../../../../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../static/resource-after-683f275d.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../postscript.js" type="module" data-persist="true"></script></html>

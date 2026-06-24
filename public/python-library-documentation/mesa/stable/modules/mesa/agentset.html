@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Source code for mesa.agentset</title><meta charset="utf-8"/><link rel="preload" href="../../../../../index.css" as="style"/><link rel="preload" href="../../../../../prescript.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 5"/><meta property="og:title" content="Source code for mesa.agentset"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Source code for mesa.agentset"/><meta name="twitter:description" content="Source code for mesa.agentset &quot;&quot;&quot;AgentSet related classes. Core Objects: AgentSet, AbstractAgentSet, _HardKeyAgentSet, GroupBy."/><meta property="og:description" content="Source code for mesa.agentset &quot;&quot;&quot;AgentSet related classes. Core Objects: AgentSet, AbstractAgentSet, _HardKeyAgentSet, GroupBy."/><meta property="og:image:alt" content="Source code for mesa.agentset &quot;&quot;&quot;AgentSet related classes. Core Objects: AgentSet, AbstractAgentSet, _HardKeyAgentSet, GroupBy."/><meta property="twitter:domain" content="nachiket8k.github.io/obsidian"/><meta property="og:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/agentset"/><meta property="twitter:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/agentset"/><link rel="icon" href="../../../../../static/icon.png"/><meta name="description" content="Source code for mesa.agentset &quot;&quot;&quot;AgentSet related classes. Core Objects: AgentSet, AbstractAgentSet, _HardKeyAgentSet, GroupBy."/><meta name="generator" content="Quartz"/><link href="../../../../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-9f9b2774.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-a12dcaa2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-26a99b87.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../../../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../../../../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/agentset-og-image.webp"/><meta property="og:image:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/agentset-og-image.webp"/><meta name="twitter:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/agentset-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="python-library-documentation/mesa/stable/modules/mesa/agentset" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../../../..">Quartz 5</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="Reader mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\r\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\r\n        numeric: true,\r\n        sensitivity: \&quot;base\&quot;\r\n      });\r\n    }\r\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return 1;\r\n    }\r\n    return -1;\r\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\r\n    return node;\r\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-165" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-165" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/">Python Library Documentation</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/">mesa package</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/stable/">Mesa: Agent-based modeling in Python</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/stable/modules/">modules</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/stable/modules/mesa/">mesa</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Source code for mesa.agentset</a></div></nav><h1 class="article-title">Source code for mesa.agentset</h1><p show-comma="true" class="content-meta"><time datetime="2026-06-19T10:10:40.387Z">Jun 19, 2026</time><span>20 min read</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="source-code-for-mesaagentset">Source code for mesa.agentset<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#source-code-for-mesaagentset" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<pre><code>&quot;&quot;&quot;AgentSet related classes.
+
+Core Objects: AgentSet, AbstractAgentSet, _HardKeyAgentSet, GroupBy.
+&quot;&quot;&quot;
+
+# Postpone annotation evaluation to avoid NameError from forward references (PEP 563). Remove once Python 3.14+ is required.
+from __future__ import annotations
+
+import contextlib
+import copy
+import operator
+import warnings
+import weakref
+from abc import ABC, abstractmethod
+from collections import defaultdict
+from collections.abc import Callable, Hashable, Iterable, Iterator, MutableSet, Sequence
+from random import Random
+from typing import TYPE_CHECKING, Any, Literal, overload
+
+if TYPE_CHECKING:
+    from mesa.agent import Agent
+
+[docs]
+class AbstractAgentSet[A: Agent](ABC, MutableSet[A]):
+    &quot;&quot;&quot;An abstract base collection class that represents an ordered set of agents within an agent-based model (ABM).
+
+    This class defines the minimal interface that all AgentSet implementations must follow.
+    Subclasses are free to override methods with optimized implementations based on their
+    storage mechanism (weak references vs strong references).
+
+    Attributes:
+        model (Model): The ABM model instance to which this AbstractAgentSet belongs.
+    &quot;&quot;&quot;
+
+    @abstractmethod
+    def __len__(self) -> int:
+        &quot;&quot;&quot;Return the number of agents in the AbstractAgentSet.&quot;&quot;&quot;
+        ...
+
+    @abstractmethod
+    def __iter__(self) -> Iterator[A]:
+        &quot;&quot;&quot;Provide an iterator over the agents in the AbstractAgentSet.&quot;&quot;&quot;
+        ...
+
+    @abstractmethod
+    def __contains__(self, agent: A) -> bool:
+        &quot;&quot;&quot;Check if an agent is in the AgentSet.&quot;&quot;&quot;
+        ...
+
+    @abstractmethod
+    def _update(self, agents: Iterable[A]) -> AbstractAgentSet[A]:
+        &quot;&quot;&quot;Update the AbstractAgentSet A with new set of agents.&quot;&quot;&quot;
+        ...
+
+[docs]
+    def select(
+        self,
+        filter_func: Callable[[A], bool] | None = None,
+        at_most: int | float = float(&quot;inf&quot;),
+        inplace: bool = False,
+        agent_type: type[A] | None = None,
+    ) -> AbstractAgentSet[A]:
+        &quot;&quot;&quot;Select a subset of agents from the AbstractAgentSet based on a filter function and/or quantity limit.
+
+        Args:
+            filter_func (Callable[[Agent], bool], optional): A function that takes an Agent and returns True if the
+                agent should be included in the result. Defaults to None, meaning no filtering is applied.
+            at_most (int | float, optional): The maximum amount of agents to select. Defaults to infinity.
+              - If an integer, at most the first number of matching agents are selected.
+              - If a float between 0 and 1, at most that fraction of original the agents are selected.
+            inplace (bool, optional): If True, modifies the current AbstractAgentSet; otherwise, returns a new AbstractAgentSet. Defaults to False.
+            agent_type (type[Agent], optional): The class type of the agents to select. Defaults to None, meaning no type filtering is applied.
+
+        Returns:
+            AbstractAgentSet: A new AbstractAgentSet containing the selected agents, unless inplace is True, in which case the current AbstractAgentSet is updated.
+
+        Notes:
+            - at_most just return the first n or fraction of agents. To take a random sample, shuffle() beforehand.
+            - at_most is an upper limit. When specifying other criteria, the number of agents returned can be smaller.
+        &quot;&quot;&quot;
+        inf = float(&quot;inf&quot;)
+        if filter_func is None and agent_type is None and at_most == inf:
+            return self if inplace else copy.copy(self)
+
+        # Check if at_most is of type float
+        if at_most &lt;= 1.0 and isinstance(at_most, float):
+            at_most = int(len(self) * at_most)  # Note that it rounds down (floor)
+
+        def agent_generator(
+            filter_func: Callable[[A], bool] | None,
+            agent_type: type[A] | None,
+            at_most: int,
+        ) -> Iterator[A]:
+            count = 0
+            for agent in self:
+                if count >= at_most:
+                    break
+                if (not filter_func or filter_func(agent)) and (
+                    not agent_type or isinstance(agent, agent_type)
+                ):
+                    yield agent
+                    count += 1
+
+        agents = agent_generator(filter_func, agent_type, at_most)
+
+        # Use type(self) to ensure we return the correct subclass (AgentSet vs StrongAgentSet)
+        return self._update(agents) if inplace else type(self)(agents, self.random)
+
+[docs]
+    def agg(
+        self, attribute: str, func: Callable | Iterable[Callable]
+    ) -> Any | list[Any]:
+        &quot;&quot;&quot;Aggregate an attribute of all agents in the AgentSet using one or more functions.
+
+        Args:
+            attribute (str): The name of the attribute to aggregate.
+            func (Callable | Iterable[Callable]):
+                - If Callable: A single function to apply to the attribute values (e.g., min, max, sum, np.mean)
+                - If Iterable: Multiple functions to apply to the attribute values
+
+        Returns:
+            Any | [Any, ...]: Result of applying the function(s) to the attribute values.
+
+        Examples:
+            # Single function
+            avg_energy = model.agents.agg(&quot;energy&quot;, np.mean)
+
+            # Multiple functions
+            min_wealth, max_wealth, total_wealth = model.agents.agg(&quot;wealth&quot;, [min, max, sum])
+        &quot;&quot;&quot;
+        values = self.get(attribute)
+
+        if isinstance(func, Callable):
+            return func(values)
+        else:
+            return [f(values) for f in func]
+
+@overload
+    def get(
+        self,
+        attr_names: str,
+        handle_missing: Literal[&quot;error&quot;, &quot;default&quot;] = &quot;error&quot;,
+        default_value: Any = None,
+    ) -> list[Any]: ...
+
+    @overload
+    def get(
+        self,
+        attr_names: list[str],
+        handle_missing: Literal[&quot;error&quot;, &quot;default&quot;] = &quot;error&quot;,
+        default_value: Any = None,
+    ) -> list[list[Any]]: ...
+
+[docs]
+    def get(
+        self,
+        attr_names,
+        handle_missing=&quot;error&quot;,
+        default_value=None,
+    ):
+        &quot;&quot;&quot;Retrieve the specified attribute(s) from each agent in the AgentSet.
+
+        Args:
+            attr_names (str | list[str]): The name(s) of the attribute(s) to retrieve from each agent.
+            handle_missing (str, optional): How to handle missing attributes. Can be:
+                                            - 'error' (default): raises an AttributeError if attribute is missing.
+                                            - 'default': returns the specified default_value.
+            default_value (Any, optional): The default value to return if 'handle_missing' is set to 'default'
+                                           and the agent does not have the attribute.
+
+        Returns:
+            list[Any]: A list with the attribute value for each agent if attr_names is a str.
+            list[list[Any]]: A list with a lists of attribute values for each agent if attr_names is a list of str.
+
+        Raises:
+            AttributeError: If 'handle_missing' is 'error' and the agent does not have the specified attribute(s).
+            ValueError: If an unknown 'handle_missing' option is provided.
+        &quot;&quot;&quot;
+        is_single_attr = isinstance(attr_names, str)
+
+        if handle_missing == &quot;error&quot;:
+            if is_single_attr:
+                return [getattr(agent, attr_names) for agent in self._agents]
+            else:
+                return [
+                    [getattr(agent, attr) for attr in attr_names]
+                    for agent in self._agents
+                ]
+
+        elif handle_missing == &quot;default&quot;:
+            if is_single_attr:
+                return [
+                    getattr(agent, attr_names, default_value) for agent in self._agents
+                ]
+            else:
+                return [
+                    [getattr(agent, attr, default_value) for attr in attr_names]
+                    for agent in self._agents
+                ]
+
+        else:
+            raise ValueError(
+                f&quot;Unknown handle_missing option: {handle_missing}, &quot;
+                &quot;should be one of 'error' or 'default'&quot;
+            )
+
+[docs]
+    def set(self, attr_name: str, value: Any) -> AgentSet[A]:
+        &quot;&quot;&quot;Set a specified attribute to a given value for all agents in the AgentSet.
+
+        Args:
+            attr_name (str): The name of the attribute to set.
+            value (Any): The value to set the attribute to.
+
+        Returns:
+            AgentSet: The AgentSet instance itself, after setting the attribute.
+        &quot;&quot;&quot;
+        for agent in self:
+            setattr(agent, attr_name, value)
+        return self
+
+[docs]
+    def to_list(self) -> list[A]:
+        &quot;&quot;&quot;Convert the AbstractAgentSet to a list.
+
+        Returns:
+            list[Agent]: A list containing all agents in the AbstractAgentSet.
+
+        Notes:
+            This method provides an explicit way to convert the AgentSet to a list.
+            It is the recommended approach when list operations (indexing, slicing)
+            are needed, as direct sequence operations on AgentSet are deprecated
+            and will be removed in Mesa 4.0.
+        &quot;&quot;&quot;
+        return list(self._agents.keys())
+
+[docs]
+    @abstractmethod
+    def add(self, agent: A):
+        &quot;&quot;&quot;Add an agent to the AbstractAgentSet.
+
+        Args:
+            agent (Agent): The agent to add to the set.
+
+        Note:
+            This method is an implementation of the abstract method from MutableSet.
+        &quot;&quot;&quot;
+        ...
+
+[docs]
+    @abstractmethod
+    def discard(self, agent: A):
+        &quot;&quot;&quot;Remove an agent from the AbstractAgentSet if it exists.
+
+        This method does not raise an error if the agent is not present.
+
+        Args:
+            agent (Agent): The agent to remove from the set.
+
+        Note:
+            This method is an implementation of the abstract method from MutableSet.
+        &quot;&quot;&quot;
+        ...
+
+[docs]
+    @abstractmethod
+    def remove(self, agent: A):
+        &quot;&quot;&quot;Remove an agent from the AbstractAgentSet.
+
+        Raises:
+            An Exception if the agent is not present.
+
+        Args:
+            agent (Agent): The agent to remove from the set.
+
+        Note:
+            This method is an implementation of the abstract method from MutableSet.
+        &quot;&quot;&quot;
+        ...
+
+[docs]
+    def groupby(
+        self, by: Callable | str, result_type: Literal[&quot;agentset&quot;, &quot;list&quot;] = &quot;agentset&quot;
+    ) -> GroupBy:
+        &quot;&quot;&quot;Group agents by the specified attribute or return from the callable.
+
+        Args:
+            by (Callable, str): used to determine what to group agents by
+
+                                * if ``by`` is a callable, it will be called for each agent and the return is used
+                                  for grouping
+                                * if ``by`` is a str, it should refer to an attribute on the agent and the value
+                                  of this attribute will be used for grouping
+
+            result_type (str, optional): The datatype for the resulting groups {&quot;agentset&quot;, &quot;list&quot;}
+
+        Returns:
+            GroupBy
+
+        Notes:
+            There might be performance benefits to using `result_type='list'` if you don't need the advanced functionality
+            of an AbstractAgentSet.
+        &quot;&quot;&quot;
+        groups = defaultdict(list)
+
+        if isinstance(by, Callable):
+            for agent in self:
+                groups[by(agent)].append(agent)
+        else:
+            for agent in self:
+                groups[getattr(agent, by)].append(agent)
+
+        if result_type == &quot;agentset&quot;:
+            return GroupBy(
+                {k: type(self)(v, random=self.random) for k, v in groups.items()}
+            )
+        else:
+            return GroupBy(groups)
+
+# Performance-critical methods are left abstract
+
+[docs]
+    @abstractmethod
+    def shuffle(self, inplace: bool = False) -> AbstractAgentSet[A]:
+        &quot;&quot;&quot;Randomly shuffle the order of agents in the AbstractAgentSet.&quot;&quot;&quot;
+        ...
+
+[docs]
+    @abstractmethod
+    def sort(
+        self,
+        key: Callable[[A], Any] | str,
+        ascending: bool = False,
+        inplace: bool = False,
+    ) -> AbstractAgentSet[A]:
+        &quot;&quot;&quot;Sort the agents in the AbstractAgentSet based on a specified attribute or custom function.&quot;&quot;&quot;
+        ...
+
+[docs]
+    @abstractmethod
+    def do(self, method: str | Callable, *args, **kwargs) -> AbstractAgentSet[A]:
+        &quot;&quot;&quot;Invoke a method or function on each agent in the AbstractAgentSet.&quot;&quot;&quot;
+        ...
+
+[docs]
+    @abstractmethod
+    def shuffle_do(
+        self, method: str | Callable, *args, **kwargs
+    ) -> AbstractAgentSet[A]:
+        &quot;&quot;&quot;Shuffle the agents in the AbstractAgentSet and then invoke a method or function on each agent.&quot;&quot;&quot;
+        ...
+
+[docs]
+    @abstractmethod
+    def map(self, method: str | Callable, *args, **kwargs) -> list[Any]:
+        &quot;&quot;&quot;Invoke a method or function on each agent in the AbstractAgentSet and return the results.&quot;&quot;&quot;
+        ...
+
+[docs]
+class AgentSet[A: Agent](AbstractAgentSet[A], Sequence[A]):
+    &quot;&quot;&quot;A collection class that represents an ordered set of agents using weak references.
+
+    This implementation uses weak references to agents, allowing for efficient management
+    of agent lifecycles without preventing garbage collection.
+
+    Attributes:
+        random (Random): The random number generator for this agent set.
+
+    Notes:
+        The AgentSet maintains weak references to agents, which means that agents not
+        referenced elsewhere in the program may be automatically removed from the AgentSet.
+        This is the default implementation for most use cases where automatic cleanup is desired.
+
+        Performance-critical methods are optimized to work directly with weak references,
+        avoiding the overhead of creating strong references during iteration.
+    &quot;&quot;&quot;
+
+    def __init__(
+        self,
+        agents: Iterable[A],
+        random: Random | None = None,
+    ):
+        &quot;&quot;&quot;Initialize the AgentSet with weak references to agents.
+
+        Args:
+            agents (Iterable[Agent]): An iterable of Agent objects to be included in the set.
+            random (Random | None): The random number generator for this agent set.
+        &quot;&quot;&quot;
+        self._agents = weakref.WeakKeyDictionary(dict.fromkeys(agents))
+        if (len(self._agents) == 0) and random is None:
+            warnings.warn(
+                &quot;No Agents specified in creation of AgentSet and no random number generator specified. &quot;
+                &quot;This can make models non-reproducible. Please pass a random number generator explicitly&quot;,
+                UserWarning,
+                stacklevel=2,
+            )
+            random = Random()
+
+        if random is not None:
+            self.random = random
+        else:
+            # all agents in an AgentSet should share the same model, just take it from first
+            self.random = self._agents.keys().__next__().model.random
+
+    def __len__(self) -> int:
+        &quot;&quot;&quot;Return the number of agents in the AgentSet.&quot;&quot;&quot;
+        return len(self._agents)
+
+    def __iter__(self) -> Iterator[A]:
+        &quot;&quot;&quot;Provide an iterator over the agents in the AgentSet.&quot;&quot;&quot;
+        return self._agents.keys()
+
+    def __contains__(self, agent: A) -> bool:
+        &quot;&quot;&quot;Check if an agent is in the AgentSet. Can be used like `agent in agentset`.&quot;&quot;&quot;
+        return agent in self._agents
+
+[docs]
+    def shuffle(self, inplace: bool = False) -> AgentSet[A]:
+        &quot;&quot;&quot;Randomly shuffle the order of agents in the AgentSet.
+
+        Args:
+            inplace (bool, optional): If True, shuffles the agents in the current AgentSet; otherwise, returns a new shuffled AgentSet. Defaults to False.
+
+        Returns:
+            AgentSet: A shuffled AgentSet. Returns the current AgentSet if inplace is True.
+
+        Note:
+            Using inplace = True is more performant
+
+        &quot;&quot;&quot;
+        weakrefs = list(self._agents.keyrefs())
+        self.random.shuffle(weakrefs)
+
+        if inplace:
+            self._agents.data = dict.fromkeys(weakrefs)
+            return self
+        else:
+            return AgentSet(
+                (agent for ref in weakrefs if (agent := ref()) is not None), self.random
+            )
+
+[docs]
+    def sort(
+        self,
+        key: Callable[[A], Any] | str,
+        ascending: bool = False,
+        inplace: bool = False,
+    ) -> AgentSet[A]:
+        &quot;&quot;&quot;Sort the agents in the AgentSet based on a specified attribute or custom function.
+
+        Args:
+            key (Callable[[Agent], Any] | str): A function or attribute name based on which the agents are sorted.
+            ascending (bool, optional): If True, the agents are sorted in ascending order. Defaults to False.
+            inplace (bool, optional): If True, sorts the agents in the current AgentSet; otherwise, returns a new sorted AgentSet. Defaults to False.
+
+        Returns:
+            AgentSet: A sorted AgentSet. Returns the current AgentSet if inplace is True.
+        &quot;&quot;&quot;
+        if isinstance(key, str):
+            key = operator.attrgetter(key)
+
+        sorted_agents = sorted(self._agents.keys(), key=key, reverse=not ascending)
+
+        return (
+            AgentSet(sorted_agents, self.random)
+            if not inplace
+            else self._update(sorted_agents)
+        )
+
+def _update(self, agents: Iterable[A]):
+        &quot;&quot;&quot;Update the AgentSet with a new set of agents.
+
+        This is a private method primarily used internally by other methods like select, shuffle, and sort.
+        &quot;&quot;&quot;
+        self._agents = weakref.WeakKeyDictionary(dict.fromkeys(agents))
+        return self
+
+[docs]
+    def do(self, method: str | Callable, *args, **kwargs) -> AgentSet[A]:
+        &quot;&quot;&quot;Invoke a method or function on each agent in the AgentSet.
+
+        Args:
+            method (str, callable): the callable to do on each agent
+
+                                        * in case of str, the name of the method to call on each agent.
+                                        * in case of callable, the function to be called with each agent as first argument
+
+            *args: Variable length argument list passed to the callable being called.
+            **kwargs: Arbitrary keyword arguments passed to the callable being called.
+
+        Returns:
+            AgentSet: The AgentSet instance itself.
+        &quot;&quot;&quot;
+        # we iterate over the actual weakref keys and check if weakref is alive before calling the method
+        if isinstance(method, str):
+            for agentref in self._agents.keyrefs():
+                if (agent := agentref()) is not None:
+                    getattr(agent, method)(*args, **kwargs)
+        else:
+            for agentref in self._agents.keyrefs():
+                if (agent := agentref()) is not None:
+                    method(agent, *args, **kwargs)
+
+        return self
+
+[docs]
+    def shuffle_do(self, method: str | Callable, *args, **kwargs) -> AgentSet[A]:
+        &quot;&quot;&quot;Shuffle the agents in the AgentSet and then invoke a method or function on each agent.
+
+        It's a fast, optimized version of calling shuffle() followed by do().
+        &quot;&quot;&quot;
+        weakrefs = list(self._agents.keyrefs())
+        self.random.shuffle(weakrefs)
+
+        if isinstance(method, str):
+            for ref in weakrefs:
+                if (agent := ref()) is not None:
+                    getattr(agent, method)(*args, **kwargs)
+        else:
+            for ref in weakrefs:
+                if (agent := ref()) is not None:
+                    method(agent, *args, **kwargs)
+
+        return self
+
+[docs]
+    def map(self, method: str | Callable, *args, **kwargs) -> list[Any]:
+        &quot;&quot;&quot;Invoke a method or function on each agent in the AgentSet and return the results.
+
+        Args:
+            method (str, callable): the callable to apply on each agent
+
+                                        * in case of str, the name of the method to call on each agent.
+                                        * in case of callable, the function to be called with each agent as first argument
+
+            *args: Variable length argument list passed to the callable being called.
+            **kwargs: Arbitrary keyword arguments passed to the callable being called.
+
+        Returns:
+           list[Any]: The results of the callable calls
+        &quot;&quot;&quot;
+        # we iterate over the actual weakref keys and check if weakref is alive before calling the method
+        if isinstance(method, str):
+            res = [
+                getattr(agent, method)(*args, **kwargs)
+                for agentref in self._agents.keyrefs()
+                if (agent := agentref()) is not None
+            ]
+        else:
+            res = [
+                method(agent, *args, **kwargs)
+                for agentref in self._agents.keyrefs()
+                if (agent := agentref()) is not None
+            ]
+
+        return res
+
+@overload
+    def __getitem__(self, item: int) -> A: ...
+
+    @overload
+    def __getitem__(self, item: slice) -> list[A]: ...
+
+    def __getitem__(self, item):
+        &quot;&quot;&quot;Retrieve an agent or a slice of agents from the AgentSet.
+
+        Args:
+            item (int | slice): The index or slice for selecting agents.
+
+        Returns:
+            Agent | list[Agent]: The selected agent or list of agents based on the index or slice provided.
+
+        .. deprecated::
+            Sequence behavior (indexing/slicing) is deprecated and will be removed in Mesa 4.0.
+            Use :meth:`to_list` instead: ``agentset.to_list()[index]`` or ``agentset.to_list()[start:stop]``.
+        &quot;&quot;&quot;
+        warnings.warn(
+            &quot;AgentSet.__getitem__ is deprecated and will be removed in Mesa 4.0. &quot;
+            &quot;Use AgentSet.to_list()[index] instead. &quot;
+            &quot;See https://mesa.readthedocs.io/latest/migration_guide.html#AgentSet-sequence-behavior&quot;,
+            PendingDeprecationWarning,
+            stacklevel=2,
+        )
+        return self.to_list()[item]
+
+[docs]
+    def add(self, agent: A):
+        &quot;&quot;&quot;Add an agent to the AgentSet.
+
+        Args:
+            agent (Agent): The agent to add to the set.
+
+        Note:
+            This method is an implementation of the abstract method from MutableSet.
+        &quot;&quot;&quot;
+        self._agents[agent] = None
+
+[docs]
+    def discard(self, agent: A):
+        &quot;&quot;&quot;Remove an agent from the AgentSet if it exists.
+
+        This method does not raise an error if the agent is not present.
+
+        Args:
+            agent (Agent): The agent to remove from the set.
+
+        Note:
+            This method is an implementation of the abstract method from MutableSet.
+        &quot;&quot;&quot;
+        with contextlib.suppress(KeyError):
+            del self._agents[agent]
+
+[docs]
+    def remove(self, agent: A):
+        &quot;&quot;&quot;Remove an agent from the AgentSet.
+
+        This method raises an error if the agent is not present.
+
+        Args:
+            agent (Agent): The agent to remove from the set.
+
+        Note:
+            This method is an implementation of the abstract method from MutableSet.
+        &quot;&quot;&quot;
+        del self._agents[agent]
+
+def __getstate__(self):
+        &quot;&quot;&quot;Retrieve the state of the AgentSet for serialization.
+
+        Returns:
+            dict: A dictionary representing the state of the AgentSet.
+        &quot;&quot;&quot;
+        return {&quot;agents&quot;: list(self._agents.keys()), &quot;random&quot;: self.random}
+
+    def __setstate__(self, state):
+        &quot;&quot;&quot;Set the state of the AgentSet during deserialization.
+
+        Args:
+            state (dict): A dictionary representing the state to restore.
+        &quot;&quot;&quot;
+        self.random = state[&quot;random&quot;]
+        self._update(state[&quot;agents&quot;])
+
+class _HardKeyAgentSet[A: Agent](AbstractAgentSet[A]):
+    &quot;&quot;&quot;A collection class that represents an ordered set of agents using strong references.
+
+    This implementation uses strong references (hard keys) to agents, preventing them
+    from being garbage collected as long as they remain in the set. This eliminates WeakKeyDictionary overhead for Model-managed collections where lifecycle is explicitly controlled.
+
+    CRITICAL SAFETY FEATURE:
+        To prevent &quot;Zombie Agents&quot; (memory leaks), any operation that creates a
+        subset, view, or copy of this set (like select, shuffle(inplace=False),
+        or groupby) will automatically 'downgrade' the result to a standard
+        AgentSet (weak references).
+    &quot;&quot;&quot;
+
+    def __init__(
+        self,
+        agents: Iterable[A],
+        random: Random | None = None,
+    ):
+        &quot;&quot;&quot;Initialize the _HardKeyAgentSet with strong references to agents.
+
+        Args:
+            agents (Iterable[Agent]): An iterable of Agent objects to be included in the set.
+            random (Random | None): The random number generator for this agent set.
+        &quot;&quot;&quot;
+        self._agents: dict[A, None] = dict.fromkeys(agents)
+
+        # Handle empty sets and random number generation
+        if (len(self._agents) == 0) and random is None:
+            warnings.warn(
+                &quot;No Agents specified in creation of AgentSet and no random number generator specified. &quot;
+                &quot;This can make models non-reproducible. Please pass a random number generator explicitly&quot;,
+                UserWarning,
+                stacklevel=2,
+            )
+            random = Random()
+
+        if random is not None:
+            self.random = random
+        else:
+            # Take random from the first agent if available
+            if len(self._agents) > 0:
+                self.random = next(iter(self._agents)).model.random
+            else:
+                self.random = Random()
+
+    def __len__(self) -> int:
+        &quot;&quot;&quot;Return the number of agents in the _HardKeyAgentSet.&quot;&quot;&quot;
+        return len(self._agents)
+
+    def __iter__(self) -> Iterator[A]:
+        &quot;&quot;&quot;Provide an iterator over the agents in the _HardKeyAgentSet.&quot;&quot;&quot;
+        return iter(self._agents.keys())
+
+    def __contains__(self, agent: A) -> bool:
+        &quot;&quot;&quot;Check if an agent is in the _HardKeyAgentSet. Can be used like `agent in agentset`.&quot;&quot;&quot;
+        return agent in self._agents
+
+    def _update(self, agents: Iterable[A]):
+        &quot;&quot;&quot;Update the internal strong dictionary.&quot;&quot;&quot;
+        self._agents = dict.fromkeys(agents)
+        return self
+
+    def __getitem__(self, item):
+        return self.to_list()[item]
+
+    def add(self, agent: A):
+        &quot;&quot;&quot;Add an agent to the _HardKeyAgentSet.&quot;&quot;&quot;
+        self._agents[agent] = None
+
+    def discard(self, agent: A):
+        &quot;&quot;&quot;Remove an agent from the _HardKeyAgentSet if it exists.&quot;&quot;&quot;
+        with contextlib.suppress(KeyError):
+            del self._agents[agent]
+
+    def remove(self, agent: A):
+        &quot;&quot;&quot;Remove an agent from the _HardKeyAgentSet. Raises KeyError if not present.&quot;&quot;&quot;
+        del self._agents[agent]
+
+    # These methods ensure that views returned to the user do not hold strong refs.
+
+    def select(
+        self,
+        filter_func: Callable[[A], bool] | None = None,
+        at_most: int | float = float(&quot;inf&quot;),
+        inplace: bool = False,
+        agent_type: type[A] | None = None,
+    ) -> AbstractAgentSet[A]:
+        &quot;&quot;&quot;Select agents. Returns a standard AgentSet (Weak Refs) if inplace=False.&quot;&quot;&quot;
+        # Let the parent logic perform the selection (returns HardKeyAgentSet by default)
+        result = super().select(filter_func, at_most, inplace, agent_type)
+
+        # 2. If inplace, we are updating self, so return self (Strong)
+        if inplace:
+            return result
+
+        # 3. If new set, downgrade to AgentSet (Weak) to prevent leaks
+        return AgentSet(result, self.random)
+
+    def groupby(
+        self, by: Callable | str, result_type: Literal[&quot;agentset&quot;, &quot;list&quot;] = &quot;agentset&quot;
+    ) -> GroupBy:
+        &quot;&quot;&quot;Group agents by the specified attribute or return from the callable. Groups are converted to standard AgentSets (Weak Refs).&quot;&quot;&quot;
+        # Let parent do the grouping
+        groups = super().groupby(by, result_type)
+
+        # Downgrade the groups from HardKeyAgentSet -> AgentSet
+        if result_type == &quot;agentset&quot;:
+            groups.groups = {
+                k: AgentSet(v, self.random) for k, v in groups.groups.items()
+            }
+
+        return groups
+
+    def copy(self) -> AgentSet[A]:
+        &quot;&quot;&quot;Return a shallow copy as a standard AgentSet (Weak Refs).&quot;&quot;&quot;
+        return AgentSet(self._agents, self.random)
+
+    def __copy__(self):
+        &quot;&quot;&quot;Support for copy.copy(). Returns a standard AgentSet.&quot;&quot;&quot;
+        return self.copy()
+
+    def do(self, method: str | Callable, *args, **kwargs) -> _HardKeyAgentSet[A]:
+        &quot;&quot;&quot;Invoke a method on each agent.&quot;&quot;&quot;
+        # Snapshot keys to avoid RuntimeError if agents are removed during iteration
+        agents = list(self._agents)
+
+        if isinstance(method, str):
+            for agent in agents:
+                # Check if agent is still in the set (wasn't removed by previous steps)
+                if agent in self._agents:
+                    getattr(agent, method)(*args, **kwargs)
+        else:
+            for agent in agents:
+                if agent in self._agents:
+                    method(agent, *args, **kwargs)
+        return self
+
+    def shuffle_do(
+        self, method: str | Callable, *args, **kwargs
+    ) -> _HardKeyAgentSet[A]:
+        &quot;&quot;&quot;Shuffle and invoke a method on each agent.&quot;&quot;&quot;
+        agents = list(self._agents)
+        self.random.shuffle(agents)
+
+        if isinstance(method, str):
+            for agent in agents:
+                if agent in self._agents:
+                    getattr(agent, method)(*args, **kwargs)
+        else:
+            for agent in agents:
+                if agent in self._agents:
+                    method(agent, *args, **kwargs)
+        return self
+
+    def map(self, method: str | Callable, *args, **kwargs) -> list[Any]:
+        &quot;&quot;&quot;Invoke a method and return results.&quot;&quot;&quot;
+        agents = list(self._agents)
+
+        if isinstance(method, str):
+            return [
+                getattr(agent, method)(*args, **kwargs)
+                for agent in agents
+                if agent in self._agents
+            ]
+        else:
+            return [
+                method(agent, *args, **kwargs)
+                for agent in agents
+                if agent in self._agents
+            ]
+
+    def shuffle(self, inplace: bool = False) -> AbstractAgentSet[A]:
+        &quot;&quot;&quot;Shuffle agents. Returns a standard AgentSet (Weak) if inplace=False.&quot;&quot;&quot;
+        agents = list(self._agents)
+        self.random.shuffle(agents)
+
+        if inplace:
+            self._agents = dict.fromkeys(agents)
+            return self
+        else:
+            # Downgrade to standard AgentSet
+            return AgentSet(agents, self.random)
+
+    def sort(
+        self,
+        key: Callable[[A], Any] | str,
+        ascending: bool = False,
+        inplace: bool = False,
+    ) -> AbstractAgentSet[A]:
+        &quot;&quot;&quot;Sort agents. Returns a standard AgentSet (Weak) if inplace=False.&quot;&quot;&quot;
+        if isinstance(key, str):
+            key = operator.attrgetter(key)
+
+        sorted_agents = sorted(self._agents.keys(), key=key, reverse=not ascending)
+
+        if inplace:
+            return self._update(sorted_agents)
+        else:
+            # Downgrade to standard AgentSet
+            return AgentSet(sorted_agents, self.random)
+
+[docs]
+class GroupBy:
+    &quot;&quot;&quot;Helper class for AgentSet.groupby.
+
+    Attributes:
+        groups (dict): A dictionary with the group_name as key and group as values
+
+    &quot;&quot;&quot;
+
+    def __init__(self, groups: dict[Any, list | AbstractAgentSet]):
+        &quot;&quot;&quot;Initialize a GroupBy instance.
+
+        Args:
+            groups (dict): A dictionary with the group_name as key and group as values
+
+        &quot;&quot;&quot;
+        self.groups: dict[Any, list | AbstractAgentSet] = groups
+
+[docs]
+    def map(self, method: Callable | str, *args, **kwargs) -> dict[Any, Any]:
+        &quot;&quot;&quot;Apply the specified callable to each group and return the results.
+
+        Args:
+            method (Callable, str): The callable to apply to each group,
+
+                                    * if ``method`` is a callable, it will be called it will be called with the group as first argument
+                                    * if ``method`` is a str, it should refer to a method on the group
+
+                                    Additional arguments and keyword arguments will be passed on to the callable.
+            args: arguments to pass to the callable
+            kwargs: keyword arguments to pass to the callable
+
+        Returns:
+            dict with group_name as key and the return of the method as value
+
+        Notes:
+            this method is useful for methods or functions that do return something. It
+            will break method chaining. For that, use ``do`` instead.
+
+        &quot;&quot;&quot;
+        if isinstance(method, str):
+            return {
+                k: getattr(v, method)(*args, **kwargs) for k, v in self.groups.items()
+            }
+        else:
+            return {k: method(v, *args, **kwargs) for k, v in self.groups.items()}
+
+[docs]
+    def do(self, method: Callable | str, *args, **kwargs) -> GroupBy:
+        &quot;&quot;&quot;Apply the specified callable to each group.
+
+        Args:
+            method (Callable, str): The callable to apply to each group,
+
+                                    * if ``method`` is a callable, it will be called it will be called with the group as first argument
+                                    * if ``method`` is a str, it should refer to a method on the group
+
+                                    Additional arguments and keyword arguments will be passed on to the callable.
+            args: arguments to pass to the callable
+            kwargs: keyword arguments to pass to the callable
+
+        Returns:
+            the original GroupBy instance
+
+        Notes:
+            this method is useful for methods or functions that don't return anything and/or
+            if you want to chain multiple do calls
+
+        &quot;&quot;&quot;
+        if isinstance(method, str):
+            for v in self.groups.values():
+                getattr(v, method)(*args, **kwargs)
+        else:
+            for v in self.groups.values():
+                method(v, *args, **kwargs)
+
+        return self
+
+[docs]
+    def count(self) -> dict[Any, int]:
+        &quot;&quot;&quot;Return the count of agents in each group.
+
+        Returns:
+            dict: A dictionary mapping group names to the number of agents in each group.
+        &quot;&quot;&quot;
+        return {k: len(v) for k, v in self.groups.items()}
+
+[docs]
+    def agg(self, attr_name: str, func: Callable) -> dict[Hashable, Any]:
+        &quot;&quot;&quot;Aggregate the values of a specific attribute across each group using the provided function.
+
+        Args:
+            attr_name (str): The name of the attribute to aggregate.
+            func (Callable): The function to apply (e.g., sum, min, max, mean).
+
+        Returns:
+            dict[Hashable, Any]: A dictionary mapping group names to the result of applying the aggregation function.
+        &quot;&quot;&quot;
+        return {
+            group_name: func([getattr(agent, attr_name) for agent in group])
+            for group_name, group in self.groups.items()
+        }
+
+def __iter__(self):  # noqa: D105
+        return iter(self.groups.items())
+
+    def __len__(self):  # noqa: D105
+        return len(self.groups)
+</code></pre>
+<hr/>
+<p>Original source: <a href="https://mesa.readthedocs.io/stable/_modules/mesa/agentset.html" class="external external-link">https://mesa.readthedocs.io/stable/_modules/mesa/agentset.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul id="list-0" class="overflow"><li><a href="../../../../../python-library-documentation/mesa/mesa-documentation" class="internal">Mesa Documentation</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script src="../../../../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-683f275d.js" type="application/javascript" data-persist="true"></script><script src="../../../../../postscript.js" type="module" data-persist="true"></script></html>

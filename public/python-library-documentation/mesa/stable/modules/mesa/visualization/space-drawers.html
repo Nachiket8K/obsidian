@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Source code for mesa.visualization.space_drawers</title><meta charset="utf-8"/><link rel="preload" href="../../../../../../index.css" as="style"/><link rel="preload" href="../../../../../../prescript.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 5"/><meta property="og:title" content="Source code for mesa.visualization.space_drawers"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Source code for mesa.visualization.space_drawers"/><meta name="twitter:description" content="Source code for mesa.visualization.space_drawers &quot;&quot;&quot;Mesa visualization space drawers."/><meta property="og:description" content="Source code for mesa.visualization.space_drawers &quot;&quot;&quot;Mesa visualization space drawers."/><meta property="og:image:alt" content="Source code for mesa.visualization.space_drawers &quot;&quot;&quot;Mesa visualization space drawers."/><meta property="twitter:domain" content="nachiket8k.github.io/obsidian"/><meta property="og:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/visualization/space-drawers"/><meta property="twitter:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/visualization/space-drawers"/><link rel="icon" href="../../../../../../static/icon.png"/><meta name="description" content="Source code for mesa.visualization.space_drawers &quot;&quot;&quot;Mesa visualization space drawers."/><meta name="generator" content="Quartz"/><link href="../../../../../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-9f9b2774.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-a12dcaa2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-26a99b87.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../../../../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../../../../../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/visualization/space-drawers-og-image.webp"/><meta property="og:image:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/visualization/space-drawers-og-image.webp"/><meta name="twitter:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/visualization/space-drawers-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="python-library-documentation/mesa/stable/modules/mesa/visualization/space-drawers" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../../../../..">Quartz 5</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="Reader mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\r\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\r\n        numeric: true,\r\n        sensitivity: \&quot;base\&quot;\r\n      });\r\n    }\r\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return 1;\r\n    }\r\n    return -1;\r\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\r\n    return node;\r\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-189" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-189" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/">Python Library Documentation</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/">mesa package</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/stable/">Mesa: Agent-based modeling in Python</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/stable/modules/">modules</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/stable/modules/mesa/">mesa</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../../python-library-documentation/mesa/stable/modules/mesa/visualization/">visualization</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Source code for mesa.visualization.space_drawers</a></div></nav><h1 class="article-title">Source code for mesa.visualization.space_drawers</h1><p show-comma="true" class="content-meta"><time datetime="2026-06-19T10:11:09.322Z">Jun 19, 2026</time><span>13 min read</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="source-code-for-mesavisualizationspace_drawers">Source code for mesa.visualization.space_drawers<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#source-code-for-mesavisualizationspace_drawers" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<pre><code>&quot;&quot;&quot;Mesa visualization space drawers.
+
+This module provides the core logic for drawing spaces in Mesa, supporting
+orthogonal grids, hexagonal grids, networks, continuous spaces, and Voronoi grids.
+It includes implementations for both Matplotlib and Altair backends.
+&quot;&quot;&quot;
+
+import itertools
+from itertools import pairwise
+
+import altair as alt
+import matplotlib.pyplot as plt
+import networkx as nx
+import numpy as np
+import pandas as pd
+from matplotlib.collections import LineCollection
+
+import mesa
+from mesa.discrete_space import (
+    OrthogonalMooreGrid,
+    OrthogonalVonNeumannGrid,
+    VoronoiGrid,
+)
+from mesa.space import (
+    ContinuousSpace,
+    HexMultiGrid,
+    HexSingleGrid,
+    MultiGrid,
+    NetworkGrid,
+    SingleGrid,
+)
+
+OrthogonalGrid = SingleGrid | MultiGrid | OrthogonalMooreGrid | OrthogonalVonNeumannGrid
+HexGrid = HexSingleGrid | HexMultiGrid | mesa.discrete_space.HexGrid
+Network = NetworkGrid | mesa.discrete_space.Network
+
+[docs]
+class BaseSpaceDrawer:
+    &quot;&quot;&quot;Base class for all space drawers.&quot;&quot;&quot;
+
+    def __init__(self, space):
+        &quot;&quot;&quot;Initialize the base space drawer.
+
+        Args:
+            space: Grid/Space type to draw.
+        &quot;&quot;&quot;
+        self.space = space
+        self.viz_xmin = None
+        self.viz_xmax = None
+        self.viz_ymin = None
+        self.viz_ymax = None
+
+[docs]
+    def get_viz_limits(self):
+        &quot;&quot;&quot;Get visualization limits for the space.
+
+        Returns:
+            A tuple of (xmin, xmax, ymin, ymax) for visualization limits.
+        &quot;&quot;&quot;
+        return (
+            self.viz_xmin,
+            self.viz_xmax,
+            self.viz_ymin,
+            self.viz_ymax,
+        )
+
+[docs]
+class OrthogonalSpaceDrawer(BaseSpaceDrawer):
+    &quot;&quot;&quot;Drawer for orthogonal grid spaces (SingleGrid, MultiGrid, Moore, VonNeumann).&quot;&quot;&quot;
+
+    def __init__(self, space: OrthogonalGrid):
+        &quot;&quot;&quot;Initialize the orthogonal space drawer.
+
+        Args:
+            space: The orthogonal grid space to draw
+        &quot;&quot;&quot;
+        super().__init__(space)
+        self.s_default = (180 / max(self.space.width, self.space.height)) ** 2
+
+        # Parameters for visualization limits
+        self.viz_xmin = -0.5
+        self.viz_xmax = self.space.width - 0.5
+        self.viz_ymin = -0.5
+        self.viz_ymax = self.space.height - 0.5
+
+[docs]
+    def draw_matplotlib(self, ax=None, **draw_space_kwargs):
+        &quot;&quot;&quot;Draw the orthogonal grid using matplotlib.
+
+        Args:
+            ax: Matplotlib axes object to draw on
+            **draw_space_kwargs: Additional keyword arguments for styling.
+
+        Examples:
+                figsize=(10, 10), color=&quot;blue&quot;, linewidth=2.
+
+        Returns:
+            The modified axes object
+        &quot;&quot;&quot;
+        fig_kwargs = {
+            &quot;figsize&quot;: draw_space_kwargs.pop(&quot;figsize&quot;, (8, 8)),
+            &quot;dpi&quot;: draw_space_kwargs.pop(&quot;dpi&quot;, 100),
+        }
+
+        if ax is None:
+            _, ax = plt.subplots(**fig_kwargs)
+
+        # gridline styling kwargs
+        line_kwargs = {
+            &quot;color&quot;: &quot;gray&quot;,
+            &quot;linestyle&quot;: &quot;:&quot;,
+            &quot;linewidth&quot;: 1,
+            &quot;alpha&quot;: 1,
+        }
+        line_kwargs.update(draw_space_kwargs)
+
+        ax.set_xlim(self.viz_xmin, self.viz_xmax)
+        ax.set_ylim(self.viz_ymin, self.viz_ymax)
+
+        # Draw grid lines
+        for x in np.arange(-0.5, self.space.width, 1):
+            ax.axvline(x, **line_kwargs)
+        for y in np.arange(-0.5, self.space.height, 1):
+            ax.axhline(y, **line_kwargs)
+
+        return ax
+
+[docs]
+    def draw_altair(self, chart_width=450, chart_height=350, **draw_chart_kwargs):
+        &quot;&quot;&quot;Draw the orthogonal grid using Altair.
+
+        Args:
+            chart_width: Width for the shown chart
+            chart_height: Height for the shown chart
+            **draw_chart_kwargs: Additional keyword arguments for styling the chart.
+
+        Examples:
+                width=500, height=500, title=&quot;Grid&quot;.
+
+        Returns:
+            Altair chart object
+        &quot;&quot;&quot;
+        # for axis and grid styling
+        axis_kwargs = {
+            &quot;xlabel&quot;: draw_chart_kwargs.pop(&quot;xlabel&quot;, &quot;X&quot;),
+            &quot;ylabel&quot;: draw_chart_kwargs.pop(&quot;ylabel&quot;, &quot;Y&quot;),
+            &quot;grid_color&quot;: draw_chart_kwargs.pop(&quot;grid_color&quot;, &quot;lightgray&quot;),
+            &quot;grid_dash&quot;: draw_chart_kwargs.pop(&quot;grid_dash&quot;, [2, 2]),
+            &quot;grid_width&quot;: draw_chart_kwargs.pop(&quot;grid_width&quot;, 1),
+            &quot;grid_opacity&quot;: draw_chart_kwargs.pop(&quot;grid_opacity&quot;, 1),
+        }
+
+        # for chart properties
+        chart_props = {
+            &quot;width&quot;: chart_width,
+            &quot;height&quot;: chart_height,
+        }
+        chart_props.update(draw_chart_kwargs)
+
+        chart = (
+            alt.Chart(pd.DataFrame([{}]))
+            .mark_point(opacity=0)
+            .encode(
+                x=alt.X(
+                    &quot;X:Q&quot;,
+                    title=axis_kwargs[&quot;xlabel&quot;],
+                    scale=alt.Scale(domain=[self.viz_xmin, self.viz_xmax], nice=False),
+                    axis=alt.Axis(
+                        grid=True,
+                        gridColor=axis_kwargs[&quot;grid_color&quot;],
+                        gridDash=axis_kwargs[&quot;grid_dash&quot;],
+                        gridWidth=axis_kwargs[&quot;grid_width&quot;],
+                        gridOpacity=axis_kwargs[&quot;grid_opacity&quot;],
+                    ),
+                ),
+                y=alt.Y(
+                    &quot;Y:Q&quot;,
+                    title=axis_kwargs[&quot;ylabel&quot;],
+                    scale=alt.Scale(domain=[self.viz_ymin, self.viz_ymax], nice=False),
+                    axis=alt.Axis(
+                        grid=True,
+                        gridColor=axis_kwargs[&quot;grid_color&quot;],
+                        gridDash=axis_kwargs[&quot;grid_dash&quot;],
+                        gridWidth=axis_kwargs[&quot;grid_width&quot;],
+                        gridOpacity=axis_kwargs[&quot;grid_opacity&quot;],
+                    ),
+                ),
+            )
+            .properties(**chart_props)
+        )
+        return chart
+
+[docs]
+class HexSpaceDrawer(BaseSpaceDrawer):
+    &quot;&quot;&quot;Drawer for hexagonal grid spaces.&quot;&quot;&quot;
+
+    def __init__(self, space: HexGrid):
+        &quot;&quot;&quot;Initialize the hexagonal space drawer.
+
+        Args:
+            space: The hexagonal grid space to draw
+        &quot;&quot;&quot;
+        super().__init__(space)
+        self.s_default = (180 / max(self.space.width, self.space.height)) ** 2
+        size = 1.0
+        self.x_spacing = np.sqrt(3) * size
+        self.y_spacing = 1.5 * size
+
+        x_max = self.space.width * self.x_spacing + (self.space.height % 2) * (
+            self.x_spacing / 2
+        )
+        y_max = self.space.height * self.y_spacing
+
+        x_padding = size * np.sqrt(3) / 2
+        y_padding = size
+
+        self.hexagons = self._get_hexmesh(self.space.width, self.space.height, size)
+
+        # Parameters for visualization limits
+        self.viz_xmin = -1.8 * x_padding
+        self.viz_xmax = x_max
+        self.viz_ymin = -1.8 * y_padding
+        self.viz_ymax = y_max
+
+    def _get_hexmesh(
+        self, width: int, height: int, size: float = 1.0
+    ) -> list[tuple[float, float]]:
+        &quot;&quot;&quot;Generate hexagon vertices for the mesh. Yields list of vertex coordinates for each hexagon.&quot;&quot;&quot;
+
+        # Helper function for getting the vertices of a hexagon given the center and size
+        def _get_hex_vertices(
+            center_x: float, center_y: float, size: float = 1.0
+        ) -> list[tuple[float, float]]:
+            &quot;&quot;&quot;Get vertices for a hexagon centered at (center_x, center_y).&quot;&quot;&quot;
+            vertices = [
+                (center_x, center_y + size),  # top
+                (center_x + size * np.sqrt(3) / 2, center_y + size / 2),  # top right
+                (center_x + size * np.sqrt(3) / 2, center_y - size / 2),  # bottom right
+                (center_x, center_y - size),  # bottom
+                (center_x - size * np.sqrt(3) / 2, center_y - size / 2),  # bottom left
+                (center_x - size * np.sqrt(3) / 2, center_y + size / 2),  # top left
+            ]
+            return vertices
+
+        x_spacing = np.sqrt(3) * size
+        y_spacing = 1.5 * size
+        hexagons = []
+
+        for row, col in itertools.product(range(height), range(width)):
+            # Calculate center position with offset for even rows
+            x = col * x_spacing + (row % 2 == 0) * (x_spacing / 2)
+            y = row * y_spacing
+            hexagons.append(_get_hex_vertices(x, y, size))
+
+        return hexagons
+
+    def _get_unique_edges(self):
+        &quot;&quot;&quot;Helper method to extract unique edges from all hexagons.&quot;&quot;&quot;
+        edges = set()
+        # Generate edges for each hexagon
+        for vertices in self.hexagons:
+            # Edge logic, connecting each vertex to the next
+            for v1, v2 in pairwise([*vertices, vertices[0]]):
+                # Sort vertices to ensure consistent edge representation and avoid duplicates.
+                edge = tuple(sorted([tuple(np.round(v1, 6)), tuple(np.round(v2, 6))]))
+                edges.add(edge)
+        return edges
+
+[docs]
+    def draw_matplotlib(self, ax=None, **draw_space_kwargs):
+        &quot;&quot;&quot;Draw the hexagonal grid using matplotlib.
+
+        Args:
+            ax: Matplotlib axes object to draw on
+            **draw_space_kwargs: Additional keyword arguments for styling.
+
+        Examples:
+                figsize=(8, 8), color=&quot;red&quot;, alpha=0.5.
+
+        Returns:
+            The modified axes object
+        &quot;&quot;&quot;
+        fig_kwargs = {
+            &quot;figsize&quot;: draw_space_kwargs.pop(&quot;figsize&quot;, (8, 8)),
+            &quot;dpi&quot;: draw_space_kwargs.pop(&quot;dpi&quot;, 100),
+        }
+
+        if ax is None:
+            _, ax = plt.subplots(**fig_kwargs)
+
+        line_kwargs = {
+            &quot;color&quot;: &quot;black&quot;,
+            &quot;linestyle&quot;: &quot;:&quot;,
+            &quot;linewidth&quot;: 1,
+            &quot;alpha&quot;: 0.8,
+        }
+        line_kwargs.update(draw_space_kwargs)
+
+        ax.set_xlim(self.viz_xmin, self.viz_xmax)
+        ax.set_ylim(self.viz_ymin, self.viz_ymax)
+        ax.set_aspect(&quot;equal&quot;, adjustable=&quot;box&quot;)
+
+        edges = self._get_unique_edges()
+        ax.add_collection(LineCollection(list(edges), **line_kwargs))
+        return ax
+
+[docs]
+    def draw_altair(self, chart_width=450, chart_height=350, **draw_chart_kwargs):
+        &quot;&quot;&quot;Draw the hexagonal grid using Altair.
+
+        Args:
+            chart_width: Width for the shown chart
+            chart_height: Height for the shown chart
+            **draw_chart_kwargs: Additional keyword arguments for styling the chart.
+
+        Examples:
+                * Line properties like color, strokeDash, strokeWidth, opacity.
+                * Other kwargs (e.g., width, title) apply to the chart.
+
+        Returns:
+            Altair chart object representing the hexagonal grid.
+        &quot;&quot;&quot;
+        mark_kwargs = {
+            &quot;color&quot;: draw_chart_kwargs.pop(&quot;color&quot;, &quot;black&quot;),
+            &quot;strokeDash&quot;: draw_chart_kwargs.pop(&quot;strokeDash&quot;, [2, 2]),
+            &quot;strokeWidth&quot;: draw_chart_kwargs.pop(&quot;strokeWidth&quot;, 1),
+            &quot;opacity&quot;: draw_chart_kwargs.pop(&quot;opacity&quot;, 0.8),
+        }
+
+        chart_props = {
+            &quot;width&quot;: chart_width,
+            &quot;height&quot;: chart_height,
+        }
+        chart_props.update(draw_chart_kwargs)
+
+        edge_data = []
+        edges = self._get_unique_edges()
+
+        for i, edge_tuple in enumerate(edges):
+            p1, p2 = edge_tuple
+            edge_data.append({&quot;edge_id&quot;: i, &quot;point_order&quot;: 0, &quot;x&quot;: p1[0], &quot;y&quot;: p1[1]})
+            edge_data.append({&quot;edge_id&quot;: i, &quot;point_order&quot;: 1, &quot;x&quot;: p2[0], &quot;y&quot;: p2[1]})
+
+        source = pd.DataFrame(edge_data)
+
+        chart = (
+            alt.Chart(source)
+            .mark_line(**mark_kwargs)
+            .encode(
+                x=alt.X(
+                    &quot;x:Q&quot;,
+                    scale=alt.Scale(domain=[self.viz_xmin, self.viz_xmax], zero=False),
+                    axis=None,
+                ),
+                y=alt.Y(
+                    &quot;y:Q&quot;,
+                    scale=alt.Scale(domain=[self.viz_ymin, self.viz_ymax], zero=False),
+                    axis=None,
+                ),
+                detail=&quot;edge_id:N&quot;,
+                order=&quot;point_order:Q&quot;,
+            )
+            .properties(**chart_props)
+        )
+        return chart
+
+[docs]
+class NetworkSpaceDrawer(BaseSpaceDrawer):
+    &quot;&quot;&quot;Drawer for network-based spaces.&quot;&quot;&quot;
+
+    def __init__(
+        self,
+        space: Network,
+        layout_alg=nx.spring_layout,
+        layout_kwargs=None,
+    ):
+        &quot;&quot;&quot;Initialize the network space drawer.
+
+        Args:
+            space: The network space to draw
+            layout_alg: NetworkX layout algorithm to use
+            layout_kwargs: Keyword arguments for the layout algorithm
+        &quot;&quot;&quot;
+        super().__init__(space)
+        self.layout_alg = layout_alg
+        self.layout_kwargs = layout_kwargs if layout_kwargs is not None else {&quot;seed&quot;: 0}
+
+        # gather locations for nodes in network
+        self.graph = self.space.G
+        self.pos = self.layout_alg(self.graph, **self.layout_kwargs)
+
+        x, y = list(zip(*self.pos.values())) if self.pos else ([0], [0])
+        xmin, xmax = min(x), max(x)
+        ymin, ymax = min(y), max(y)
+
+        width = xmax - xmin
+        height = ymax - ymin
+        self.s_default = (
+            (180 / max(width, height)) ** 2 if width > 0 or height > 0 else 1
+        )
+
+        # Parameters for visualization limits
+        self.viz_xmin = xmin - width / 20
+        self.viz_xmax = xmax + width / 20
+        self.viz_ymin = ymin - height / 20
+        self.viz_ymax = ymax + height / 20
+
+[docs]
+    def draw_matplotlib(self, ax=None, **draw_space_kwargs):
+        &quot;&quot;&quot;Draw the network using matplotlib.
+
+        Args:
+            ax: Matplotlib axes object to draw on.
+            **draw_space_kwargs: Dictionaries of keyword arguments for styling.
+                Can also handle zorder for both nodes and edges if passed.
+                * ``node_kwargs``: A dict passed to nx.draw_networkx_nodes.
+                * ``edge_kwargs``: A dict passed to nx.draw_networkx_edges.
+
+        Returns:
+            The modified axes object.
+        &quot;&quot;&quot;
+        if ax is None:
+            _, ax = plt.subplots()
+
+        ax.set_axis_off()
+        ax.set_xlim(self.viz_xmin, self.viz_xmax)
+        ax.set_ylim(self.viz_ymin, self.viz_ymax)
+
+        node_kwargs = {&quot;alpha&quot;: 0.5}
+        edge_kwargs = {&quot;alpha&quot;: 0.5, &quot;style&quot;: &quot;--&quot;}
+
+        node_kwargs.update(draw_space_kwargs.get(&quot;node_kwargs&quot;, {}))
+        edge_kwargs.update(draw_space_kwargs.get(&quot;edge_kwargs&quot;, {}))
+
+        node_zorder = node_kwargs.pop(&quot;zorder&quot;, 1)
+        edge_zorder = edge_kwargs.pop(&quot;zorder&quot;, 0)
+
+        nodes = nx.draw_networkx_nodes(self.graph, self.pos, ax=ax, **node_kwargs)
+        edges = nx.draw_networkx_edges(self.graph, self.pos, ax=ax, **edge_kwargs)
+
+        if nodes:
+            nodes.set_zorder(node_zorder)
+        # In some matplotlib versions, edges can be a list of collections
+        if isinstance(edges, list):
+            for edge_collection in edges:
+                edge_collection.set_zorder(edge_zorder)
+        elif edges:
+            edges.set_zorder(edge_zorder)
+
+        return ax
+
+[docs]
+    def draw_altair(self, chart_width=450, chart_height=350, **draw_chart_kwargs):
+        &quot;&quot;&quot;Draw the network using Altair.
+
+        Args:
+            chart_width: Width for the shown chart
+            chart_height: Height for the shown chart
+            **draw_chart_kwargs: Dictionaries for styling the chart.
+                * ``node_kwargs``: A dict of properties for the node's mark_point.
+                * ``edge_kwargs``: A dict of properties for the edge's mark_rule.
+                * Other kwargs (e.g., title, width) are passed to chart.properties().
+
+        Returns:
+            Altair chart object representing the network.
+        &quot;&quot;&quot;
+        nodes_df = pd.DataFrame(self.pos).T.reset_index()
+        nodes_df.columns = [&quot;node&quot;, &quot;x&quot;, &quot;y&quot;]
+
+        edges_df = pd.DataFrame(self.graph.edges(), columns=[&quot;source&quot;, &quot;target&quot;])
+        edge_positions = edges_df.merge(
+            nodes_df, how=&quot;left&quot;, left_on=&quot;source&quot;, right_on=&quot;node&quot;
+        ).merge(
+            nodes_df,
+            how=&quot;left&quot;,
+            left_on=&quot;target&quot;,
+            right_on=&quot;node&quot;,
+            suffixes=(&quot;_source&quot;, &quot;_target&quot;),
+        )
+
+        node_mark_kwargs = {&quot;filled&quot;: True, &quot;opacity&quot;: 0.5, &quot;size&quot;: 500}
+        edge_mark_kwargs = {&quot;opacity&quot;: 0.5, &quot;strokeDash&quot;: [5, 3]}
+
+        node_mark_kwargs.update(draw_chart_kwargs.pop(&quot;node_kwargs&quot;, {}))
+        edge_mark_kwargs.update(draw_chart_kwargs.pop(&quot;edge_kwargs&quot;, {}))
+
+        chart_props = {
+            &quot;width&quot;: chart_width,
+            &quot;height&quot;: chart_height,
+        }
+        chart_props.update(draw_chart_kwargs)
+
+        edge_plot = (
+            alt.Chart(edge_positions)
+            .mark_rule(**edge_mark_kwargs)
+            .encode(
+                x=alt.X(
+                    &quot;x_source&quot;,
+                    scale=alt.Scale(domain=[self.viz_xmin, self.viz_xmax]),
+                    axis=None,
+                ),
+                y=alt.Y(
+                    &quot;y_source&quot;,
+                    scale=alt.Scale(domain=[self.viz_ymin, self.viz_ymax]),
+                    axis=None,
+                ),
+                x2=&quot;x_target&quot;,
+                y2=&quot;y_target&quot;,
+            )
+        )
+
+        node_plot = (
+            alt.Chart(nodes_df)
+            .mark_point(**node_mark_kwargs)
+            .encode(x=&quot;x&quot;, y=&quot;y&quot;, tooltip=[&quot;node&quot;])
+        )
+
+        chart = edge_plot + node_plot
+
+        if chart_props:
+            chart = chart.properties(**chart_props)
+
+        return chart
+
+[docs]
+class ContinuousSpaceDrawer(BaseSpaceDrawer):
+    &quot;&quot;&quot;Drawer for continuous spaces.&quot;&quot;&quot;
+
+    def __init__(self, space: ContinuousSpace):
+        &quot;&quot;&quot;Initialize the continuous space drawer.
+
+        Args:
+            space: The continuous space to draw
+        &quot;&quot;&quot;
+        super().__init__(space)
+        width = self.space.x_max - self.space.x_min
+        height = self.space.y_max - self.space.y_min
+        self.s_default = (
+            (180 / max(width, height)) ** 2 if width > 0 or height > 0 else 1
+        )
+
+        x_padding = width / 20
+        y_padding = height / 20
+
+        self.viz_xmin = self.space.x_min - x_padding
+        self.viz_xmax = self.space.x_max + x_padding
+        self.viz_ymin = self.space.y_min - y_padding
+        self.viz_ymax = self.space.y_max + y_padding
+
+[docs]
+    def draw_matplotlib(self, ax=None, **draw_space_kwargs):
+        &quot;&quot;&quot;Draw the continuous space using matplotlib.
+
+        Args:
+            ax: Matplotlib axes object to draw on
+            **draw_space_kwargs: Keyword arguments for styling the axis frame.
+
+        Examples:
+                linewidth=3, color=&quot;green&quot;
+
+        Returns:
+            The modified axes object
+        &quot;&quot;&quot;
+        if ax is None:
+            _, ax = plt.subplots()
+
+        border_style = &quot;solid&quot; if not self.space.torus else (0, (5, 10))
+        spine_kwargs = {&quot;linewidth&quot;: 1.5, &quot;color&quot;: &quot;black&quot;, &quot;linestyle&quot;: border_style}
+        spine_kwargs.update(draw_space_kwargs)
+
+        for spine in ax.spines.values():
+            spine.set(**spine_kwargs)
+
+        ax.set_xlim(self.viz_xmin, self.viz_xmax)
+        ax.set_ylim(self.viz_ymin, self.viz_ymax)
+
+        return ax
+
+[docs]
+    def draw_altair(self, chart_width=450, chart_height=350, **draw_chart_kwargs):
+        &quot;&quot;&quot;Draw the continuous space using Altair.
+
+        Args:
+            chart_width: Width for the shown chart
+            chart_height: Height for the shown chart
+            **draw_chart_kwargs: Keyword arguments for styling the chart's view properties.
+                            See Altair's documentation for `configure_view`.
+
+        Returns:
+            An Altair Chart object representing the space.
+        &quot;&quot;&quot;
+        chart_props = {&quot;width&quot;: chart_width, &quot;height&quot;: chart_height}
+        chart_props.update(draw_chart_kwargs)
+
+        chart = (
+            alt.Chart(pd.DataFrame([{}]))
+            .mark_rect(color=&quot;transparent&quot;)
+            .encode(
+                x=alt.X(scale=alt.Scale(domain=[self.viz_xmin, self.viz_xmax])),
+                y=alt.Y(scale=alt.Scale(domain=[self.viz_ymin, self.viz_ymax])),
+            )
+            .properties(**chart_props)
+        )
+
+        return chart
+
+[docs]
+class VoronoiSpaceDrawer(BaseSpaceDrawer):
+    &quot;&quot;&quot;Drawer for Voronoi diagram spaces.&quot;&quot;&quot;
+
+    def __init__(self, space: VoronoiGrid):
+        &quot;&quot;&quot;Initialize the Voronoi space drawer.
+
+        Args:
+            space: The Voronoi grid space to draw
+        &quot;&quot;&quot;
+        super().__init__(space)
+        if self.space.centroids_coordinates:
+            x_list = [i[0] for i in self.space.centroids_coordinates]
+            y_list = [i[1] for i in self.space.centroids_coordinates]
+            x_max, x_min = max(x_list), min(x_list)
+            y_max, y_min = max(y_list), min(y_list)
+        else:
+            x_max, x_min, y_max, y_min = 1, 0, 1, 0
+
+        width = x_max - x_min
+        height = y_max - y_min
+        self.s_default = (
+            (180 / max(width, height)) ** 2 if width > 0 or height > 0 else 1
+        )
+
+        # Parameters for visualization limits
+        self.viz_xmin = x_min - width / 20
+        self.viz_xmax = x_max + width / 20
+        self.viz_ymin = y_min - height / 20
+        self.viz_ymax = y_max + height / 20
+
+    def _clip_line(self, p1, p2, box):
+        &quot;&quot;&quot;Clips a line segment using the Cohen-Sutherland algorithm.
+
+        Returns the clipped line segment (p1, p2) or None if it's outside.
+        &quot;&quot;&quot;
+        x1, y1 = p1
+        x2, y2 = p2
+        min_x, min_y, max_x, max_y = box
+
+        # Define region codes
+        INSIDE, LEFT, RIGHT, BOTTOM, TOP = 0, 1, 2, 4, 8  # noqa: N806
+
+        def compute_outcode(x, y):
+            code = INSIDE
+            if x &lt; min_x:
+                code |= LEFT
+            elif x > max_x:
+                code |= RIGHT
+            if y &lt; min_y:
+                code |= BOTTOM
+            elif y > max_y:
+                code |= TOP
+            return code
+
+        outcode1 = compute_outcode(x1, y1)
+        outcode2 = compute_outcode(x2, y2)
+
+        while True:
+            if not (outcode1 | outcode2):  # Both points inside
+                return (x1, y1), (x2, y2)
+            elif outcode1 &amp; outcode2:  # Both points share an outside region
+                return None
+            else:
+                outcode_out = outcode1 if outcode1 else outcode2
+                x, y = 0.0, 0.0
+
+                # Check for horizontal line
+                if y1 != y2:
+                    if outcode_out &amp; TOP:
+                        x = x1 + (x2 - x1) * (max_y - y1) / (y2 - y1)
+                        y = max_y
+                    elif outcode_out &amp; BOTTOM:
+                        x = x1 + (x2 - x1) * (min_y - y1) / (y2 - y1)
+                        y = min_y
+
+                # Check for vertical line
+                if x1 != x2:
+                    if outcode_out &amp; RIGHT:
+                        y = y1 + (y2 - y1) * (max_x - x1) / (x2 - x1)
+                        x = max_x
+                    elif outcode_out &amp; LEFT:
+                        y = y1 + (y2 - y1) * (min_x - x1) / (x2 - x1)
+                        x = min_x
+
+                if outcode_out == outcode1:
+                    x1, y1 = x, y
+                    outcode1 = compute_outcode(x1, y1)
+                else:
+                    x2, y2 = x, y
+                    outcode2 = compute_outcode(x2, y2)
+
+    def _get_clipped_segments(self):
+        &quot;&quot;&quot;Helper method to perform the segment extraction, de-duplication and clipping logic.&quot;&quot;&quot;
+        clip_box = (
+            self.viz_xmin,
+            self.viz_ymin,
+            self.viz_xmax,
+            self.viz_ymax,
+        )
+
+        unique_segments = set()
+        for cell in self.space.all_cells.cells:
+            vertices = [tuple(v) for v in cell.properties[&quot;polygon&quot;]]
+            for p1, p2 in pairwise([*vertices, vertices[0]]):
+                # Sort to avoid duplicate segments going in opposite directions
+                unique_segments.add(tuple(sorted((p1, p2))))
+
+        # Clip each unique segment
+        final_segments = []
+        for p1, p2 in unique_segments:
+            clipped_segment = self._clip_line(p1, p2, clip_box)
+            if clipped_segment:
+                final_segments.append(clipped_segment)
+
+        return final_segments, clip_box
+
+[docs]
+    def draw_matplotlib(self, ax=None, **draw_space_kwargs):
+        &quot;&quot;&quot;Draw the Voronoi diagram using matplotlib.
+
+        Args:
+            ax: Matplotlib axes object to draw on
+            **draw_space_kwargs: Keyword arguments passed to matplotlib's LineCollection.
+
+        Examples:
+                lw=2, alpha=0.5, colors='red'
+
+        Returns:
+            The modified axes object
+        &quot;&quot;&quot;
+        if ax is None:
+            _, ax = plt.subplots()
+
+        final_segments, clip_box = self._get_clipped_segments()
+
+        ax.set_xlim(clip_box[0], clip_box[2])
+        ax.set_ylim(clip_box[1], clip_box[3])
+
+        if final_segments:
+            # Define default styles for the plot
+            style_args = {&quot;colors&quot;: &quot;k&quot;, &quot;linestyle&quot;: &quot;dotted&quot;, &quot;lw&quot;: 1}
+            style_args.update(draw_space_kwargs)
+
+            # Create the LineCollection with the final styles
+            lc = LineCollection(final_segments, **style_args)
+            ax.add_collection(lc)
+
+        return ax
+
+[docs]
+    def draw_altair(self, chart_width=450, chart_height=350, **draw_chart_kwargs):
+        &quot;&quot;&quot;Draw the Voronoi diagram using Altair.
+
+        Args:
+            chart_width: Width for the shown chart
+            chart_height: Height for the shown chart
+            **draw_chart_kwargs: Additional keyword arguments for styling the chart.
+
+        Examples:
+                * Line properties like color, strokeDash, strokeWidth, opacity.
+                * Other kwargs (e.g., width, title) apply to the chart.
+
+        Returns:
+            An Altair Chart object representing the Voronoi diagram.
+        &quot;&quot;&quot;
+        final_segments, clip_box = self._get_clipped_segments()
+
+        # Prepare data
+        final_data = []
+        for i, (p1, p2) in enumerate(final_segments):
+            final_data.append({&quot;x&quot;: p1[0], &quot;y&quot;: p1[1], &quot;line_id&quot;: i})
+            final_data.append({&quot;x&quot;: p2[0], &quot;y&quot;: p2[1], &quot;line_id&quot;: i})
+
+        df = pd.DataFrame(final_data)
+
+        # Define default properties for the mark
+        mark_kwargs = {
+            &quot;color&quot;: draw_chart_kwargs.pop(&quot;color&quot;, &quot;black&quot;),
+            &quot;strokeDash&quot;: draw_chart_kwargs.pop(&quot;strokeDash&quot;, [2, 2]),
+            &quot;strokeWidth&quot;: draw_chart_kwargs.pop(&quot;strokeWidth&quot;, 1),
+            &quot;opacity&quot;: draw_chart_kwargs.pop(&quot;opacity&quot;, 0.8),
+        }
+
+        chart_props = {&quot;width&quot;: chart_width, &quot;height&quot;: chart_height}
+        chart_props.update(draw_chart_kwargs)
+
+        chart = (
+            alt.Chart(df)
+            .mark_line(**mark_kwargs)
+            .encode(
+                x=alt.X(
+                    &quot;x:Q&quot;, scale=alt.Scale(domain=[clip_box[0], clip_box[2]]), axis=None
+                ),
+                y=alt.Y(
+                    &quot;y:Q&quot;, scale=alt.Scale(domain=[clip_box[1], clip_box[3]]), axis=None
+                ),
+                detail=&quot;line_id:N&quot;,
+            )
+            .properties(**chart_props)
+        )
+        return chart
+</code></pre>
+<hr/>
+<p>Original source: <a href="https://mesa.readthedocs.io/stable/_modules/mesa/visualization/space_drawers.html" class="external external-link">https://mesa.readthedocs.io/stable/_modules/mesa/visualization/space_drawers.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul id="list-0" class="overflow"><li><a href="../../../../../../python-library-documentation/mesa/mesa-documentation" class="internal">Mesa Documentation</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script src="../../../../../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../static/resource-after-683f275d.js" type="application/javascript" data-persist="true"></script><script src="../../../../../../postscript.js" type="module" data-persist="true"></script></html>

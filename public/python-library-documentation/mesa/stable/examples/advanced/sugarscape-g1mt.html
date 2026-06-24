@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Sugarscape Constant Growback Model with Traders</title><meta charset="utf-8"/><link rel="preload" href="../../../../../index.css" as="style"/><link rel="preload" href="../../../../../prescript.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 5"/><meta property="og:title" content="Sugarscape Constant Growback Model with Traders"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Sugarscape Constant Growback Model with Traders"/><meta name="twitter:description" content="Sugarscape Constant Growback Model with Traders Summary This is Epstein &amp; Axtell’s Sugarscape model with Traders, a detailed description is in Chapter four of Growing Artificial Societies: Social Science from the Bottom Up (1996)."/><meta property="og:description" content="Sugarscape Constant Growback Model with Traders Summary This is Epstein &amp; Axtell’s Sugarscape model with Traders, a detailed description is in Chapter four of Growing Artificial Societies: Social Science from the Bottom Up (1996)."/><meta property="og:image:alt" content="Sugarscape Constant Growback Model with Traders Summary This is Epstein &amp; Axtell’s Sugarscape model with Traders, a detailed description is in Chapter four of Growing Artificial Societies: Social Science from the Bottom Up (1996)."/><meta property="twitter:domain" content="nachiket8k.github.io/obsidian"/><meta property="og:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/examples/advanced/sugarscape-g1mt"/><meta property="twitter:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/examples/advanced/sugarscape-g1mt"/><link rel="icon" href="../../../../../static/icon.png"/><meta name="description" content="Sugarscape Constant Growback Model with Traders Summary This is Epstein &amp; Axtell’s Sugarscape model with Traders, a detailed description is in Chapter four of Growing Artificial Societies: Social Science from the Bottom Up (1996)."/><meta name="generator" content="Quartz"/><link href="../../../../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-9f9b2774.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-a12dcaa2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-26a99b87.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../../../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../../../../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/examples/advanced/sugarscape-g1mt-og-image.webp"/><meta property="og:image:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/examples/advanced/sugarscape-g1mt-og-image.webp"/><meta name="twitter:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/examples/advanced/sugarscape-g1mt-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="python-library-documentation/mesa/stable/examples/advanced/sugarscape-g1mt" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../../../..">Quartz 5</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="Reader mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\r\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\r\n        numeric: true,\r\n        sensitivity: \&quot;base\&quot;\r\n      });\r\n    }\r\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return 1;\r\n    }\r\n    return -1;\r\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\r\n    return node;\r\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-147" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-147" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/">Python Library Documentation</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/">mesa package</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/stable/">Mesa: Agent-based modeling in Python</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/stable/examples/">Mesa Core Examples</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/stable/examples/advanced/">advanced</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Sugarscape Constant Growback Model with Traders</a></div></nav><h1 class="article-title">Sugarscape Constant Growback Model with Traders</h1><p show-comma="true" class="content-meta"><time datetime="2026-06-19T10:09:13.712Z">Jun 19, 2026</time><span>11 min read</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="sugarscape-constant-growback-model-with-traders">Sugarscape Constant Growback Model with Traders<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#sugarscape-constant-growback-model-with-traders" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<h2 id="summary">Summary<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#summary" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>This is Epstein &amp; Axtell’s Sugarscape model with Traders, a detailed description is in Chapter four of<br/>
+<em>Growing Artificial Societies: Social Science from the Bottom Up (1996)</em>. The model shows an emergent price equilibrium can happen via a decentralized dynamics.</p>
+<p>This code generally matches the code in the Complexity Explorer Tutorial, but in <code>.py</code> instead of <code>.ipynb</code> format.</p>
+<h3 id="agents">Agents:<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#agents" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><strong>Resource</strong>: Resource agents grow back at one unit of sugar and spice per time step up to a specified max amount and can be harvested and traded by the trader agents.<br/>
+(if you do the interactive run, the color will be green if the resource agent has a bigger amount of sugar, or yellow if it has a bigger amount of spice)</li>
+<li><strong>Traders</strong>: Trader agents have the following attributes: (1) metabolism for sugar, (2) metabolism for spice, (3) vision,<br/>
+(4) initial sugar endowment and (5) initial spice endowment. The traverse the landscape harvesting sugar and spice and<br/>
+trading with other agents. If they run out of sugar or spice then they are removed from the model. (red circle if you do the interactive run)</li>
+</ul>
+<p>The trader agents traverse the landscape according to rule <strong>M</strong>:</p>
+<ul>
+<li>Look out as far as vision permits in the four principal lattice directions and identify the unoccupied site(s).</li>
+<li>Considering only unoccupied sites find the nearest position that produces the most welfare using the Cobb-Douglas function.</li>
+<li>Move to the new position</li>
+<li>Collect all the resources (sugar and spice) at that location<br/>
+(Epstein and Axtell, 1996, p. 99)</li>
+</ul>
+<p>The traders trade according to rule <strong>T</strong>:</p>
+<ul>
+<li>Agents and potential trade partner compute their marginal rates of substitution (MRS), if they are equal <em>end</em>.</li>
+<li>Exchange resources, with spice flowing from the agent with the higher MRS to the agent with the lower MRS and sugar<br/>
+flowing the opposite direction.</li>
+<li>The price (p) is calculated by taking the geometric mean of the agents’ MRS.</li>
+<li>If p > 1 then p units of spice are traded for 1 unit of sugar; if p &lt; 1 then 1/p units of sugar for 1 unit of spice</li>
+<li>The trade occurs if it will (a) make both agent better off (increases MRS) and (b) does not cause the agents’ MRS to<br/>
+cross over one another otherwise <em>end</em>.</li>
+<li>This process then repeats until an <em>end</em> condition is met.<br/>
+(Epstein and Axtell, 1996, p. 105)</li>
+</ul>
+<p>The model demonstrates several Mesa concepts and features:</p>
+<ul>
+<li>OrthogonalMooreGrid</li>
+<li>Multiple agent types (traders, sugar, spice)</li>
+<li>Dynamically removing agents from the grid and schedule when they die</li>
+<li>Data Collection at the model and agent level</li>
+<li>custom solara matplotlib space visualization</li>
+</ul>
+<h2 id="how-to-run">How to Run<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#how-to-run" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>To run the model interactively, in this directory, run the following command</p>
+<pre><code>    $ solara run app.py
+</code></pre>
+<h2 id="files">Files<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#files" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><code>model.py</code>: The Sugarscape Constant Growback with Traders model.</li>
+<li><code>agents.py</code>: Defines the Trader agent class and the Resource agent class which contains an amount of sugar and spice.</li>
+<li><code>app.py</code>: Runs a visualization server via Solara (<code>solara run app.py</code>).</li>
+<li><code>sugar_map.txt</code>: Provides sugar and spice landscape in raster type format.</li>
+<li><code>tests.py</code>: Has tests to ensure that the model reproduces the results in shown in Growing Artificial Societies.</li>
+</ul>
+<h2 id="further-reading">Further Reading<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#further-reading" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><a href="https://mitpress.mit.edu/9780262550253/growing-artificial-societies/" class="external external-link">Growing Artificial Societies<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+<li><a href="https://www.complexityexplorer.org/courses/172-agent-based-models-with-python-an-introduction-to-mesa" class="external external-link">Complexity Explorer Sugarscape with Traders Tutorial<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></li>
+</ul>
+<h2 id="agents-1">Agents<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#agents-1" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<pre><code>import math
+
+from mesa.discrete_space import CellAgent
+
+# Helper function
+def get_distance(cell_1, cell_2):
+    &quot;&quot;&quot;
+    Calculate the Euclidean distance between two positions
+
+    used in trade.move()
+    &quot;&quot;&quot;
+
+    x1, y1 = cell_1.coordinate
+    x2, y2 = cell_2.coordinate
+    dx = x1 - x2
+    dy = y1 - y2
+    return math.sqrt(dx**2 + dy**2)
+
+class Trader(CellAgent):
+    &quot;&quot;&quot;
+    Trader:
+    - has a metabolism of sugar and spice
+    - harvest and trade sugar and spice to survive
+    &quot;&quot;&quot;
+
+    def __init__(
+        self,
+        model,
+        cell,
+        sugar=0,
+        spice=0,
+        metabolism_sugar=0,
+        metabolism_spice=0,
+        vision=0,
+    ):
+        super().__init__(model)
+        self.cell = cell
+        self.sugar = sugar
+        self.spice = spice
+        self.metabolism_sugar = metabolism_sugar
+        self.metabolism_spice = metabolism_spice
+        self.vision = vision
+        self.prices = []
+        self.trade_partners = []
+
+    def get_trader(self, cell):
+        &quot;&quot;&quot;
+        helper function used in self.trade_with_neighbors()
+        &quot;&quot;&quot;
+
+        for agent in cell.agents:
+            if isinstance(agent, Trader):
+                return agent
+
+    def calculate_welfare(self, sugar, spice):
+        &quot;&quot;&quot;
+        helper function
+
+        part 2 self.move()
+        self.trade()
+        &quot;&quot;&quot;
+
+        # calculate total resources
+        m_total = self.metabolism_sugar + self.metabolism_spice
+        # Cobb-Douglas functional form; starting on p. 97
+        # on Growing Artificial Societies
+        return sugar ** (self.metabolism_sugar / m_total) * spice ** (
+            self.metabolism_spice / m_total
+        )
+
+    def is_starved(self):
+        &quot;&quot;&quot;
+        Helper function for self.maybe_die()
+        &quot;&quot;&quot;
+
+        return (self.sugar &lt;= 0) or (self.spice &lt;= 0)
+
+    def calculate_MRS(self, sugar, spice):
+        &quot;&quot;&quot;
+        Helper function for
+          - self.trade()
+          - self.maybe_self_spice()
+
+        Determines what trader agent needs and can give up
+        &quot;&quot;&quot;
+
+        return (spice / self.metabolism_spice) / (sugar / self.metabolism_sugar)
+
+    def calculate_sell_spice_amount(self, price):
+        &quot;&quot;&quot;
+        helper function for self.maybe_sell_spice() which is called from
+        self.trade()
+        &quot;&quot;&quot;
+
+        if price >= 1:
+            sugar = 1
+            spice = int(price)
+        else:
+            sugar = int(1 / price)
+            spice = 1
+        return sugar, spice
+
+    def sell_spice(self, other, sugar, spice):
+        &quot;&quot;&quot;
+        used in self.maybe_sell_spice()
+
+        exchanges sugar and spice between traders
+        &quot;&quot;&quot;
+
+        self.sugar += sugar
+        other.sugar -= sugar
+        self.spice -= spice
+        other.spice += spice
+
+    def maybe_sell_spice(self, other, price, welfare_self, welfare_other):
+        &quot;&quot;&quot;
+        helper function for self.trade()
+        &quot;&quot;&quot;
+
+        sugar_exchanged, spice_exchanged = self.calculate_sell_spice_amount(price)
+
+        # Assess new sugar and spice amount - what if change did occur
+        self_sugar = self.sugar + sugar_exchanged
+        other_sugar = other.sugar - sugar_exchanged
+        self_spice = self.spice - spice_exchanged
+        other_spice = other.spice + spice_exchanged
+
+        # double check to ensure agents have resources
+
+        if (
+            (self_sugar &lt;= 0)
+            or (other_sugar &lt;= 0)
+            or (self_spice &lt;= 0)
+            or (other_spice &lt;= 0)
+        ):
+            return False
+
+        # trade criteria #1 - are both agents better off?
+        both_agents_better_off = (
+            welfare_self &lt; self.calculate_welfare(self_sugar, self_spice)
+        ) and (welfare_other &lt; other.calculate_welfare(other_sugar, other_spice))
+
+        # trade criteria #2 is their mrs crossing with potential trade
+        mrs_not_crossing = self.calculate_MRS(
+            self_sugar, self_spice
+        ) > other.calculate_MRS(other_sugar, other_spice)
+
+        if not (both_agents_better_off and mrs_not_crossing):
+            return False
+
+        # criteria met, execute trade
+        self.sell_spice(other, sugar_exchanged, spice_exchanged)
+
+        return True
+
+    def trade(self, other):
+        &quot;&quot;&quot;
+        helper function used in trade_with_neighbors()
+
+        other is a trader agent object
+        &quot;&quot;&quot;
+
+        # sanity check to verify code is working as expected
+        assert self.sugar > 0
+        assert self.spice > 0
+        assert other.sugar > 0
+        assert other.spice > 0
+
+        # calculate marginal rate of substitution in Growing Artificial Societies p. 101
+        mrs_self = self.calculate_MRS(self.sugar, self.spice)
+        mrs_other = other.calculate_MRS(other.sugar, other.spice)
+
+        # calculate each agents welfare
+        welfare_self = self.calculate_welfare(self.sugar, self.spice)
+        welfare_other = other.calculate_welfare(other.sugar, other.spice)
+
+        if math.isclose(mrs_self, mrs_other):
+            return
+
+        # calculate price
+        price = math.sqrt(mrs_self * mrs_other)
+
+        if mrs_self > mrs_other:
+            # self is a sugar buyer, spice seller
+            sold = self.maybe_sell_spice(other, price, welfare_self, welfare_other)
+            # no trade - criteria not met
+            if not sold:
+                return
+        else:
+            # self is a spice buyer, sugar seller
+            sold = other.maybe_sell_spice(self, price, welfare_other, welfare_self)
+            # no trade - criteria not met
+            if not sold:
+                return
+
+        # Capture data
+        self.prices.append(price)
+        self.trade_partners.append(other.unique_id)
+
+        # continue trading
+        self.trade(other)
+
+    ######################################################################
+    #                                                                    #
+    #                      MAIN TRADE FUNCTIONS                          #
+    #                                                                    #
+    ######################################################################
+
+    def move(self):
+        &quot;&quot;&quot;
+        Function for trader agent to identify optimal move for each step in 4 parts
+        1 - identify all possible moves
+        2 - determine which move maximizes welfare
+        3 - find closest best option
+        4 - move
+        &quot;&quot;&quot;
+
+        # 1. identify all possible moves
+
+        neighboring_cells = [
+            cell
+            for cell in self.cell.get_neighborhood(self.vision, include_center=True)
+            if cell.is_empty
+        ]
+
+        # 2. determine which move maximizes welfare
+
+        welfares = [
+            self.calculate_welfare(
+                self.sugar + cell.sugar,
+                self.spice + cell.spice,
+            )
+            for cell in neighboring_cells
+        ]
+
+        # 3. Find closest best option
+
+        # find the highest welfare in welfares
+        max_welfare = max(welfares)
+        # Get cells with the highest welfare
+        candidates = [
+            cell
+            for cell, welfare in zip(neighboring_cells, welfares)
+            if math.isclose(welfare, max_welfare)
+        ]
+
+        min_dist = min(get_distance(self.cell, cell) for cell in candidates)
+
+        final_candidates = [
+            cell
+            for cell in candidates
+            if math.isclose(get_distance(self.cell, cell), min_dist, rel_tol=1e-02)
+        ]
+
+        # 4. Move Agent
+        self.cell = self.random.choice(final_candidates)
+
+    def eat(self):
+        self.sugar += self.cell.sugar
+        self.cell.sugar = 0
+        self.sugar -= self.metabolism_sugar
+
+        self.spice += self.cell.spice
+        self.cell.spice = 0
+        self.spice -= self.metabolism_spice
+
+    def maybe_die(self):
+        &quot;&quot;&quot;
+        Function to remove Traders who have consumed all their sugar or spice
+        &quot;&quot;&quot;
+
+        if self.is_starved():
+            self.remove()
+
+    def trade_with_neighbors(self):
+        &quot;&quot;&quot;
+        Function for trader agents to decide who to trade with in three parts
+
+        1- identify neighbors who can trade
+        2- trade (2 sessions)
+        3- collect data
+        &quot;&quot;&quot;
+        # iterate through traders in neighboring cells and trade
+        for a in self.cell.get_neighborhood(radius=self.vision).agents:
+            self.trade(a)
+
+        return
+</code></pre>
+<h2 id="model">Model<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#model" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<pre><code>from pathlib import Path
+
+import numpy as np
+
+import mesa
+from mesa.discrete_space import OrthogonalVonNeumannGrid
+from mesa.discrete_space.property_layer import PropertyLayer
+from mesa.examples.advanced.sugarscape_g1mt.agents import Trader
+
+# Helper Functions
+def flatten(list_of_lists):
+    &quot;&quot;&quot;
+    helper function for model datacollector for trade price
+    collapses agent price list into one list
+    &quot;&quot;&quot;
+    return [item for sublist in list_of_lists for item in sublist]
+
+def geometric_mean(list_of_prices):
+    &quot;&quot;&quot;
+    find the geometric mean of a list of prices
+    &quot;&quot;&quot;
+    return np.exp(np.log(list_of_prices).mean())
+
+def get_trade(agent):
+    &quot;&quot;&quot;
+    For agent reporters in data collector
+
+    return list of trade partners and None for other agents
+    &quot;&quot;&quot;
+    if isinstance(agent, Trader):
+        return agent.trade_partners
+    else:
+        return None
+
+class SugarscapeG1mt(mesa.Model):
+    &quot;&quot;&quot;
+    Manager class to run Sugarscape with Traders
+    &quot;&quot;&quot;
+
+    def __init__(
+        self,
+        width=50,
+        height=50,
+        initial_population=200,
+        endowment_min=25,
+        endowment_max=50,
+        metabolism_min=1,
+        metabolism_max=5,
+        vision_min=1,
+        vision_max=5,
+        enable_trade=True,
+        rng=None,
+    ):
+        super().__init__(rng=rng)
+        # Initiate width and height of sugarscape
+        self.width = width
+        self.height = height
+
+        # Initiate population attributes
+        self.enable_trade = enable_trade
+        self.running = True
+
+        # initiate mesa grid class
+        self.grid = OrthogonalVonNeumannGrid(
+            (self.width, self.height), torus=False, random=self.random
+        )
+        # initiate datacollector
+        self.datacollector = mesa.DataCollector(
+            model_reporters={
+                &quot;#Traders&quot;: lambda m: len(m.agents),
+                &quot;Trade Volume&quot;: lambda m: sum(len(a.trade_partners) for a in m.agents),
+                &quot;Price&quot;: lambda m: geometric_mean(
+                    flatten([a.prices for a in m.agents])
+                ),
+            },
+            agent_reporters={&quot;Trade Network&quot;: lambda a: get_trade(a)},  # noqa: PLW0108
+        )
+
+        # read in landscape file from supplementary material
+        self.sugar_distribution = np.genfromtxt(Path(__file__).parent / &quot;sugar-map.txt&quot;)
+        self.spice_distribution = np.flip(self.sugar_distribution, 1)
+
+        self.grid.add_property_layer(
+            PropertyLayer.from_data(&quot;sugar&quot;, self.sugar_distribution)
+        )
+        self.grid.add_property_layer(
+            PropertyLayer.from_data(&quot;spice&quot;, self.spice_distribution)
+        )
+
+        Trader.create_agents(
+            self,
+            initial_population,
+            self.random.choices(self.grid.all_cells.cells, k=initial_population),
+            sugar=self.rng.integers(
+                endowment_min, endowment_max, (initial_population,), endpoint=True
+            ),
+            spice=self.rng.integers(
+                endowment_min, endowment_max, (initial_population,), endpoint=True
+            ),
+            metabolism_sugar=self.rng.integers(
+                metabolism_min, metabolism_max, (initial_population,), endpoint=True
+            ),
+            metabolism_spice=self.rng.integers(
+                metabolism_min, metabolism_max, (initial_population,), endpoint=True
+            ),
+            vision=self.rng.integers(
+                vision_min, vision_max, (initial_population,), endpoint=True
+            ),
+        )
+
+    def step(self):
+        &quot;&quot;&quot;
+        Unique step function that does staged activation of sugar and spice
+        and then randomly activates traders
+        &quot;&quot;&quot;
+        # step Resource agents
+        self.grid.sugar.data = np.minimum(
+            self.grid.sugar.data + 1, self.sugar_distribution
+        )
+        self.grid.spice.data = np.minimum(
+            self.grid.spice.data + 1, self.spice_distribution
+        )
+
+        # step trader agents
+        # to account for agent death and removal we need a separate data structure to
+        # iterate
+        trader_shuffle = self.agents_by_type[Trader].shuffle()
+
+        for agent in trader_shuffle:
+            agent.prices = []
+            agent.trade_partners = []
+            agent.move()
+            agent.eat()
+            agent.maybe_die()
+
+        if not self.enable_trade:
+            # If trade is not enabled, return early
+            self.datacollector.collect(self)
+            return
+
+        trader_shuffle = self.agents_by_type[Trader].shuffle()
+
+        for agent in trader_shuffle:
+            agent.trade_with_neighbors()
+
+        # collect model level data
+        # fixme we can already collect agent class data
+        # fixme, we don't have resource agents anymore so this can be done simpler
+        self.datacollector.collect(self)
+        &quot;&quot;&quot;
+        Mesa is working on updating datacollector agent reporter
+        so it can collect information on specific agents from
+        mesa.time.RandomActivationByType.
+
+        Please see issue #1419 at
+        https://github.com/mesa/mesa/issues/1419
+        (contributions welcome)
+
+        Below is one way to update agent_records to get specific Trader agent data
+        &quot;&quot;&quot;
+        # Need to remove excess data
+        # Create local variable to store trade data
+        agent_trades = self.datacollector._agent_records[self.steps]
+        # Get rid of all None to reduce data storage needs
+        agent_trades = [agent for agent in agent_trades if agent[2] is not None]
+        # Reassign the dictionary value with lean trade data
+        self.datacollector._agent_records[self.steps] = agent_trades
+
+    def run_model(self, step_count=1000):
+        for _ in range(step_count):
+            self.step()
+</code></pre>
+<h2 id="app">App<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#app" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<pre><code>from mesa.examples.advanced.sugarscape_g1mt.model import SugarscapeG1mt
+from mesa.visualization import Slider, SolaraViz, SpaceRenderer, make_plot_component
+from mesa.visualization.components import AgentPortrayalStyle, PropertyLayerStyle
+
+def agent_portrayal(agent):
+    return AgentPortrayalStyle(
+        x=agent.cell.coordinate[0],
+        y=agent.cell.coordinate[1],
+        color=&quot;red&quot;,
+        marker=&quot;o&quot;,
+        size=10,
+        zorder=1,
+    )
+
+def propertylayer_portrayal(layer):
+    if layer.name == &quot;sugar&quot;:
+        return PropertyLayerStyle(
+            color=&quot;blue&quot;, alpha=0.8, colorbar=True, vmin=0, vmax=10
+        )
+    return PropertyLayerStyle(color=&quot;red&quot;, alpha=0.8, colorbar=True, vmin=0, vmax=10)
+
+def post_process(chart):
+    chart = chart.properties(width=400, height=400)
+    return chart
+
+model_params = {
+    &quot;rng&quot;: {
+        &quot;type&quot;: &quot;InputText&quot;,
+        &quot;value&quot;: 42,
+        &quot;label&quot;: &quot;Random Seed&quot;,
+    },
+    &quot;width&quot;: 50,
+    &quot;height&quot;: 50,
+    # Population parameters
+    &quot;initial_population&quot;: Slider(
+        &quot;Initial Population&quot;, value=200, min=50, max=500, step=10
+    ),
+    # Agent endowment parameters
+    &quot;endowment_min&quot;: Slider(&quot;Min Initial Endowment&quot;, value=25, min=5, max=30, step=1),
+    &quot;endowment_max&quot;: Slider(&quot;Max Initial Endowment&quot;, value=50, min=30, max=100, step=1),
+    # Metabolism parameters
+    &quot;metabolism_min&quot;: Slider(&quot;Min Metabolism&quot;, value=1, min=1, max=3, step=1),
+    &quot;metabolism_max&quot;: Slider(&quot;Max Metabolism&quot;, value=5, min=3, max=8, step=1),
+    # Vision parameters
+    &quot;vision_min&quot;: Slider(&quot;Min Vision&quot;, value=1, min=1, max=3, step=1),
+    &quot;vision_max&quot;: Slider(&quot;Max Vision&quot;, value=5, min=3, max=8, step=1),
+    # Trade parameter
+    &quot;enable_trade&quot;: {&quot;type&quot;: &quot;Checkbox&quot;, &quot;value&quot;: True, &quot;label&quot;: &quot;Enable Trading&quot;},
+}
+
+model = SugarscapeG1mt()
+
+# Here, the renderer uses the Altair backend, while the plot components
+# use the Matplotlib backend.
+# Both can be mixed and matched to enhance the visuals of your model.
+renderer = (
+    SpaceRenderer(model, backend=&quot;altair&quot;)
+    .setup_agents(agent_portrayal)
+    .setup_propertylayer(propertylayer_portrayal)
+)
+# Specifically, avoid drawing the grid to hide the grid lines.
+renderer.draw_agents()
+renderer.draw_propertylayer()
+
+renderer.post_process = post_process
+
+# Note: It is advised to switch the pages after pausing the model
+# on the Solara dashboard.
+page = SolaraViz(
+    model,
+    renderer,
+    components=[
+        make_plot_component(&quot;#Traders&quot;, page=1),
+        make_plot_component(&quot;Price&quot;, page=1),
+    ],
+    model_params=model_params,
+    name=&quot;Sugarscape {G1, M, T}&quot;,
+    play_interval=150,
+)
+page  # noqa
+</code></pre>
+<p>On this page</p>
+<h3 id="this-page">This Page<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#this-page" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h3>
+<ul>
+<li><a href="../../../../.././../_sources/examples/advanced/sugarscape_g1mt.md.txt" class="internal internal-link alias" data-slug="_sources/examples/advanced/sugarscape_g1mt.md.txt">Show Source</a></li>
+</ul>
+<hr/>
+<p>Original source: <a href="https://mesa.readthedocs.io/stable/examples/advanced/sugarscape_g1mt.html" class="external external-link">https://mesa.readthedocs.io/stable/examples/advanced/sugarscape_g1mt.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc"><button type="button" class="toc-header" aria-controls="toc-80" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul id="list-0" class="toc-content overflow"><li class="depth-0"><a href="#sugarscape-constant-growback-model-with-traders" data-for="sugarscape-constant-growback-model-with-traders">Sugarscape Constant Growback Model with Traders</a></li><li class="depth-1"><a href="#summary" data-for="summary">Summary</a></li><li class="depth-2"><a href="#agents" data-for="agents">Agents:</a></li><li class="depth-1"><a href="#how-to-run" data-for="how-to-run">How to Run</a></li><li class="depth-1"><a href="#files" data-for="files">Files</a></li><li class="depth-1"><a href="#further-reading" data-for="further-reading">Further Reading</a></li><li class="depth-1"><a href="#agents-1" data-for="agents-1">Agents</a></li><li class="depth-1"><a href="#model" data-for="model">Model</a></li><li class="depth-1"><a href="#app" data-for="app">App</a></li><li class="depth-2"><a href="#this-page" data-for="this-page">This Page</a></li><li class="overflow-end"></li></ul></div><div class="backlinks"><h3>Backlinks</h3><ul id="list-0" class="overflow"><li><a href="../../../../../python-library-documentation/mesa/mesa-documentation" class="internal">Mesa Documentation</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script src="../../../../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-683f275d.js" type="application/javascript" data-persist="true"></script><script src="../../../../../postscript.js" type="module" data-persist="true"></script></html>

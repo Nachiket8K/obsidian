@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head><title>Source code for mesa.model</title><meta charset="utf-8"/><link rel="preload" href="../../../../../index.css" as="style"/><link rel="preload" href="../../../../../prescript.js" as="script"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="Quartz 5"/><meta property="og:title" content="Source code for mesa.model"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="Source code for mesa.model"/><meta name="twitter:description" content="Source code for mesa.model &quot;&quot;&quot;The model class for Mesa framework."/><meta property="og:description" content="Source code for mesa.model &quot;&quot;&quot;The model class for Mesa framework."/><meta property="og:image:alt" content="Source code for mesa.model &quot;&quot;&quot;The model class for Mesa framework."/><meta property="twitter:domain" content="nachiket8k.github.io/obsidian"/><meta property="og:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/model"/><meta property="twitter:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/model"/><link rel="icon" href="../../../../../static/icon.png"/><meta name="description" content="Source code for mesa.model &quot;&quot;&quot;The model class for Mesa framework."/><meta name="generator" content="Quartz"/><link href="../../../../../index.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-735924e0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-589c1cea.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-bbc3f7c0.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-2911f5d1.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-e427079e.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-53b25b2b.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-c93c6a44.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-8a06014f.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-77d6a441.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-6ee21cee.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-1ea6ad18.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-34bdfded.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-788c9ca3.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-642859cd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-4abc06bd.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-274a3dfe.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-94cb6c84.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-58d5ff56.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-9f9b2774.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../component-7262b5a7.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-a12dcaa2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-26a99b87.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-a5c806d2.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-6bd36952.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-9857b007.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="../../../../../static/resource-style-d3a1a224.css" rel="stylesheet" type="text/css" data-persist="true"/><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" data-persist="true"/><script src="../../../../../prescript.js" type="application/javascript" data-persist="true"></script><script type="application/javascript" data-persist="true">const fetchData = fetch("../../../../../static/contentIndex.json").then(data => data.json())</script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted%20Grotesk%3Awght%40400%3B700&amp;family=Source%20Sans%20Pro%3Aital%2Cwght%400%2C400%3B0%2C600%3B1%2C400%3B1%2C600&amp;family=IBM%20Plex%20Mono%3Awght%40400%3B600&amp;display=swap"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/model-og-image.webp"/><meta property="og:image:url" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/model-og-image.webp"/><meta name="twitter:image" content="https://nachiket8k.github.io/obsidian/python-library-documentation/mesa/stable/modules/mesa/model-og-image.webp"/><meta property="og:image:type" content="image/webp"/></head><body data-slug="python-library-documentation/mesa/stable/modules/mesa/model" data-basepath><div id="quartz-root" class="page" data-frame="default"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href="../../../../..">Quartz 5</a></h2><div class="mobile-only"><div class="spacer"></div></div><div class="flex-component" style="flex-direction: row; flex-wrap: nowrap; gap: 0.5rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button" aria-label="Search" aria-expanded="false"><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg><p>Search</p></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something..." placeholder="Search for something..."/><div class="search-layout" data-preview="true" data-field-priority="[&quot;title&quot;,&quot;content&quot;,&quot;tags&quot;]"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode" aria-label="Dark mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode" aria-label="Reader mode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer nav-files-container" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a2, b2) => {\r\n    if (!a2.isFolder &amp;&amp; !b2.isFolder || a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return (a2.displayName || \&quot;\&quot;).localeCompare(b2.displayName || \&quot;\&quot;, void 0, {\r\n        numeric: true,\r\n        sensitivity: \&quot;base\&quot;\r\n      });\r\n    }\r\n    if (!a2.isFolder &amp;&amp; b2.isFolder) {\r\n      return 1;\r\n    }\r\n    return -1;\r\n  }&quot;,&quot;filterFn&quot;:&quot;(node) => node.slugSegment !== \&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;(node) => {\r\n    return node;\r\n  }&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-176" aria-label="Explorer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div id="explorer-176" class="explorer-content" aria-expanded="false" role="group"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#" class="nav-file-title tree-item-self"></a></li></template><template id="template-folder"><li><div class="folder-container nav-folder-title tree-item-self"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon nav-folder-collapse-indicator collapse-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content tree-item-children"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="../../../../../">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/">Python Library Documentation</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/">mesa package</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/stable/">Mesa: Agent-based modeling in Python</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/stable/modules/">modules</a><p> ❯ </p></div><div class="breadcrumb-element"><a href="../../../../../python-library-documentation/mesa/stable/modules/mesa/">mesa</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>Source code for mesa.model</a></div></nav><h1 class="article-title">Source code for mesa.model</h1><p show-comma="true" class="content-meta"><time datetime="2026-06-19T10:10:30.109Z">Jun 19, 2026</time><span>11 min read</span></p></div></div><article class="popover-hint"><div class="markdown-preview-view markdown-rendered"><h1 id="source-code-for-mesamodel">Source code for mesa.model<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#source-code-for-mesamodel" class="internal internal-link"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<pre><code>&quot;&quot;&quot;The model class for Mesa framework.
+
+Core Objects: Model
+&quot;&quot;&quot;
+
+# Postpone annotation evaluation to avoid NameError from forward references (PEP 563). Remove once Python 3.14+ is required.
+from __future__ import annotations
+
+import random
+import sys
+import warnings
+from collections.abc import Callable, Sequence
+from typing import TYPE_CHECKING, Any
+
+import numpy as np
+
+from mesa.experimental.data_collection.dataset import DataRegistry
+from mesa.experimental.mesa_signals import (
+    HasObservables,
+    ModelSignals,
+    Observable,
+    emit,
+)
+
+if TYPE_CHECKING:
+    from mesa.experimental.devs import Simulator
+
+from mesa.agent import Agent
+from mesa.agentset import _HardKeyAgentSet
+from mesa.experimental.scenarios import Scenario
+from mesa.mesa_logging import create_module_logger, method_logger
+from mesa.time import (
+    Event,
+    EventGenerator,
+    EventList,
+    Priority,
+    Schedule,
+)
+from mesa.time.events import _create_callable_reference
+
+SeedLike = int | np.integer | Sequence[int] | np.random.SeedSequence
+RNGLike = np.random.Generator | np.random.BitGenerator
+
+_mesa_logger = create_module_logger()
+
+# TODO: We can add `= Scenario` default type when Python 3.13+ is required
+
+[docs]
+class Model[A: Agent, S: Scenario](HasObservables):
+    &quot;&quot;&quot;Base class for models in the Mesa ABM library.
+
+    This class serves as a foundational structure for creating agent-based models.
+    It includes the basic attributes and methods necessary for initializing and
+    running a simulation model.
+
+    Type Parameters:
+        A: The agent type used in this model
+        S: The scenario type used in this model
+
+    Attributes:
+        running: A boolean indicating if the model should continue running.
+        steps: the number of times `model.step()` has been called.
+        time: the current simulation time. Automatically increments by 1.0
+              with each step unless controlled by a discrete event simulator.
+        random: a seeded python.random number generator.
+        rng: a seeded numpy.random.Generator
+        scenario: the scenario instance containing model parameters
+
+    Notes:
+        Model.agents returns the AgentSet containing all agents registered with the model. Changing
+        the content of the AgentSet directly can result in strange behavior. If you want change the
+        composition of this AgentSet, ensure you operate on a copy.
+
+    &quot;&quot;&quot;
+
+    # fixme how can we declare that &quot;agents&quot; is observable?
+    time = (
+        Observable()
+    )  # we can now just subscribe to change events on the observable time
+
+    @property
+    def scenario(self) -> S:
+        &quot;&quot;&quot;Return scenario instance.&quot;&quot;&quot;
+        return self._scenario
+
+    @scenario.setter
+    def scenario(self, scenario: S) -> None:
+        &quot;&quot;&quot;Set scenario instance.&quot;&quot;&quot;
+        self._scenario = scenario
+        scenario.model = self
+
+    @method_logger(__name__)
+    def __init__(
+        self,
+        *args: Any,
+        seed: float | None = None,
+        rng: RNGLike | SeedLike | None = None,
+        scenario: S | None = None,
+        **kwargs: Any,
+    ) -> None:
+        &quot;&quot;&quot;Create a new model.
+
+        Overload this method with the actual code to initialize the model. Always start with super().__init__()
+        to initialize the model object properly.
+
+        Args:
+            args: arguments to pass onto super
+            seed: the seed for the random number generator
+            rng: Pseudorandom number generator state. When `rng` is None, a new `numpy.random.Generator` is created
+                  using entropy from the operating system. Types other than `numpy.random.Generator` are passed to
+                  `numpy.random.default_rng` to instantiate a `Generator`.
+            scenario: the scenario specifying the computational experiment to run
+            kwargs: keyword arguments to pass onto super
+
+        Notes:
+            you have to pass either seed or rng, but not both.
+
+        &quot;&quot;&quot;
+        super().__init__(*args, **kwargs)
+        self.running: bool = True
+        self.steps: int = 0
+        self.time: float = 0.0
+        self.agent_id_counter: int = 1
+
+        # Track if a simulator is controlling time
+        self._simulator: Simulator | None = None
+
+        # Event list for event-based execution
+        self._event_list: EventList = EventList()
+        # Strong references to active EventGenerators (prevent GC)
+        self._event_generators: set[EventGenerator] = set()
+
+        # check if `scenario` is provided
+        # and if so, whether rng is the same or not
+        if scenario is not None:
+            if rng is not None and (scenario.rng != rng):
+                raise ValueError(&quot;rng and scenario.rng must be the same&quot;)
+            else:
+                rng = scenario.rng
+
+        if (seed is not None) and (rng is not None):
+            raise ValueError(&quot;you have to pass either rng or seed, not both&quot;)
+        elif seed is None:
+            self.rng: np.random.Generator = np.random.default_rng(rng)
+            self._rng = (
+                self.rng.bit_generator.state
+            )  # this allows for reproducing the rng
+
+            # If rng is an integer, use it directly.
+            # Otherwise (None, Generator, etc.), generate a new integer seed.
+            if isinstance(rng, (int, np.integer)):
+                seed = rng
+                self.random = random.Random(seed)
+            else:
+                seed = int(self.rng.integers(np.iinfo(np.int32).max))
+                self.random = random.Random(seed)
+            self._seed = seed  # this allows for reproducing stdlib.random
+        elif rng is None:
+            warnings.warn(
+                &quot;The use of the `seed` keyword argument is deprecated, use `rng` instead. No functional changes.&quot;,
+                FutureWarning,
+                stacklevel=2,
+            )
+
+            self.random = random.Random(seed)
+            self._seed = seed  # this allows for reproducing stdlib.random
+
+            try:
+                self.rng: np.random.Generator = np.random.default_rng(seed)
+            except TypeError:
+                rng = self.random.randint(0, sys.maxsize)
+                self.rng: np.random.Generator = np.random.default_rng(rng)
+            self._rng = self.rng.bit_generator.state
+
+        # now that we have figured out the seed value for rng
+        # we can set create a scenario with this if needed
+        if scenario is None:
+            scenario = Scenario(rng=seed)  # type: ignore[assignment]
+        self.scenario = scenario
+
+        # Store user's step method and create the default step schedule.
+        # Uses EventGenerator to schedule _do_step every 1.0 time units.
+        self._user_step = self.step
+        self._default_schedule: EventGenerator = EventGenerator(
+            self,
+            self._do_step,
+            Schedule(interval=1.0, start=1.0),
+            priority=Priority.HIGH,
+        ).start()
+        self.step = self._wrapped_step
+
+        # setup agent registration data structures
+        self._agents_by_type: dict[
+            type[A], _HardKeyAgentSet[A]
+        ] = {}  # a dict with an agentset for each class of agents
+        self._all_agents: _HardKeyAgentSet[A] = _HardKeyAgentSet(
+            [], random=self.random
+        )  # an agenset with all agents
+
+        self.data_registry = DataRegistry()
+
+    def _wrapped_step(self) -> None:
+        &quot;&quot;&quot;Advance time by one unit, processing any scheduled events.&quot;&quot;&quot;
+        self._advance_time(self.time + 1)
+
+    def _advance_time(self, until: float) -> None:
+        &quot;&quot;&quot;Advance time to the given point, processing events along the way.
+
+        Args:
+            until: The time to advance to
+
+        &quot;&quot;&quot;
+        if until &lt;= self.time:
+            warnings.warn(
+                f&quot;end time {until} is larger than time {self.time}&quot;,
+                RuntimeWarning,
+                stacklevel=2,
+            )
+
+            return
+        while True:
+            try:
+                event = self._event_list.pop_event()
+            except IndexError:
+                break
+
+            if event.time &lt;= until:
+                self.time = event.time
+                event.execute()
+            else:
+                self._event_list.add_event(event)
+                break
+
+        self.time = until
+
+    def _do_step(self) -> None:
+        &quot;&quot;&quot;Execute one step. Rescheduling is handled by the EventGenerator.&quot;&quot;&quot;
+        self.steps += 1
+        _mesa_logger.info(f&quot;Step {self.steps} at time {self.time}&quot;)
+        self._user_step()
+
+    @property
+    def agents(self) -> _HardKeyAgentSet[A]:
+        &quot;&quot;&quot;Provides a _HardKeyAgentSet of all agents in the model, combining agents from all types.
+
+        Returns:
+            _HardKeyAgentSet: The agent set containing all agents with strong references.
+
+        Warning:
+            This returns the actual internal _HardKeyAgentSet used by Mesa for agent registration
+            and tracking. It uses strong references to prevent premature garbage collection and reduce performance overhead
+            caused by weak reference management.
+
+            **Do not modify this AgentSet directly** (e.g., by adding or removing agents manually).
+            Direct modifications can break the model's agent tracking system and cause unexpected
+            behavior. Instead:
+
+            - Use ``Agent()`` to create new agents (automatically registers them)
+            - Use ``agent.remove()`` to remove agents (automatically deregisters them)
+            - For read-only operations or transformations, work on a copy: ``model.agents.copy()``
+
+        Notes:
+            This is Mesa's core agent registration system. All agents created via ``Agent.__init__``
+            are automatically registered here.
+        &quot;&quot;&quot;
+        return self._all_agents
+
+    @agents.setter
+    def agents(self, agents: Any) -> None:
+        raise AttributeError(
+            &quot;You are trying to set model.agents. In Mesa 3.0 and higher, this attribute is &quot;
+            &quot;used by Mesa itself, so you cannot use it directly anymore.&quot;
+            &quot;Please adjust your code to use a different attribute name for custom agent storage.&quot;
+        )
+
+    @property
+    def agent_types(self) -> list[type]:
+        &quot;&quot;&quot;Return a list of all unique agent types registered with the model.&quot;&quot;&quot;
+        return list(self._agents_by_type.keys())
+
+    @property
+    def agents_by_type(self) -> dict[type[A], _HardKeyAgentSet[A]]:
+        &quot;&quot;&quot;A dictionary where keys are agent types and values are the corresponding _HardKeyAgentSets.
+
+        Returns:
+            dict[type[A], _HardKeyAgentSet[A]]: Dictionary mapping agent types to their AgentSets.
+
+        Warning:
+            Each AgentSet in this dictionary is a _HardKeyAgentSet with strong references,
+            forming part of Mesa's core agent registration system.
+
+            **Do not modify these AgentSets directly**. Direct modifications can break agent
+            tracking and cause unexpected behavior. Instead:
+
+            - Use ``Agent()`` to create new agents (automatically registers them)
+            - Use ``agent.remove()`` to remove agents (automatically deregisters them)
+            - For read-only operations, work on copies: ``model.agents_by_type[AgentType].copy()``
+
+        Notes:
+            This is part of Mesa's core agent registration system. All agents are automatically
+            registered in the appropriate type-specific AgentSet when created via ``Agent.__init__``.
+        &quot;&quot;&quot;
+        return self._agents_by_type
+
+[docs]
+    @emit(&quot;agents&quot;, ModelSignals.AGENT_ADDED)
+    def register_agent(self, agent: A):
+        &quot;&quot;&quot;Register the agent with the model.
+
+        Args:
+            agent: The agent to register.
+
+        Notes:
+            This method is called automatically by ``Agent.__init__``, so there
+            is no need to use this if you are subclassing Agent and calling its
+            super in the ``__init__`` method.
+        &quot;&quot;&quot;
+        # Add to main storage
+        self._all_agents.add(agent)
+        agent.unique_id = self.agent_id_counter
+        self.agent_id_counter += 1
+
+        # because AgentSet requires model, we cannot use defaultdict
+        # tricks with a function won't work because model then cannot be pickled
+        try:
+            self._agents_by_type[type(agent)].add(agent)
+        except KeyError:
+            self._agents_by_type[type(agent)] = _HardKeyAgentSet(
+                [agent],
+                random=self.random,
+            )
+
+        _mesa_logger.debug(
+            f&quot;registered {agent.__class__.__name__} with agent_id {agent.unique_id}&quot;
+        )
+
+[docs]
+    @emit(&quot;agents&quot;, ModelSignals.AGENT_REMOVED)
+    def deregister_agent(self, agent: A):
+        &quot;&quot;&quot;Deregister the agent with the model.
+
+        Args:
+            agent: The agent to deregister.
+
+        Notes:
+            This method is called automatically by ``Agent.remove``
+
+        &quot;&quot;&quot;
+        self._agents_by_type[type(agent)].remove(agent)
+        self._all_agents.remove(agent)
+
+        _mesa_logger.debug(f&quot;deregistered agent with agent_id {agent.unique_id}&quot;)
+
+[docs]
+    def run_model(self) -> None:
+        &quot;&quot;&quot;Run the model until the end condition is reached.
+
+        Overload as needed.
+        &quot;&quot;&quot;
+        while self.running:
+            self.step()
+
+[docs]
+    def step(self) -> None:
+        &quot;&quot;&quot;A single step. Fill in here.&quot;&quot;&quot;
+
+[docs]
+    def reset_randomizer(self, seed: int | None = None) -> None:
+        &quot;&quot;&quot;Reset the model random number generator.
+
+        Args:
+            seed: A new seed for the RNG; if None, reset using the current seed
+        &quot;&quot;&quot;
+        warnings.warn(
+            &quot;The use of the `seed` keyword argument is deprecated, use `rng` instead. No functional changes.&quot;,
+            FutureWarning,
+            stacklevel=2,
+        )
+
+        if seed is None:
+            seed = self._seed
+        self.random.seed(seed)
+        self._seed = seed
+
+[docs]
+    def reset_rng(self, rng: RNGLike | SeedLike | None = None) -> None:
+        &quot;&quot;&quot;Reset the model random number generator.
+
+        Args:
+            rng: A new seed for the RNG; if None, reset using the current seed
+        &quot;&quot;&quot;
+        if rng is None:
+            # Restore from saved initial state
+            bg_class = getattr(np.random, self._rng[&quot;bit_generator&quot;])
+            bg = bg_class()
+            bg.state = self._rng
+            self.rng = np.random.Generator(bg)
+        else:
+            self.rng = np.random.default_rng(rng)
+            self._rng = self.rng.bit_generator.state
+
+[docs]
+    def remove_all_agents(self):
+        &quot;&quot;&quot;Remove all agents from the model.
+
+        Notes:
+            This method calls agent.remove for all agents in the model. If you need to remove agents from
+            e.g., a SingleGrid, you can either explicitly implement your own agent.remove method or clean this up
+            near where you are calling this method.
+
+        &quot;&quot;&quot;
+        # we need to wrap keys in a list to avoid a RunTimeError: dictionary changed size during iteration
+        for agent in list(self._all_agents):
+            agent.remove()
+
+        self.data_registry.close()  # this is needed to ensure GC works properly
+
+### Event scheduling and time progression methods ###
+
+[docs]
+    def schedule_event(
+        self,
+        function: Callable,
+        *,
+        at: float | None = None,
+        after: float | None = None,
+        priority: Priority = Priority.DEFAULT,
+    ) -> Event:
+        &quot;&quot;&quot;Schedule a one-off event.
+
+        Args:
+            function: The callable to execute
+            at: Absolute time to execute (mutually exclusive with after)
+            after: Relative time from now to execute (mutually exclusive with at)
+            priority: Priority level for the event
+
+        Returns:
+            The scheduled Event (can be used to cancel)
+
+        Raises:
+            ValueError: If both or neither of at/after are specified
+            ValueError: If both or neither of at/after are specified, or if the scheduled time is in the past.
+        &quot;&quot;&quot;
+        if (at is None) == (after is None):
+            raise ValueError(&quot;Specify exactly one of 'at' or 'after'&quot;)
+
+        time = at if at is not None else self.time + after
+        # Enforce monotonic time progression
+        if time &lt; self.time:
+            raise ValueError(
+                f&quot;Cannot schedule event in the past. &quot;
+                f&quot;Scheduled time is {time}, but current time is {self.time}&quot;
+            )
+
+        callback_ref = _create_callable_reference(function)
+        function = None
+        function = callback_ref()
+        if function is None:
+            raise ValueError(&quot;function must be alive at Event creation.&quot;)
+
+        event = Event(time, function, priority=priority)
+        self._event_list.add_event(event)
+        return event
+
+[docs]
+    def schedule_recurring(
+        self,
+        function: Callable,
+        schedule: Schedule,
+        priority: Priority = Priority.DEFAULT,
+    ) -> EventGenerator:
+        &quot;&quot;&quot;Schedule a recurring event based on a Schedule.
+
+        Args:
+            function: The callable to execute repeatedly
+            schedule: The Schedule defining when events occur
+            priority: Priority level for generated events
+
+        Returns:
+            The EventGenerator (can be used to stop)
+
+        Raises:
+            ValueError: If the schedule start time is in the past.
+        &quot;&quot;&quot;
+        if schedule.start is not None and schedule.start &lt; self.time:
+            raise ValueError(
+                f&quot;Cannot start recurring schedule in the past. &quot;
+                f&quot;Start time is {schedule.start}, current time is {self.time}&quot;
+            )
+        generator = EventGenerator(self, function, schedule, priority)
+        generator.start()
+        return generator
+
+[docs]
+    def run_for(self, duration: float | int) -> None:
+        &quot;&quot;&quot;Run the model for the specified duration.
+
+        Args:
+            duration: Time units to advance
+        &quot;&quot;&quot;
+        self._advance_time(self.time + duration)
+
+[docs]
+    def run_until(self, end_time: float | int) -> None:
+        &quot;&quot;&quot;Run the model until the specified time.
+
+        Args:
+            end_time: Absolute time to run until
+
+        If model.time is larger than end_time, the method returns directly.
+
+        &quot;&quot;&quot;
+        if self.time > end_time:
+            warnings.warn(
+                f&quot;end_time {end_time} is larger than time {self.time}&quot;,
+                RuntimeWarning,
+                stacklevel=2,
+            )
+            return
+
+        self._advance_time(end_time)
+</code></pre>
+<hr/>
+<p>Original source: <a href="https://mesa.readthedocs.io/stable/_modules/mesa/model.html" class="external external-link">https://mesa.readthedocs.io/stable/_modules/mesa/model.html<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a></p></div></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="backlinks"><h3>Backlinks</h3><ul id="list-0" class="overflow"><li><a href="../../../../../python-library-documentation/mesa/mesa-documentation" class="internal">Mesa Documentation</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v5.0.0</a> © 2026</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script src="../../../../../static/resource-after-e13fffa1.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-8b336f9a.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-baba652b.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-5eb75950.js" type="module" data-persist="true"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript" data-persist="true"></script><script src="../../../../../static/resource-after-683f275d.js" type="application/javascript" data-persist="true"></script><script src="../../../../../postscript.js" type="module" data-persist="true"></script></html>
