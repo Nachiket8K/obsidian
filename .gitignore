@@ -1,1 +1,4 @@
 *.pdf
+content/.obsidian/
+content/.smart-env/
+.quartz/plugins/
