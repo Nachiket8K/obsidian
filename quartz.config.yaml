@@ -161,6 +161,12 @@ plugins:
       condition: not-index
   - source: github:quartz-community/graph
     enabled: true
+    options:
+      localGraph:
+        depth: -1
+        scale: 0.9
+        focusOnHover: true
+        enableRadial: true
     layout:
       position: right
       priority: 10
